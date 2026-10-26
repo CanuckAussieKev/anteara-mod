@@ -1,4 +1,4 @@
-# The Anteara Mod's edits to game\menu\roundbarmenu.qb (applied to the game's own script: lib/edits.ts)
+# Anteara Mod's edits to game\menu\roundbarmenu.qb (applied to the game's own script: lib/edits.ts)
 base 844669fe
 unit make_new_roundbar_menu
 = 1-128

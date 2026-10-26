@@ -1,6 +1,6 @@
 # Third-party code
 
-This repository (the Anteara Mod's tools, MIT - LICENSE) is derived in part from the following. Their licences apply
+This repository (Anteara Mod's tools, MIT - LICENSE) is derived in part from the following. Their licences apply
 to those parts. (No game files or game script text are in it: README.md "How it's stored".)
 
 | Component | Where | Licence |

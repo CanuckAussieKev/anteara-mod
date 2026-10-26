@@ -1,4 +1,4 @@
-# The Anteara Mod's units in night_menu.qb that are adapted game units (lib/edits.ts)
+# Anteara Mod's units in night_menu.qb that are adapted game units (lib/edits.ts)
 new test_func3
 from d21d1fb8 engine\menu\lighttool.qb create_lighting_tool
 with 5a937638 game\menu\catmenu.qb create_CAT_pause_menu

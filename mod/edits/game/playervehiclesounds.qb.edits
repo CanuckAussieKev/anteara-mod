@@ -1,4 +1,4 @@
-# The Anteara Mod's edits to game\playervehiclesounds.qb (applied to the game's own script: lib/edits.ts)
+# Anteara Mod's edits to game\playervehiclesounds.qb (applied to the game's own script: lib/edits.ts)
 base 7ad7094f
 unit PlayerVehicleSounds
 = 1-29

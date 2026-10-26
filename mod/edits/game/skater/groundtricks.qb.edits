@@ -1,4 +1,4 @@
-# The Anteara Mod's edits to game\skater\groundtricks.qb (applied to the game's own script: lib/edits.ts)
+# Anteara Mod's edits to game\skater\groundtricks.qb (applied to the game's own script: lib/edits.ts)
 base 77ee2cd6
 register
 ~ 1 3879 0  Airshuffle Trick_Airshuffle Trick_Test

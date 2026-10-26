@@ -1,4 +1,4 @@
-# The Anteara Mod's units in game\menu\Anteara_Stuff\anteara_2010.qb that are adapted game units (lib/edits.ts)
+# Anteara Mod's units in game\menu\Anteara_Stuff\anteara_2010.qb that are adapted game units (lib/edits.ts)
 new anteara_start_observing
 from 5c8b1c04 game\skater\tricks.qb EndOfRun
 ~ 83 0 40 script anteara_start_o

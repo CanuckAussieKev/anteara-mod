@@ -1,4 +1,4 @@
-# The Anteara Mod's edits to game\menu\menu3d.qb (applied to the game's own script: lib/edits.ts)
+# Anteara Mod's edits to game\menu\menu3d.qb (applied to the game's own script: lib/edits.ts)
 base ea2a12b2
 register
 ~ 1 1825 0  menu3d_show1 menu3d_show10 menu3d_show11 menu3d_show12 menu3d_show2 menu3d_show3 menu3d_show4 menu3d_show5 menu3d_show6 menu3d_show7 menu3d_show8 menu3d_show9 menu3d_show_sign1 menu3d_show_sign10 menu3d_show_sign11 menu3d_show_sign12 menu3d_show_sign2 menu3d_show_sign3 menu3d_show_sign4 menu3d_show_sign5 menu3d_show_sign6 menu3d_show_sign7 menu3d_show_sign8 menu3d_show_sign9 rotate_pause_deck rotate_pause_deck1 rotate_pause_deck10 rotate_pause_deck11 rotate_pause_deck12 rotate_pause_deck2 rotate_pause_deck3 rotate_pause_deck4 rotate_pause_deck5 rotate_pause_deck6 rotate_pause_deck7 rotate_pause_deck8 rotate_pause_deck9

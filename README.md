@@ -1,4 +1,4 @@
-# The Anteara Mod (tools/anteara)
+# Anteara Mod (tools/anteara)
 
 > **Not affiliated with or endorsed by Activision, Neversoft or any other rights holder.** A non-commercial fan project
 > for preservation, interoperability and education. No game files are included: the tools work only on copies of the

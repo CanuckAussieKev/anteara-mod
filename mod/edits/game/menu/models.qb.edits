@@ -1,4 +1,4 @@
-# The Anteara Mod's edits to game\menu\models.qb (applied to the game's own script: lib/edits.ts)
+# Anteara Mod's edits to game\menu\models.qb (applied to the game's own script: lib/edits.ts)
 base f5118d04
 unit create_cutscene_heads_model_set
 + // MERGE: 2010 - 2010: the tricycle model line

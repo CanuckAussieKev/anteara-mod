@@ -1,4 +1,4 @@
-# The Anteara Mod's edits to game\menu\goal_editor_menu.qb (applied to the game's own script: lib/edits.ts)
+# Anteara Mod's edits to game\menu\goal_editor_menu.qb (applied to the game's own script: lib/edits.ts)
 base 53ad6da0
 remove control_types_basic
 unit generate_control_name

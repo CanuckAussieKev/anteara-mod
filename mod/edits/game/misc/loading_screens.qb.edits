@@ -1,4 +1,4 @@
-# The Anteara Mod's edits to game\misc\loading_screens.qb (applied to the game's own script: lib/edits.ts)
+# Anteara Mod's edits to game\misc\loading_screens.qb (applied to the game's own script: lib/edits.ts)
 base 2445997e
 unit startup_loading_screen
 = 1

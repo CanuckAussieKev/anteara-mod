@@ -1,4 +1,4 @@
-# The Anteara Mod's edits to game\misc\SK4_Scripts.qb (applied to the game's own script: lib/edits.ts)
+# Anteara Mod's edits to game\misc\SK4_Scripts.qb (applied to the game's own script: lib/edits.ts)
 base c973f47f
 unit SK3_KillSkater
 = 1

@@ -1,4 +1,4 @@
-# The Anteara Mod's edits to game\goal_utilities.qb (applied to the game's own script: lib/edits.ts)
+# Anteara Mod's edits to game\goal_utilities.qb (applied to the game's own script: lib/edits.ts)
 base 856a9a5b
 unit goal_passive_start
 = 1-14

@@ -1,4 +1,4 @@
-# The Anteara Mod's edits to game\skutils.qb (applied to the game's own script: lib/edits.ts)
+# Anteara Mod's edits to game\skutils.qb (applied to the game's own script: lib/edits.ts)
 base 9663df0c
 remove kill_blur
 remove pulse_blur

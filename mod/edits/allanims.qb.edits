@@ -1,4 +1,4 @@
-# The Anteara Mod's edits to allanims.qb (applied to the game's own script: lib/edits.ts)
+# Anteara Mod's edits to allanims.qb (applied to the game's own script: lib/edits.ts)
 base 592aa868
 register
 ~ 1 31180 0  animload_THPS6_LugeandSlalom

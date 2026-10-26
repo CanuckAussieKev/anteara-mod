@@ -1,4 +1,4 @@
-// NOT ORIGINAL - the Anteara Mod (the user's own THUG2 script mod, 2010 + 2011 merged; README.md) as an optional part
+// NOT ORIGINAL - Anteara Mod (the user's own THUG2 script mod, 2010 + 2011 merged; README.md) as an optional part
 // of the data overlay. Only the mod's own changes are stored here (mod\), no game script text: its own files
 // (mod\new), and for each game script it changes its edits (mod\edits, the format in lib/edits.ts: the units it removes,
 // changes or adds as line operations on the game's own units), and a manifest (which files, its qdir.txt changes).
@@ -528,7 +528,7 @@ export function scriptEdits(base: string, target: string, index: UnitIndex, scri
     const [th, tu, tr] = split(target);
     if (join(th, tu, tr) !== target) fail(`${rel}: the mod's text doesn't split into units and back`);
     const edits: Edits = {
-        comments: [`# The Anteara Mod's edits to ${rel} (applied to the game's own script: lib/edits.ts)`],
+        comments: [`# Anteara Mod's edits to ${rel} (applied to the game's own script: lib/edits.ts)`],
         base: textCrc(base),
         blocks: [],
     };
@@ -758,7 +758,7 @@ export function extract(unified: string, game: string, tool: string, thug1 = THU
                     index,
                     scripts,
                     rel,
-                    `# The Anteara Mod's units in ${rel} that are adapted game units (lib/edits.ts)`,
+                    `# Anteara Mod's units in ${rel} that are adapted game units (lib/edits.ts)`,
                 );
                 write("new", `${file}.ns`, own);
                 const entry: FileEntry = { new: true, path: `${file}.ns` };

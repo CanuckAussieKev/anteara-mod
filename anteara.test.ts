@@ -1,4 +1,4 @@
-// The Anteara Mod's tool: unit keys and normalised code (moved from the content pipeline's menu_level tests), and the
+// Anteara Mod's tool: unit keys and normalised code (moved from the content pipeline's menu_level tests), and the
 // edits format (edits.ts) on made-up text.
 
 import assert from "node:assert/strict";

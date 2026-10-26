@@ -1,4 +1,4 @@
-# The Anteara Mod's edits to game\skater\grindscripts.qb (applied to the game's own script: lib/edits.ts)
+# Anteara Mod's edits to game\skater\grindscripts.qb (applied to the game's own script: lib/edits.ts)
 base 286c19a6
 register
 ~ 1 12302 0  natas_extra_tricks natas_spin

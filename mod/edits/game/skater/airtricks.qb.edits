@@ -1,4 +1,4 @@
-# The Anteara Mod's edits to game\skater\airtricks.qb (applied to the game's own script: lib/edits.ts)
+# Anteara Mod's edits to game\skater\airtricks.qb (applied to the game's own script: lib/edits.ts)
 base 317a0533
 unit Trick_FFImpossible
 + // MERGE: 2010 - 2010: AirBorne

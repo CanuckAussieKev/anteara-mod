@@ -1,4 +1,4 @@
-# The Anteara Mod's edits to game\menu\themes.qb (applied to the game's own script: lib/edits.ts)
+# Anteara Mod's edits to game\menu\themes.qb (applied to the game's own script: lib/edits.ts)
 base a94d6f8b
 unit DE_BALANCE_METER_COLOR
 + // MERGE: 2010 - 2010's colour (pink - what 2011's theme menu calls its first value)

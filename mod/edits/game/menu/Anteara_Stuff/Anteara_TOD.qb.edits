@@ -1,4 +1,4 @@
-# The Anteara Mod's units in game\menu\Anteara_Stuff\Anteara_TOD.qb that are adapted game units (lib/edits.ts)
+# Anteara Mod's units in game\menu\Anteara_Stuff\Anteara_TOD.qb that are adapted game units (lib/edits.ts)
 new kirillgta_nightON
 from fa1aea66 engine\tod_manager.qb tod_manager_update_geo
 + script kirillgta_nightON {

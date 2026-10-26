@@ -1,4 +1,4 @@
-# The Anteara Mod's edits to game\misc\global_flags.qb (applied to the game's own script: lib/edits.ts)
+# Anteara Mod's edits to game\misc\global_flags.qb (applied to the game's own script: lib/edits.ts)
 base 9be3d604
 register
 ~ 1 4317 0  ANTEARA_AIRSHUFFLE ANTEARA_FAILSAFE_FLAG ANTEARA_MOD_NOT_ENABLED FREEMAN_BAIL FREEMAN_BOUND FREEMAN_CR FREEMAN_HACKED_CHAT FREEMAN_PUNGEE FREEMAN_WATER FREEMAN_WEAK_PEDS

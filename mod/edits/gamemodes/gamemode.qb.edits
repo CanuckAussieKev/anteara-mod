@@ -1,4 +1,4 @@
-# The Anteara Mod's edits to gamemodes\gamemode.qb (applied to the game's own script: lib/edits.ts)
+# Anteara Mod's edits to gamemodes\gamemode.qb (applied to the game's own script: lib/edits.ts)
 base 02b7495d
 unit mode_freeskate
 + // MERGE: 2010 - 2010: accumulate_score=1, should_modulate_color=1

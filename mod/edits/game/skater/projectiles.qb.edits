@@ -1,4 +1,4 @@
-# The Anteara Mod's edits to game\skater\projectiles.qb (applied to the game's own script: lib/edits.ts)
+# Anteara Mod's edits to game\skater\projectiles.qb (applied to the game's own script: lib/edits.ts)
 base 47e0c0bf
 unit ClientLaunchProjectile
 + // MERGE: 2010 - 2010: skateboard, Crystal_Ball and Anteara_Fire models (2011's ammo menu offers Skateboard and Crystal Ball too)

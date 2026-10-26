@@ -1,4 +1,4 @@
-# The Anteara Mod's edits to game\decks.qb (applied to the game's own script: lib/edits.ts)
+# Anteara Mod's edits to game\decks.qb (applied to the game's own script: lib/edits.ts)
 base 767ec064
 unit deck_graphic
 with f6dc7025 game\cas_skater_m.qb board

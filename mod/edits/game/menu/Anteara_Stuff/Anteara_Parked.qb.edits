@@ -1,4 +1,4 @@
-# The Anteara Mod's units in game\menu\Anteara_Stuff\Anteara_Parked.qb that are adapted game units (lib/edits.ts)
+# Anteara Mod's units in game\menu\Anteara_Stuff\Anteara_Parked.qb that are adapted game units (lib/edits.ts)
 new anteara_parked_setup_main_menu
 from 81d4880e pre:Sk5ed_scripts.prx:levels\sk5ed\sk5ed_scripts.qb parked_setup_main_menu
 ~ 1 7 0 anteara_

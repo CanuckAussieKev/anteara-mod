@@ -1,4 +1,4 @@
-# The Anteara Mod's edits to game\EdPieces2.qb (applied to the game's own script: lib/edits.ts)
+# Anteara Mod's edits to game\EdPieces2.qb (applied to the game's own script: lib/edits.ts)
 base b9d88184
 unit Ed_Resources_Info
 = 1-16

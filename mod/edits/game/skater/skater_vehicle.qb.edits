@@ -1,4 +1,4 @@
-# The Anteara Mod's edits to game\skater\skater_vehicle.qb (applied to the game's own script: lib/edits.ts)
+# Anteara Mod's edits to game\skater\skater_vehicle.qb (applied to the game's own script: lib/edits.ts)
 base 1c0d2392
 register
 ~ 1 11811 0  Anteara_Is_In_Story_Vehicle luge_bail_script riskblade_params wings_params

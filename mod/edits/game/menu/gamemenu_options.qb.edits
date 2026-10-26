@@ -1,4 +1,4 @@
-# The Anteara Mod's edits to game\menu\gamemenu_options.qb (applied to the game's own script: lib/edits.ts)
+# Anteara Mod's edits to game\menu\gamemenu_options.qb (applied to the game's own script: lib/edits.ts)
 base 941809ef
 unit controller_config_focus
 = 1-2

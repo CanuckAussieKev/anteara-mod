@@ -1,4 +1,4 @@
-# The Anteara Mod's edits to game\cas_skater_f.qb (applied to the game's own script: lib/edits.ts)
+# Anteara Mod's edits to game\cas_skater_f.qb (applied to the game's own script: lib/edits.ts)
 base 856da9d7
 unit skater_f_head
 = 1-3

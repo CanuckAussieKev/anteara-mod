@@ -1,4 +1,4 @@
-# The Anteara Mod's edits to engine\menu\lighttool.qb (applied to the game's own script: lib/edits.ts)
+# Anteara Mod's edits to engine\menu\lighttool.qb (applied to the game's own script: lib/edits.ts)
 base 42aeac2e
 unit toggle_color_lock
 = 1

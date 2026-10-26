@@ -1,4 +1,4 @@
-# The Anteara Mod's edits to game\net\net.qb (applied to the game's own script: lib/edits.ts)
+# Anteara Mod's edits to game\net\net.qb (applied to the game's own script: lib/edits.ts)
 base 99edc448
 register
 ~ 1 22414 0  idSkater_pos idSkater_speed launch_popup_keyboard menu_pupup_message popup_cum popup_enter_mess popup_gay popup_noob popup_slap teleport_to

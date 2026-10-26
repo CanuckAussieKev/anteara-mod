@@ -1,4 +1,4 @@
-# The Anteara Mod's edits to engine\menu\keyboard.qb (applied to the game's own script: lib/edits.ts)
+# Anteara Mod's edits to engine\menu\keyboard.qb (applied to the game's own script: lib/edits.ts)
 base bb69b11e
 unit keyboard_button_pressed
 = 1-4
@@ -10,34 +10,34 @@ unit keyboard_button_pressed
 +     // 2011 types those characters as they are; the 2010 menu's "KEYBOARD SYMBOLS (2010)" turns these on
 +     if (anteara_2010_keyboard = 1) {
 +         if (<text> = "[") {
-+             <text> = "©" 
++             <text> = "ï¿½" 
 +         } 
 +         if (<text> = "]") {
-+             <text> = "®" 
++             <text> = "ï¿½" 
 +         } 
 +         if (<text> = "{") {
-+             <text> = "™" 
++             <text> = "ï¿½" 
 +         } 
 +         if (<text> = "}") {
-+             <text> = "¦" 
++             <text> = "ï¿½" 
 +         } 
 +         if (<text> = "`") {
 +             <text> = "%" 
 +         } 
 +         if (<text> = "*") {
-+             <text> = "¬" 
++             <text> = "ï¿½" 
 +         } 
 +         if (<text> = "^") {
-+             <text> = "«" 
++             <text> = "ï¿½" 
 +         } 
 +         if (<text> = "&") {
-+             <text> = "œ" 
++             <text> = "ï¿½" 
 +         } 
 +         if (<text> = "#") {
 +             <text> = "\\cLA\\c4n\\cBt\\c4e\\cLa\\c4r\\cBa \\c4M\\cLo\\c4d" 
 +         } 
 +         if (<text> = "!") {
-+             <text> = " \\cb™©®¦%¬«œ" 
++             <text> = " \\cbï¿½ï¿½ï¿½ï¿½%ï¿½ï¿½ï¿½" 
 +         } 
 = 33-92
 +

@@ -1,7 +1,7 @@
 // NOT ORIGINAL - edits to game scripts: how this project stores a change to a game's script (or a script made from
 // one) without storing the game's text. The edits are applied at install / convert time to the user's own copy of
 // the game's scripts (decompiled or rendered as NeverScript text) and give back the changed script exactly. Used by
-// the Anteara Mod (tools/anteara: mod\edits\*.edits, its README "How it's stored"; lib/edits.ts there is a copy of
+// Anteara Mod (tools/anteara: mod\edits\*.edits, its README "How it's stored"; lib/edits.ts there is a copy of
 // this file) and by THAW's BMX (thaw_bmx/bike_scripts.edits). Latin-1 text, one directive or operation per line:
 //
 //   # ...                      a comment
@@ -13,7 +13,7 @@
 //   from <crc> <file> <name>   the operations below start from this game unit (another script's) instead
 //   with <crc> <file> <name>   another game unit the operations copy lines from ("@1" for the first "with"...)
 //   head / register            the text before the first unit / the __register_checksums__ line
-// (<file>: a script as the tool's UnitLookup names it - the Anteara Mod's: "game\x.qb" in THUG2's Data\scripts,
+// (<file>: a script as the tool's UnitLookup names it - Anteara Mod's: "game\x.qb" in THUG2's Data\scripts,
 // "pre:<archive>:<name>" a file in one of THUG2's Data\pre archives, "thug1:<name>" one in THUG1's Data\pre\qb.pre;
 // the menu builder's: a file of THUG2's Data\pre archives by its stored name; THAW's BMX: a THAW script file)
 // (<crc>: the CRC-32 of the unit's text, checked) and the operations that make a unit's lines, from its source unit's

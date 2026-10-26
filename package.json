@@ -2,7 +2,7 @@
   "name": "anteara-mod",
   "private": true,
   "type": "module",
-  "description": "The Anteara Mod for THUG2 (PC): its own changes and the tool that builds its script set, TypeScript run directly by Node 24.",
+  "description": "Anteara Mod for THUG2 (PC): its own changes and the tool that builds its script set, TypeScript run directly by Node 24.",
   "engines": {
     "node": ">=24"
   },

@@ -1,4 +1,4 @@
-# The Anteara Mod's units in game\menu\Car_ModelViewer.qb that are adapted game units (lib/edits.ts)
+# Anteara Mod's units in game\menu\Car_ModelViewer.qb that are adapted game units (lib/edits.ts)
 new anteara_focus
 from 33fa767c game\menu\roundbarmenu.qb roundbar_menu_item_focus
 ~ 1 7 18 anteara

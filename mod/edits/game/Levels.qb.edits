@@ -1,4 +1,4 @@
-# The Anteara Mod's edits to game\Levels.qb (applied to the game's own script: lib/edits.ts)
+# Anteara Mod's edits to game\Levels.qb (applied to the game's own script: lib/edits.ts)
 base 0d137ff4
 unit request_level
 = 1
