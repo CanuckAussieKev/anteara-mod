@@ -17,7 +17,7 @@ export interface InstallKind {
 }
 
 export const INSTALLS: Readonly<Record<InstallGame, InstallKind>> = {
-    // the exe (the reference build or the alternate THUG2.exe build), or the data alone (the converters only read it)
+    // the exe (the reference build or THUG2.exe), or the data alone (the converters only read it)
     thug2: { title: "THUG2", markers: [["The reference build"], ["THUG2.exe"], ["Data\\pre\\qb_scripts.prx"]] },
     thps3: { title: "THPS3", markers: [["Data\\Levels"]] },
     // (skeletons: THPS3 has a Data\Levels too, but no skeletons)
