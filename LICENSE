@@ -1,3 +1,18 @@
+Anteara Mod - licensing
+
+1. Material from the game (no licence granted)
+
+   Not covered by the MIT licence below, and not owned by this project:
+   - Tony Hawk's Underground 2's own scripts, which the mod's edits (mod/edits) are applied to and refer to by unit
+     and line;
+   - anything the installer produces from your game files (the mod's complete script set in the data overlay): that
+     output is derived from the game, whose copyright belongs to Activision Publishing, Inc. and its licensors.
+
+2. Original work (MIT licence)
+
+   The mod's own changes and files (mod/edits, mod/new) and the tools are licensed under the MIT licence below.
+   Third-party parts keep their own licences: THIRD_PARTY_NOTICES.md.
+
 MIT License
 
 Copyright (c) 2026 Kevin Mallinson and the THUG2 decompilation contributors

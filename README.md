@@ -2,7 +2,8 @@
 
 > **Not affiliated with or endorsed by Activision, Neversoft or any other rights holder.** A non-commercial fan project
 > for preservation, interoperability and education. No game files are included: the tools work only on copies of the
-> games you own. Game names are trademarks of their owners. MIT licence (LICENSE); CPython-derived helpers in `lib/`:
+> games you own. Game names are trademarks of their owners. See LICENSE (MIT for the mod's own work; no licence for the game's
+> scripts); CPython-derived helpers in `lib/`:
 > THIRD_PARTY_NOTICES.md.
 > Rights holders: open an issue and it will be dealt with promptly.
 
