@@ -1,0 +1,267 @@
+{
+ "qdir": {
+  "remove": [
+   "game\\misc\\tagsdb.qb",
+   "game\\skater\\deprecated_tricks.qb"
+  ],
+  "insert_after": [
+   [
+    "night_menu.qb",
+    "allanims.qb"
+   ],
+   [
+    "game\\menu\\Car_ModelViewer.qb",
+    "game\\menu\\arcade_machine.qb"
+   ],
+   [
+    "game\\menu\\Anteara_Stuff\\Anteara_Parked.qb",
+    "gamemodes\\gamemode.qb"
+   ],
+   [
+    "game\\menu\\Anteara_Stuff\\Anteara_Vehicles.qb",
+    "game\\menu\\Anteara_Stuff\\Anteara_Parked.qb"
+   ],
+   [
+    "game\\menu\\Anteara_Stuff\\Anteara_Menus.qb",
+    "game\\menu\\Anteara_Stuff\\Anteara_Vehicles.qb"
+   ],
+   [
+    "game\\menu\\Anteara_Stuff\\Anteara_TOD.qb",
+    "game\\menu\\Anteara_Stuff\\Anteara_Menus.qb"
+   ],
+   [
+    "game\\menu\\Anteara_Stuff\\Anteara_Animations.qb",
+    "game\\menu\\Anteara_Stuff\\Anteara_TOD.qb"
+   ],
+   [
+    "game\\menu\\Anteara_Stuff\\Anteara_Chat.qb",
+    "game\\menu\\Anteara_Stuff\\Anteara_Animations.qb"
+   ],
+   [
+    "game\\menu\\Anteara_Stuff\\Anteara_Misc.qb",
+    "game\\menu\\Anteara_Stuff\\Anteara_Chat.qb"
+   ],
+   [
+    "game\\menu\\Anteara_Stuff\\Anteara_Models.qb",
+    "game\\menu\\Anteara_Stuff\\Anteara_Misc.qb"
+   ],
+   [
+    "game\\menu\\Anteara_Stuff\\anteara_2010.qb",
+    "game\\menu\\Anteara_Stuff\\Anteara_Models.qb"
+   ]
+  ],
+  "move_after": [
+   [
+    "game\\cas_logos.qb",
+    "game\\animtags.qb"
+   ],
+   [
+    "game\\cas_parts.qb",
+    "game\\cas_logos.qb"
+   ],
+   [
+    "game\\cas_skater_f.qb",
+    "game\\cas_parts.qb"
+   ],
+   [
+    "game\\cas_skater_m.qb",
+    "game\\cas_skater_f.qb"
+   ],
+   [
+    "game\\cas_skater_shared.qb",
+    "game\\cas_skater_m.qb"
+   ],
+   [
+    "game\\cas_team.qb",
+    "game\\cas_skater_shared.qb"
+   ],
+   [
+    "game\\goal_utilities.qb",
+    "game\\gameflow.qb"
+   ],
+   [
+    "game\\player_controlled_vehicle.qb",
+    "game\\ped.qb"
+   ]
+  ]
+ },
+ "files": {
+  "allanims.qb": {
+   "edits": "allanims.qb.edits"
+  },
+  "night_menu.qb": {
+   "new": true,
+   "path": "night_menu.qb.ns",
+   "edits": "night_menu.qb.edits"
+  },
+  "engine\\menu\\keyboard.qb": {
+   "edits": "engine/menu/keyboard.qb.edits"
+  },
+  "engine\\menu\\lighttool.qb": {
+   "edits": "engine/menu/lighttool.qb.edits"
+  },
+  "game\\cas_skater_f.qb": {
+   "edits": "game/cas_skater_f.qb.edits"
+  },
+  "game\\decks.qb": {
+   "edits": "game/decks.qb.edits"
+  },
+  "game\\EdPieces2.qb": {
+   "edits": "game/EdPieces2.qb.edits"
+  },
+  "game\\game.qb": {
+   "edits": "game/game.qb.edits"
+  },
+  "game\\goal_utilities.qb": {
+   "edits": "game/goal_utilities.qb.edits"
+  },
+  "game\\Levels.qb": {
+   "edits": "game/Levels.qb.edits"
+  },
+  "game\\player_controlled_vehicle.qb": {
+   "edits": "game/player_controlled_vehicle.qb.edits"
+  },
+  "game\\playervehiclesounds.qb": {
+   "edits": "game/playervehiclesounds.qb.edits"
+  },
+  "game\\skater_fx.qb": {
+   "edits": "game/skater_fx.qb.edits"
+  },
+  "game\\skutils.qb": {
+   "edits": "game/skutils.qb.edits"
+  },
+  "game\\menu\\Car_ModelViewer.qb": {
+   "new": true,
+   "path": "game/menu/Car_ModelViewer.qb.ns",
+   "edits": "game/menu/Car_ModelViewer.qb.edits"
+  },
+  "game\\menu\\edit_tricks_menu.qb": {
+   "edits": "game/menu/edit_tricks_menu.qb.edits"
+  },
+  "game\\menu\\gamemenu.qb": {
+   "edits": "game/menu/gamemenu.qb.edits"
+  },
+  "game\\menu\\gamemenu_helpers.qb": {
+   "edits": "game/menu/gamemenu_helpers.qb.edits"
+  },
+  "game\\menu\\gamemenu_options.qb": {
+   "edits": "game/menu/gamemenu_options.qb.edits"
+  },
+  "game\\menu\\gamemenu_pause.qb": {
+   "edits": "game/menu/gamemenu_pause.qb.edits"
+  },
+  "game\\menu\\goal_editor_menu.qb": {
+   "edits": "game/menu/goal_editor_menu.qb.edits"
+  },
+  "game\\menu\\menu3d.qb": {
+   "edits": "game/menu/menu3d.qb.edits"
+  },
+  "game\\menu\\models.qb": {
+   "edits": "game/menu/models.qb.edits"
+  },
+  "game\\menu\\roundbarmenu.qb": {
+   "edits": "game/menu/roundbarmenu.qb.edits"
+  },
+  "game\\menu\\themes.qb": {
+   "edits": "game/menu/themes.qb.edits"
+  },
+  "game\\misc\\car_scripts.qb": {
+   "edits": "game/misc/car_scripts.qb.edits"
+  },
+  "game\\misc\\gameoptions.qb": {
+   "edits": "game/misc/gameoptions.qb.edits"
+  },
+  "game\\misc\\global_flags.qb": {
+   "edits": "game/misc/global_flags.qb.edits"
+  },
+  "game\\misc\\loading_screens.qb": {
+   "edits": "game/misc/loading_screens.qb.edits"
+  },
+  "game\\misc\\SK4_Scripts.qb": {
+   "edits": "game/misc/SK4_Scripts.qb.edits"
+  },
+  "game\\net\\net.qb": {
+   "edits": "game/net/net.qb.edits"
+  },
+  "game\\net\\netmessages.qb": {
+   "edits": "game/net/netmessages.qb.edits"
+  },
+  "game\\net\\netoptions.qb": {
+   "edits": "game/net/netoptions.qb.edits"
+  },
+  "game\\net\\scavenger.qb": {
+   "edits": "game/net/scavenger.qb.edits"
+  },
+  "game\\ped\\Sk6Ped_StateLogic.qb": {
+   "edits": "game/ped/Sk6Ped_StateLogic.qb.edits"
+  },
+  "game\\skater\\airtricks.qb": {
+   "edits": "game/skater/airtricks.qb.edits"
+  },
+  "game\\skater\\grindscripts.qb": {
+   "edits": "game/skater/grindscripts.qb.edits"
+  },
+  "game\\skater\\groundtricks.qb": {
+   "edits": "game/skater/groundtricks.qb.edits"
+  },
+  "game\\skater\\manualtricks.qb": {
+   "edits": "game/skater/manualtricks.qb.edits"
+  },
+  "game\\skater\\projectiles.qb": {
+   "edits": "game/skater/projectiles.qb.edits"
+  },
+  "game\\skater\\skater_vehicle.qb": {
+   "edits": "game/skater/skater_vehicle.qb.edits"
+  },
+  "game\\skater\\walking_control.qb": {
+   "edits": "game/skater/walking_control.qb.edits"
+  },
+  "gamemodes\\gamemode.qb": {
+   "edits": "gamemodes/gamemode.qb.edits"
+  },
+  "game\\menu\\Anteara_Stuff\\Anteara_Parked.qb": {
+   "new": true,
+   "path": "game/menu/Anteara_Stuff/Anteara_Parked.qb.ns",
+   "edits": "game/menu/Anteara_Stuff/Anteara_Parked.qb.edits"
+  },
+  "game\\menu\\Anteara_Stuff\\Anteara_Vehicles.qb": {
+   "new": true,
+   "path": "game/menu/Anteara_Stuff/Anteara_Vehicles.qb.ns",
+   "edits": "game/menu/Anteara_Stuff/Anteara_Vehicles.qb.edits"
+  },
+  "game\\menu\\Anteara_Stuff\\Anteara_Menus.qb": {
+   "new": true,
+   "path": "game/menu/Anteara_Stuff/Anteara_Menus.qb.ns"
+  },
+  "game\\menu\\Anteara_Stuff\\Anteara_TOD.qb": {
+   "new": true,
+   "path": "game/menu/Anteara_Stuff/Anteara_TOD.qb.ns",
+   "edits": "game/menu/Anteara_Stuff/Anteara_TOD.qb.edits"
+  },
+  "game\\menu\\Anteara_Stuff\\Anteara_Animations.qb": {
+   "new": true,
+   "path": "game/menu/Anteara_Stuff/Anteara_Animations.qb.ns"
+  },
+  "game\\menu\\Anteara_Stuff\\Anteara_Chat.qb": {
+   "new": true,
+   "path": "game/menu/Anteara_Stuff/Anteara_Chat.qb.ns"
+  },
+  "game\\menu\\Anteara_Stuff\\Anteara_Misc.qb": {
+   "new": true,
+   "path": "game/menu/Anteara_Stuff/Anteara_Misc.qb.ns",
+   "edits": "game/menu/Anteara_Stuff/Anteara_Misc.qb.edits"
+  },
+  "game\\menu\\Anteara_Stuff\\Anteara_Models.qb": {
+   "new": true,
+   "path": "game/menu/Anteara_Stuff/Anteara_Models.qb.ns"
+  },
+  "game\\menu\\Anteara_Stuff\\anteara_2010.qb": {
+   "new": true,
+   "path": "game/menu/Anteara_Stuff/anteara_2010.qb.ns",
+   "edits": "game/menu/Anteara_Stuff/anteara_2010.qb.edits"
+  },
+  "localtext.qb": {
+   "edits": "localtext.qb.edits"
+  }
+ }
+}

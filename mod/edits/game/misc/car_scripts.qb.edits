@@ -1,0 +1,58 @@
+# The Anteara Mod's edits to game\misc\car_scripts.qb (applied to the game's own script: lib/edits.ts)
+base 32d70693
+new accelCarRot
+first
+from 1469bb2c thug1:scripts\game\misc\car_scripts.qb accelCarRot
+= 1
+new decelCarRot
+after accelCarRot
+from 4a092eaf thug1:scripts\game\misc\car_scripts.qb decelCarRot
+= 1
+new speedCarRot
+after decelCarRot
+from 5d60ed78 thug1:scripts\game\misc\car_scripts.qb speedCarRot
+= 1
+new accelCarRotFactor
+after speedCarRot
+from 4c44b0bb thug1:scripts\game\misc\car_scripts.qb accelCarRotFactor
+= 1
+new driving_parked_car
+after accelCarRotFactor
+from 96806938 thug1:scripts\game\misc\car_scripts.qb driving_parked_car
+= 1
+new SetupDrivableCar
+after driving_parked_car
+from 281c82d1 thug1:scripts\game\misc\car_scripts.qb SetupDrivableCar
+= 1-6
+new car_set_exceptions
+after SetupDrivableCar
+from c28f85ba thug1:scripts\game\misc\car_scripts.qb car_set_exceptions
+= 1-10
+new car_inner_radius_handler
+after car_set_exceptions
+from 9bdf7dc1 thug1:scripts\game\misc\car_scripts.qb car_inner_radius_handler
+= 1-72
+new car_refuse
+after car_inner_radius_handler
+from d46ab657 thug1:scripts\game\misc\car_scripts.qb car_refuse
+= 1-4
+new car_accept
+after car_refuse
+from 23d7e13b thug1:scripts\game\misc\car_scripts.qb car_accept
+= 1-5
+new car_begin_driving_run
+after car_accept
+from 96f10c73 thug1:scripts\game\misc\car_scripts.qb car_begin_driving_run
+= 1-25
+new car_wait_for_exit_request
+after car_begin_driving_run
+from 94689c09 thug1:scripts\game\misc\car_scripts.qb car_wait_for_exit_request
+= 1-5
+new handle_exit_vehicle_request
+after car_wait_for_exit_request
+from 20523bcd thug1:scripts\game\misc\car_scripts.qb handle_exit_vehicle_request
+= 1-6
+new car_end_driving_run
+after handle_exit_vehicle_request
+from 0217ea3f thug1:scripts\game\misc\car_scripts.qb car_end_driving_run
+= 1-20

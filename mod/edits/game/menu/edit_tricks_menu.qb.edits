@@ -1,0 +1,24 @@
+# The Anteara Mod's edits to game\menu\edit_tricks_menu.qb (applied to the game's own script: lib/edits.ts)
+base f03615ec
+unit edit_tricks_menu_can_edit
+= 1-11
+~ 12 34 1 1
+= 13-19
+~ 20 34 1 1
+= 21-24
+~ 25 30 1 1
+= 26-28
+~ 29 34 1 1
+= 30-34
+~ 35 26 1 1
+~ 36 26 1 1
+= 37-50
+unit create_edit_tricks_menu
+= 1-47
+~ 48 26 0 not_focusable 
+= 49-101
+unit create_edit_tricks_sub_menu
+= 1-32
+~ 33 35 0 not_focusable 
+= 34-333
++

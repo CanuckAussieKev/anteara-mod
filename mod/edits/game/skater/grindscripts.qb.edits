@@ -1,0 +1,99 @@
+# The Anteara Mod's edits to game\skater\grindscripts.qb (applied to the game's own script: lib/edits.ts)
+base 286c19a6
+register
+~ 1 12302 0  natas_extra_tricks natas_spin
+unit SkateInOrBail
+= 1-38
++     
+= 40-45
+unit SkateIn_Right
+= 1-10
++         
+= 12-45
+unit SkateIn_Left
+= 1-11
++         
+= 13-37
++         
+= 39-47
+unit SkateInOrBail_Out
+= 1-3
++         
+= 5-7
++     
+= 9
+unit GrindRelease
+= 1-2
++     {Trigger={Press, White, 100} Scr=SkateInOrBail Params={GrindRelease GrindBail=Airborne moveright=-5 movey=5}} 
+= 3-4
+unit GrindTaps_FS
+= 1
+= 3-10
+unit GrindTaps_BS
+= 1
+= 3-10
+unit Grind
+= 1-27
+= 29-151
++             
+= 153-170
++     
+= 172-219
++         
+= 221-224
+unit Grind_ScreenShake
+= 1-5
++                 
+= 7-19
+unit OffRail
+= 1-13
+= 15-20
++                 
+= 22-30
++         
+= 32-35
++         
+= 37-41
+unit Trick_Crooked_FS_180
+= 1-2
++         
+= 4-8
+unit Trick_NGCRook_FS_rot
+= 1-2
++     
+= 4-5
+unit PointRailSpin
+~ 1 22 58
++     natas_spin {Name=%"Natas Spin" init_anim=natas_spin_init range_anim=natas_spin_range PlaySound} 
+= 26
+new natas_spin
+after PointRailSpin
+from 28df1ea9 game\skater\grindscripts.qb PointRailSpin
++ script natas_spin {
++     if ! GotParam PlaySound {
++         PlaySound ExtraTrick 
++     } 
++     SetTrickName "" 
+= 17-18
+= 14
+= 2-5
+= 7
++     SetTrickName <Name> 
+= 20-21
+= 12-13
+= 15
++     SetExtraTricks natas_extra_tricks 
+= 26
+new natas_extra_tricks
+after natas_spin
++ natas_extra_tricks = 
++ [
++     {Trigger={InOrder, a=Triangle, b=Triangle, 300} Scr=natas_spin Params={Name=%"Natas Spin" init_anim=natas_spin_init range_anim=natas_spin_range}} 
++     {Trigger={InOrder, a=Circle, b=Circle, 300} Scr=natas_spin Params={Name=%"Handstand Spin" init_anim=HandstandHandFlip_Range range_anim=HandstandHandFlip_Range}} 
++     {Trigger={InOrder, a=Square, b=Square, 300} Scr=natas_spin Params={Name=%"One Foot Spin" init_anim=special_natas_spin_init range_anim=special_natas_spin_range}} 
++ ] 
+unit ExitPointRailSpin
+= 1
++     KillExtraTricks 
+= 2-41
++

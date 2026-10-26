@@ -1,0 +1,26 @@
+# The Anteara Mod's units in game\menu\Anteara_Stuff\anteara_2010.qb that are adapted game units (lib/edits.ts)
+new anteara_start_observing
+from 5c8b1c04 game\skater\tricks.qb EndOfRun
+~ 83 0 40 script anteara_start_o
+~ 84 4 32
+~ 91 4 32
++     exit_pause_menu 
+= 100
+new anteara_stop_observing
+from 7f1312f1 gamemodes\gamemode.qb create_rankings
+~ 13 0 16 script anteara_stop_o
+~ 14 4 9 s
+~ 15 4 8
+= 48
+= 192
+new anteara_screen_set_menu
+from 4ba5ecc7 game\menu\gamemenu_options.qb select_return_display_menu
+~ 1 7 21 anteara_screen_set
+~ 2 7 4 gotp
+= 3-4
+~ 5 7 4 gotp
+= 6-7
+~ 8 7 4 gotp
+= 9-10
+~ 11 11 6 anteara
+= 12

@@ -1,0 +1,19 @@
+# The Anteara Mod's edits to game\menu\gamemenu_options.qb (applied to the game's own script: lib/edits.ts)
+base 941809ef
+unit controller_config_focus
+= 1-2
+~ 3 50 4 on
+~ 4 49 5 off
+= 5
+~ 6 51 4 on
+~ 7 51 5 off
+~ 8 51 5 off
++     menu3d_show2 
+= 9
+unit controller_config_unfocus
+= 1-2
+~ 3 52 4 off
+= 4
+~ 5 51 4 on
+= 6-8
++

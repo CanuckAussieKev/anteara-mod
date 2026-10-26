@@ -1,0 +1,22 @@
+# The Anteara Mod's edits to game\Levels.qb (applied to the game's own script: lib/edits.ts)
+base 0d137ff4
+unit request_level
+= 1
++     GetPreferenceChecksum pref_type=network Anteara_Resolution 
++     switch <checksum>
++         case standard {
++             change_screen_mode standard callback=screen_setup_standard set_screen_flags 
++         }
++         case Widescreen {
++             change_screen_mode wide callback=screen_setup_widescreen set_screen_flags 
++         }
++     endswitch    
++     if ObjectExists Id=PlayerVehicle {
++         Anteara_ExitVehicle_Working 
++     } 
+= 2-7
+unit Level_sk5ed_defaults
+= 1-19
+~ 20 8 13 scripts\\game\\menu\\anteara_stuff
+= 21-54
++

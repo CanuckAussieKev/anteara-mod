@@ -1,0 +1,9 @@
+# The Anteara Mod's edits to game\net\netoptions.qb (applied to the game's own script: lib/edits.ts)
+base 509726b6
+unit default_network_preferences
+= 1
++     Veh_Anteara={ui_string="Minikart" checksum=Minikart} 
++     TextColor={checksum=color_c0} 
++     Anteara_Resolution={checksum=standard} 
+= 2-55
++

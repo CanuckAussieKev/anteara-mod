@@ -1,0 +1,69 @@
+# The Anteara Mod's edits to game\playervehiclesounds.qb (applied to the game's own script: lib/edits.ts)
+base 7ad7094f
+unit PlayerVehicleSounds
+= 1-29
+~ 30 31 1 l
+= 31-216
+~ 217 31 1 l
+= 218-253
+~ 254 31 1 l
+= 255-290
+~ 291 31 1 l
+= 292-327
+~ 328 31 1 l
+= 329-352
+~ 353 31 1 l
+= 354-389
+~ 390 31 1 l
+= 391-426
+~ 427 31 1 l
+= 428-451
+~ 452 31 1 l
+= 453-476
+~ 477 31 1 l
+= 478-513
+~ 514 31 1 l
+= 515-550
+~ 551 31 1 l
+= 552-587
+~ 588 31 1 l
+= 589-612
+~ 613 31 1 l
+= 614-620
++     } 
++     UKBus_Sound_Profile={
++         EngineSound=UKBusEngineLoop 
+= 4-9
++         Gears=[
++             {
+= 12-14
++                 TopRPM=100 
++             } 
++             {
+= 316
++                 UpshiftPoint=120 
+= 20
++                 TopRPM=100 
++             } 
++         ] 
++         TireSound=Vehicle_Tire_loop 
+= 31-37
++     } 
++     Wrangler_Sound_Profile={
++         EngineSound=Default 
+= 4-9
++         Gears=[
++             {
+= 12-14
++                 TopRPM=100 
++             } 
++             {
+= 316
++                 UpshiftPoint=120 
+= 20
++                 TopRPM=100 
++             } 
++         ] 
++         TireSound=Vehicle_Tire_loop 
+= 31-37
+= 621-623

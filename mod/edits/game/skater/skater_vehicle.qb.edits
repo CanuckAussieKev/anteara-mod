@@ -1,0 +1,212 @@
+# The Anteara Mod's edits to game\skater\skater_vehicle.qb (applied to the game's own script: lib/edits.ts)
+base 1c0d2392
+register
+~ 1 11811 0  Anteara_Is_In_Story_Vehicle luge_bail_script riskblade_params wings_params
+remove shoppingcart_params
+remove shoppingcart_start_script
+remove shoppingcart_bail_script
+remove chainsaw_params
+new Anteara_Is_In_Story_Vehicle
+first
++ Anteara_Is_In_Story_Vehicle = 0 
+unit Vehicle_Start
+= 1
++     change Anteara_Is_In_Story_Vehicle=1 
++     // MERGE: slalom_params added back to the list (as in retail) for the 2010 slalom
+~ 2 43 133 egway_params tricycle_params wheelchair_params minikart_params mechbull_params luge_params riskblade_params wings_params slalom
+= 3-5
+unit vehicle_land2
+with 503d0680 game\Levels.qb load_level
+= 1-68
+= 369 @1
+~ 69 4 0     
+~ 70 8 0     
++         } 
+= 71-74
+unit gurney_params
+with 42085876 game\skater\skater_vehicle.qb tricycle_params
+with fba149d9 game\skater\skater_vehicle.qb mechbull_params
+with 48ecc3e6 game\skater\skater_vehicle.qb segway_params
+= 1-7
++     board=1 
+= 9
+~ 10 15 1 1
+= 11
+= 12-13 @1
+= 12-18
++     trick_name2=%"Kidding With Patient" 
++     trick_score2=50 
++     manual_trick=%"Heart Massage" 
++     manual_Score=50 
++     revert_trick=%"Die!" 
+= 19-20
+~ 21 16 18 tricycle_bail
+= 22-38
+= 55-56 @2
+= 39-43
+= 48 @3
++     wallplant_anim=Segway_FlipTrick1 
+= 44-47
+unit gurney_start_script
+with 503d0680 game\Levels.qb load_level
+= 1
+= 369 @1
+~ 2 4 0     
+~ 3 4 0     
+~ 4 4 0     
+~ 5 4 0     
+~ 6 4 0     
+~ 7 4 0     
+~ 8 4 0     
+~ 9 4 0     
+~ 10 4 0     
+~ 11 4 0     
++     } 
+= 12
+unit luge_params
+with 48ecc3e6 game\skater\skater_vehicle.qb segway_params
+= 1-10
+~ 11 15 1 1
+= 12
+~ 14 13 1 1
+= 11 @1
+~ 15 4 5 jump
+~ 16 4 5 jump
++     grind_trick="Luge Grind" 
++     grind_score=100 
+= 17
+~ 18 20 21 veh_OnGroundAI
++     bail_script=luge_bail_script 
+~ 19 14 8 CoffinGrind_Rang
++     crouch_anim=CoffinGrind_Range 
+~ 21 14 19 CoffinGrind_Range
+~ 22 15 20 CoffinGrind_Range
++     leftidle_anim=CoffinGrind_Range 
++     rightidle_anim=CoffinGrind_Range 
++     crouch_left_anim=CoffinGrind_Range 
++     crouch_right_anim=CoffinGrind_Range 
++     crouch_leftidle_anim=CoffinGrind_Range 
++     crouch_rightidle_anim=CoffinGrind_Range 
+~ 23 15 10 CoffinGrind_Range
+~ 24 15 9 CoffinGrind_Rang
+~ 25 18 11 CoffinGrind_Rang
+~ 26 14 9 CoffinGrind_Init
++     accel_anim=CoffinGrind_Range 
++     brake_anim=CoffinGrind_Range 
++     revert_anim=CoffinGrind_Range 
++     air_trick_init=CoffinGrind_Range 
++     air_trick_idle=CoffinGrind_Range 
++     air_trick_out=CoffinGrind_Range 
++     air_trick2=CoffinGrind_Range 
++     wallplant_anim=CoffinGrind_Range 
++     wheel_anim=CoffinGrind_Range 
+= 27
+unit luge_start_script
+= 1
+~ 2 18 9 CoffinGrind_Init
+= 3-4
+new luge_bail_script
+after luge_start_script
++ script luge_bail_script {
++     if NotInBail {
++         Vehicle_Start params=luge_params 
++     } 
++ } 
+new riskblade_params
+after luge_bail_script
+from a4aeb00f game\skater\skater_vehicle.qb wheelchair_params
+with de7f44be game\skater\skater_vehicle.qb luge_params
+with 48ecc3e6 game\skater\skater_vehicle.qb segway_params
+with 42085876 game\skater\skater_vehicle.qb tricycle_params
+with 986a8667 game\skater\skater_vehicle.qb gurney_params
+~ 1 0 10 riskblade
+~ 2 11 10 riskblade
+~ 3 13 10 riskblade
+~ 4 15 0 60
+~ 5 18 1 4
+= 6-7 @1
+= 6-11
+= 11 @2
+~ 16 16 8 Jum
+= 17
+~ 18 17 11 Slide
+~ 19 16 1 10
+~ 20 17 10 Doll
+= 21
+~ 22 19 7 katewalk
+= 23
+= 30 @3
+~ 25 19 6 BackSid
+= 26
+= 31
+~ 33 14 13 Ped_RollerBlader_SkateCyc
+~ 34 16 19 Ped_RollerBlader_SkateCyc
+~ 35 14 20 Ped_RollerBlader_SkateCycle
+~ 36 15 19 Ped_RollerBlader_SkateCycle
+~ 37 18 23 Ped_RollerBlader_SkateCyc
+~ 38 19 22 Ped_RollerBlader_SkateCyc
+~ 39 21 20 Ped_RollerBlader_SkateCycle
+~ 40 22 19 Ped_RollerBlader_SkateCycle
+~ 41 25 23 Ped_RollerBlader_SkateCyc
+~ 42 26 22 Ped_RollerBlader_SkateCyc
+~ 47 20 21 Ped_RollerBlader_HipPrance
+~ 48 20 21 Ped_RollerBlader_HipPranc
+~ 49 19 20 Ped_RollerBlader_HipPrance
+= 32-33 @4
++     air_idle_anim=Gurney_Bump 
++     land_anim=Ped_RollerBlader_HipPrance 
+~ 50 15 16 Ped_RollerBlader_SkateCycle
+~ 51 15 15 Ped_RollerBlader_BackSkat
++     revert_anim=RevertFS 
+= 54-56
+~ 57 15 19 OllieAirWal
++     manual_init_anim=Ped_RollerBlader_BackSkate 
++     manual_balance_anim=Ped_RollerBlader_BackSkate 
+~ 60 19 20 Ped_RollerBlader_SkateCycle
+= 66
+new wings_params
+after riskblade_params
+from 48ecc3e6 game\skater\skater_vehicle.qb segway_params
+with 42085876 game\skater\skater_vehicle.qb tricycle_params
+~ 1 0 6 wings
+~ 2 11 6 wings
+~ 3 13 6 wings
+= 4-10
++     cangrind=1 
+= 11
++     canwallplant=1 
+= 9-10
+= 13-14
+~ 15 16 7 Airswing
+~ 16 15 2 3
+~ 17 17 8 Over The Rail
+~ 18 16 1 2
+~ 19 17 10
+~ 20 16 2
+~ 21 18 7
+~ 22 17 1
+= 23-25
+~ 26 14 11 PED_Imp_Fly
+~ 27 16 13 PED_Imp_Fly
+~ 28 14 22 PED_Imp_Fly
+~ 29 15 21 PED_Imp_Fly
+~ 30 18 16 PED_Imp_Fly
+~ 31 19 15 PED_Imp_Fly
+~ 32 21 24 PED_Imp_Fly
+~ 33 22 23 PED_Imp_Fly
+~ 34 25 23 PED_Imp_Fly
+~ 35 26 22 PED_Imp_Fly
+~ 36 15 6 PED_Imp
+~ 37 15 12 PED_Imp_Idle2Fly
+~ 38 18 14 PED_Imp_Fly
+~ 39 14 11 PED_Imp_Fly2Idle
+~ 43 15 12 PED_Imp_idle
+~ 44 15 11 PED_Imp_Fly2Idle
+= 64 @1
+~ 45 19 18 PED_Imp_Idle2Fly
+~ 46 19 18 PED_Imp_Idle2Fly
+~ 47 18 17 PED_Imp_Idle2Fly
+~ 48 15 17 PED_Imp_Idle2Fly
++     wallplant_anim=PED_Imp_Idle2Fly 
+= 49-54
++

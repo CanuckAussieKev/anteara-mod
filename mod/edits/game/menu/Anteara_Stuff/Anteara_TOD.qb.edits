@@ -1,0 +1,25 @@
+# The Anteara Mod's units in game\menu\Anteara_Stuff\Anteara_TOD.qb that are adapted game units (lib/edits.ts)
+new kirillgta_nightON
+from fa1aea66 engine\tod_manager.qb tod_manager_update_geo
++ script kirillgta_nightON {
+~ 14 4 8
+~ 35 4 8
+~ 36 4 8
+~ 37 4 8
+~ 38 4 8
+~ 39 4 8
+~ 40 4 8
+~ 41 4 8
+= 57
+new kirillgta_nightOFF
+from fa1aea66 engine\tod_manager.qb tod_manager_update_geo
++ script kirillgta_nightOFF {
+~ 14 4 8
+~ 15 4 8
+~ 16 4 8
+~ 17 4 8
+~ 18 4 8
+~ 19 4 8
+~ 20 4 8
+~ 21 4 8
+= 57

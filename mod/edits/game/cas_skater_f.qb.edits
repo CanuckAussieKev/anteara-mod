@@ -1,0 +1,28 @@
+# The Anteara Mod's edits to game\cas_skater_f.qb (applied to the game's own script: lib/edits.ts)
+base 856da9d7
+unit skater_f_head
+= 1-3
+~ 4 24 11 \\CLFuQ FACE
+= 5-13
+= 15-22
+~ 24 8 30 script SetPart {part = body desc_id = 
+= 25-438
+= 440-441
+unit skater_f_torso
+with 67f1e27a game\cas_skater_m.qb skater_m_torso
+= 1-3
++         // MERGE: FIX - a stray 0x16 byte here swallowed this '}' and the next '{'
++     } 
++     {
++         desc_id=Shirtless 
+~ 4 24 9 \\CLSPORTB
+= 5-7 @1
+= 5-8
+= 10-489
+~ 490 24 11 FuQ YEAH!!!
+= 492-512
+unit skater_f_legs
+= 1-8
+= 10
+= 12-240
++

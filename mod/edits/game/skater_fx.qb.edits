@@ -1,0 +1,34 @@
+# The Anteara Mod's edits to game\skater_fx.qb (applied to the game's own script: lib/edits.ts)
+base 226a3bb9
+register
+~ 1 1456 0  make_skater_lol
+remove make_skater_explode_exit
+remove make_skater_explode_cleanup
+remove make_skater_explode_cleanup_all_parts
+remove make_skater_lose_head_exit
+remove make_skater_lose_head_cleanup
+unit make_skater_explode
+~ 1 28 11
+= 2-4
+= 10
+= 18-25
++     // MERGE: FIX (never worked in the original) - these four bone names were compiled byte-reversed
++     // (#f1c35735 #0bcc6a56 #96ec22f2 #0aa1482b), so the bones were never found
+~ 32 24 5 Collar
+~ 34 19 11 Bone_Collar_R
++     Dismember Bone=Bone_Chest 
++     Dismember Bone=Cloth_breast 
+= 36
+unit make_skater_lose_head
+= 1
+= 19
+= 24
+new make_skater_lol
+after make_skater_lose_head
+from 99a3974d game\skater_fx.qb make_skater_lose_head
++ // MERGE: name written out - 2011 compiled make_skater_lol byte-reversed (#5d84ddbd); nothing calls it
+~ 1 21 7 l
+= 2-16
+= 19-20
+= 23-24
++

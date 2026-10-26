@@ -1,0 +1,5 @@
+# The Anteara Mod's units in game\menu\Anteara_Stuff\Anteara_Vehicles.qb that are adapted game units (lib/edits.ts)
+new anteara_blinking_arrow
+from e700db90 game\menu\ParkEdMenu.qb parked_menu_blink_arrow
+~ 1 7 17 anteara_blinking
+= 2-5

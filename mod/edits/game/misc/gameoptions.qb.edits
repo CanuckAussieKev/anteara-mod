@@ -1,0 +1,12 @@
+# The Anteara Mod's edits to game\misc\gameoptions.qb (applied to the game's own script: lib/edits.ts)
+base 91deb8dc
+unit time_limit_options
+= 1
++     {name="1 second" checksum=time_01 time=1} 
++     {name="3 seconds" checksum=time_03 time=3} 
++     {name="10 seconds" checksum=time_10 time=10} 
+= 2-6
++     // MERGE: 2010 - the Infinite time limit
++     {name="Infinite" checksum=time_9001 time=0} 
+= 7
++

@@ -1,0 +1,8 @@
+# The Anteara Mod's edits to game\menu\models.qb (applied to the game's own script: lib/edits.ts)
+base f5118d04
+unit create_cutscene_heads_model_set
++ // MERGE: 2010 - 2010: the tricycle model line
+= 1-19
++     make_select_view_model_line name=vehicle model="Veh\\veh_tricycle\\Veh_Tricycle_Skin.skin" skeletonName=thps6_human 
+= 20
++

@@ -1,0 +1,510 @@
+# The Anteara Mod's edits to game\menu\menu3d.qb (applied to the game's own script: lib/edits.ts)
+base ea2a12b2
+register
+~ 1 1825 0  menu3d_show1 menu3d_show10 menu3d_show11 menu3d_show12 menu3d_show2 menu3d_show3 menu3d_show4 menu3d_show5 menu3d_show6 menu3d_show7 menu3d_show8 menu3d_show9 menu3d_show_sign1 menu3d_show_sign10 menu3d_show_sign11 menu3d_show_sign12 menu3d_show_sign2 menu3d_show_sign3 menu3d_show_sign4 menu3d_show_sign5 menu3d_show_sign6 menu3d_show_sign7 menu3d_show_sign8 menu3d_show_sign9 rotate_pause_deck rotate_pause_deck1 rotate_pause_deck10 rotate_pause_deck11 rotate_pause_deck12 rotate_pause_deck2 rotate_pause_deck3 rotate_pause_deck4 rotate_pause_deck5 rotate_pause_deck6 rotate_pause_deck7 rotate_pause_deck8 rotate_pause_deck9
+new menu3d_show1
+after menu3d_show
+from 012fab31 game\menu\menu3d.qb menu3d_show
+~ 1 18 0 1
+= 2-14
+~ 15 20 0 1
+= 16
+new menu3d_show2
+after menu3d_show1
+from 012fab31 game\menu\menu3d.qb menu3d_show
+~ 1 18 0 2
+= 2-14
+~ 15 20 0 2
+= 16
+new menu3d_show3
+after menu3d_show2
+from 012fab31 game\menu\menu3d.qb menu3d_show
+~ 1 18 0 3
+= 2-14
+~ 15 20 0 3
+= 16
+new menu3d_show4
+after menu3d_show3
+from 012fab31 game\menu\menu3d.qb menu3d_show
+~ 1 18 0 4
+= 2-14
+~ 15 20 0 4
+= 16
+new menu3d_show5
+after menu3d_show4
+from 012fab31 game\menu\menu3d.qb menu3d_show
+~ 1 18 0 5
+= 2-14
+~ 15 20 0 5
+= 16
+new menu3d_show6
+after menu3d_show5
+from 012fab31 game\menu\menu3d.qb menu3d_show
+~ 1 18 0 6
+= 2-14
+~ 15 20 0 6
+= 16
+new menu3d_show7
+after menu3d_show6
+from 012fab31 game\menu\menu3d.qb menu3d_show
+~ 1 18 0 7
+= 2-14
+~ 15 20 0 7
+= 16
+new menu3d_show8
+after menu3d_show7
+from 012fab31 game\menu\menu3d.qb menu3d_show
+~ 1 18 0 8
+= 2-14
+~ 15 20 0 8
+= 16
+new menu3d_show9
+after menu3d_show8
+from 012fab31 game\menu\menu3d.qb menu3d_show
+~ 1 18 0 9
+= 2-14
+~ 15 20 0 9
+= 16
+new menu3d_show10
+after menu3d_show9
+from 012fab31 game\menu\menu3d.qb menu3d_show
+~ 1 18 0 10
+= 2-14
+~ 15 20 0 10
+= 16
+new menu3d_show11
+after menu3d_show10
+from 012fab31 game\menu\menu3d.qb menu3d_show
+~ 1 18 0 11
+= 2-14
+~ 15 20 0 11
+= 16
+new menu3d_show12
+after menu3d_show11
+from 012fab31 game\menu\menu3d.qb menu3d_show
+~ 1 18 0 12
+= 2-14
+~ 15 20 0 12
+= 16
+unit menu3d_show_sign
+= 1-12
++     <menu3d_name> = "Board_default\\Board_default.mdl" 
+= 18-24
++         scale=0.12 
+= 26
+~ 27 25 3 4.12
+= 28-31
++         anglez=0.4 
++         just=[Right center] 
+= 33
++     spawnscript rotate_pause_deck <no_slide> 
+= 34
+new menu3d_show_sign1
+after menu3d_show_sign
+from c0e81776 game\menu\menu3d.qb menu3d_show_sign
+~ 1 23 0 1
+= 2-6
+= 12
+= 18-20
+~ 21 22 0 1
++         Model="Mdl_Cone\\Mdl_Cone.mdl" 
++         pos=(150.0, 280.0) 
+= 24-26
+~ 27 25 3 4.12
+= 28-29
++         anglex=0.0 
++         angley=90 
++         anglez=0.0 
++         just=[Right center] 
+= 33
++     spawnscript rotate_pause_deck1 <no_slide> 
+= 34
+new menu3d_show_sign2
+after menu3d_show_sign1
+from c0e81776 game\menu\menu3d.qb menu3d_show_sign
+~ 1 23 0 2
+= 2-6
+= 12
+= 18-20
+~ 21 22 0 2
++         Model="veh\\veh_custom\\veh_custom.mdl" 
++         SkeletonName=car 
++         Class=Vehicle 
++         pos=(150.0, 280.0) 
+= 24
+~ 25 17 1 2
+~ 27 25 3 4.12
+= 28-31
++         anglez=0.0 
++         just=[Left center] 
+= 33
++     spawnscript rotate_pause_deck2 <no_slide> 
+= 34
+new menu3d_show_sign3
+after menu3d_show_sign2
+from c0e81776 game\menu\menu3d.qb menu3d_show_sign
+~ 1 23 0 3
+= 2-6
+= 12
+= 18-20
+~ 21 22 0 3
++         Model="Veh\\Veh_ATV\\Veh_ATV.mdl" 
++         SkeletonName=car 
++         Class=Vehicle 
++         pos=(150.0, 280.0) 
+= 24
+~ 25 17 1 2
+~ 27 25 3 4.12
+= 28-31
++         anglez=0.0 
++         just=[Left center] 
+= 33
++     spawnscript rotate_pause_deck3 <no_slide> 
+= 34
+new rotate_pause_deck3
+after menu3d_show_sign3
+from e6cca3b6 game\menu\gamemenu_helpers.qb rotate_pause_deck
+~ 1 24 0 3
+~ 2 25 10 menu3d_sign3
+= 3-5
+~ 6 38 25 menu3d_sign3 pos=(150.0, 28
+= 7
+~ 8 29 10 menu3d_sign3
+= 9-10
+~ 11 33 10 menu3d_sign3
+= 12-15
+new menu3d_show_sign4
+after rotate_pause_deck3
+from c0e81776 game\menu\menu3d.qb menu3d_show_sign
+~ 1 23 0 4
+= 2-6
+= 12
+= 18-20
+~ 21 22 0 4
++         Model="Veh\\Veh_Blimp\\Veh_Blimp.mdl" 
++         SkeletonName=car 
++         Class=Vehicle 
++         pos=(150.0, 280.0) 
+= 24
+~ 25 17 1 2
+~ 27 25 3 4.12
+= 28-31
++         anglez=0.0 
++         just=[Left center] 
+= 33
++     spawnscript rotate_pause_deck4 <no_slide> 
+= 34
+new rotate_pause_deck4
+after menu3d_show_sign4
+from e6cca3b6 game\menu\gamemenu_helpers.qb rotate_pause_deck
+~ 1 24 0 4
+~ 2 25 10 menu3d_sign4
+= 3-5
+~ 6 38 25 menu3d_sign4 pos=(150.0, 28
+= 7
+~ 8 29 10 menu3d_sign4
+= 9-10
+~ 11 33 10 menu3d_sign4
+= 12-15
+new menu3d_show_sign5
+after rotate_pause_deck4
+from c0e81776 game\menu\menu3d.qb menu3d_show_sign
+~ 1 23 0 5
+= 2-6
+= 12
+= 18-20
+~ 21 22 0 5
++         Model="veh\\Veh_SDKart_Gardens\\Veh_SDKart_Gardens.mdl" 
++         SkeletonName=car 
++         Class=Vehicle 
++         pos=(150.0, 280.0) 
+= 24
+~ 25 17 1 2
+~ 27 25 3 4.12
+= 28-31
++         anglez=0.0 
++         just=[Left center] 
+= 33
++     spawnscript rotate_pause_deck5 <no_slide> 
+= 34
+new rotate_pause_deck5
+after menu3d_show_sign5
+from e6cca3b6 game\menu\gamemenu_helpers.qb rotate_pause_deck
+~ 1 24 0 5
+~ 2 25 10 menu3d_sign5
+= 3-5
+~ 6 38 25 menu3d_sign5 pos=(150.0, 28
+= 7
+~ 8 29 10 menu3d_sign5
+= 9-10
+~ 11 33 10 menu3d_sign5
+= 12-15
+new menu3d_show_sign6
+after rotate_pause_deck5
+from c0e81776 game\menu\menu3d.qb menu3d_show_sign
+~ 1 23 0 6
+= 2-6
+= 12
+= 18-20
+~ 21 22 0 6
++         Model="veh\\Veh_SDKart_Security\\Veh_SDKart_Security.mdl" 
++         SkeletonName=car 
++         Class=Vehicle 
++         pos=(150.0, 280.0) 
+= 24
+~ 25 17 1 2
+~ 27 25 3 4.12
+= 28-31
++         anglez=0.0 
++         just=[Left center] 
+= 33
++     spawnscript rotate_pause_deck6 <no_slide> 
+= 34
+new rotate_pause_deck6
+after menu3d_show_sign6
+from e6cca3b6 game\menu\gamemenu_helpers.qb rotate_pause_deck
+~ 1 24 0 6
+~ 2 25 10 menu3d_sign6
+= 3-5
+~ 6 38 25 menu3d_sign6 pos=(150.0, 28
+= 7
+~ 8 29 10 menu3d_sign6
+= 9-10
+~ 11 33 10 menu3d_sign6
+= 12-15
+new menu3d_show_sign7
+after rotate_pause_deck6
+from c0e81776 game\menu\menu3d.qb menu3d_show_sign
+~ 1 23 0 7
+= 2-6
+= 12
+= 18-20
+~ 21 22 0 7
++         Model="Veh\\Veh_Chevy_Impala\\Veh_Chevy_Impala.mdl" 
++         SkeletonName=car 
++         Class=Vehicle 
++         pos=(150.0, 280.0) 
+= 24
+~ 25 17 1 2
+~ 27 25 3 4.12
+= 28-31
++         anglez=0.0 
++         just=[Left center] 
+= 33
++     spawnscript rotate_pause_deck7 <no_slide> 
+= 34
+new rotate_pause_deck7
+after menu3d_show_sign7
+from e6cca3b6 game\menu\gamemenu_helpers.qb rotate_pause_deck
+~ 1 24 0 7
+~ 2 25 10 menu3d_sign7
+= 3-5
+~ 6 38 25 menu3d_sign7 pos=(150.0, 28
+= 7
+~ 8 29 10 menu3d_sign7
+= 9-10
+~ 11 33 10 menu3d_sign7
+= 12-15
+new menu3d_show_sign8
+after rotate_pause_deck7
+from c0e81776 game\menu\menu3d.qb menu3d_show_sign
+~ 1 23 0 8
+= 2-6
+= 12
+= 18-20
+~ 21 22 0 8
++         Model="veh\\fl\\veh_policecar_fl\\veh_policecar_fl.mdl" 
++         SkeletonName=car 
++         Class=Vehicle 
++         pos=(150.0, 280.0) 
+= 24
+~ 25 17 1 2
+~ 27 25 3 4.12
+= 28-31
++         anglez=0.0 
++         just=[Left center] 
+= 33
++     spawnscript rotate_pause_deck8 <no_slide> 
+= 34
+new rotate_pause_deck8
+after menu3d_show_sign8
+from e6cca3b6 game\menu\gamemenu_helpers.qb rotate_pause_deck
+~ 1 24 0 8
+~ 2 25 10 menu3d_sign8
+= 3-5
+~ 6 38 25 menu3d_sign8 pos=(150.0, 28
+= 7
+~ 8 29 10 menu3d_sign8
+= 9-10
+~ 11 33 10 menu3d_sign8
+= 12-15
+new menu3d_show_sign9
+after rotate_pause_deck8
+from c0e81776 game\menu\menu3d.qb menu3d_show_sign
+~ 1 23 0 9
+= 2-6
+= 12
+= 18-20
+~ 21 22 0 9
++         Model="veh\\veh_camino\\veh_camino.mdl" 
++         SkeletonName=car 
++         Class=Vehicle 
++         pos=(150.0, 280.0) 
+= 24
+~ 25 17 1 2
+~ 27 25 3 4.12
+= 28-31
++         anglez=0.0 
++         just=[Left center] 
+= 33
++     spawnscript rotate_pause_deck9 <no_slide> 
+= 34
+new rotate_pause_deck9
+after menu3d_show_sign9
+from e6cca3b6 game\menu\gamemenu_helpers.qb rotate_pause_deck
+~ 1 24 0 9
+~ 2 25 10 menu3d_sign9
+= 3-5
+~ 6 38 25 menu3d_sign9 pos=(150.0, 28
+= 7
+~ 8 29 10 menu3d_sign9
+= 9-10
+~ 11 33 10 menu3d_sign9
+= 12-15
+new menu3d_show_sign10
+after rotate_pause_deck9
+from c0e81776 game\menu\menu3d.qb menu3d_show_sign
+~ 1 23 0 10
+= 2-6
+= 12
+= 18-20
+~ 21 22 0 10
++         Model="veh\\veh_limo\\veh_limo.mdl" 
++         SkeletonName=car 
++         Class=Vehicle 
++         pos=(150.0, 280.0) 
+= 24
+~ 25 17 1 2
+~ 27 25 3 4.12
+= 28-31
++         anglez=0.0 
++         just=[Left center] 
+= 33
++     spawnscript rotate_pause_deck10 <no_slide> 
+= 34
+new rotate_pause_deck10
+after menu3d_show_sign10
+from e6cca3b6 game\menu\gamemenu_helpers.qb rotate_pause_deck
+~ 1 24 0 10
+~ 2 25 10 menu3d_sign10
+= 3-5
+~ 6 38 25 menu3d_sign10 pos=(150.0, 28
+= 7
+~ 8 29 10 menu3d_sign10
+= 9-10
+~ 11 33 10 menu3d_sign10
+= 12-15
+new menu3d_show_sign11
+after rotate_pause_deck10
+from c0e81776 game\menu\menu3d.qb menu3d_show_sign
+with afe49e66 pre:Sk5ed_scripts.prx:levels\sk5ed\sk5ed.qb Sk5Ed_NodeArray
+~ 1 23 0 11
+= 2-6
+= 12
+= 18-20
+~ 21 22 0 11
+= 7471 @1
++         SkeletonName=car 
++         Class=Vehicle 
++         pos=(150.0, 280.0) 
+= 24
+~ 25 17 1 2
+~ 27 25 3 4.12
+= 28-31
++         anglez=0.0 
++         just=[Left center] 
+= 33
++     spawnscript rotate_pause_deck11 <no_slide> 
+= 34
+new rotate_pause_deck11
+after menu3d_show_sign11
+from e6cca3b6 game\menu\gamemenu_helpers.qb rotate_pause_deck
+~ 1 24 0 11
+~ 2 25 10 menu3d_sign11
+= 3-5
+~ 6 38 25 menu3d_sign11 pos=(150.0, 28
+= 7
+~ 8 29 10 menu3d_sign11
+= 9-10
+~ 11 33 10 menu3d_sign11
+= 12-15
+new menu3d_show_sign12
+after rotate_pause_deck11
+from c0e81776 game\menu\menu3d.qb menu3d_show_sign
+~ 1 23 0 12
+= 2-6
+= 12
+= 18-20
+~ 21 22 0 12
++         Model="veh\\veh_lada\\veh_lada.mdl" 
++         SkeletonName=car 
++         Class=Vehicle 
++         pos=(150.0, 280.0) 
+= 24
+~ 25 17 1 2
+~ 27 25 3 4.12
+= 28-31
++         anglez=0.0 
++         just=[Left center] 
+= 33
++     spawnscript rotate_pause_deck12 <no_slide> 
+= 34
+new rotate_pause_deck12
+after menu3d_show_sign12
+from e6cca3b6 game\menu\gamemenu_helpers.qb rotate_pause_deck
+~ 1 24 0 12
+~ 2 25 10 menu3d_sign12
+= 3-5
+~ 6 38 25 menu3d_sign12 pos=(150.0, 28
+= 7
+~ 8 29 10 menu3d_sign12
+= 9-10
+~ 11 33 10 menu3d_sign12
+= 12-15
+new rotate_pause_deck2
+after rotate_pause_deck12
+from e6cca3b6 game\menu\gamemenu_helpers.qb rotate_pause_deck
+~ 1 24 0 2
+~ 2 25 10 menu3d_sign2
+= 3-5
+~ 6 38 25 menu3d_sign2 pos=(150.0, 28
+= 7
+~ 8 29 10 menu3d_sign2
+= 9-10
+~ 11 33 10 menu3d_sign2
+= 12-15
+new rotate_pause_deck1
+after rotate_pause_deck2
+from e6cca3b6 game\menu\gamemenu_helpers.qb rotate_pause_deck
+~ 1 24 0 1
+~ 2 25 10 menu3d_sign1
+= 3-5
+~ 6 38 25 menu3d_sign1 pos=(150.0, 28
+= 7
+~ 8 29 10 menu3d_sign1
+= 9-10
+~ 11 33 10 menu3d_sign1
+= 12-15
+new rotate_pause_deck
+after rotate_pause_deck1
+from e6cca3b6 game\menu\gamemenu_helpers.qb rotate_pause_deck
+= 1
+~ 2 25 10 menu3d_sign
+= 3-5
+~ 6 38 10 menu3d_sign
+= 7
+~ 8 29 10 menu3d_sign
+= 9-10
+~ 11 33 10 menu3d_sign
+= 12-15
++

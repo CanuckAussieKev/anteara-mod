@@ -1,0 +1,15 @@
+# The Anteara Mod's units in night_menu.qb that are adapted game units (lib/edits.ts)
+new test_func3
+from d21d1fb8 engine\menu\lighttool.qb create_lighting_tool
+with 5a937638 game\menu\catmenu.qb create_CAT_pause_menu
++ script test_func3 {
+= 29 @1
++         pos=(255.0, 100.0) 
++         pad_back_script=create_anteara_menu title="test MENU" 
+= 4
+~ 219 4 8
+~ 220 4 8
+~ 221 4 8
+~ 222 4 58 make_text_sub_menu_item text="Night"
+= 43 @1
+= 291

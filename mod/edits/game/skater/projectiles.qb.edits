@@ -1,0 +1,16 @@
+# The Anteara Mod's edits to game\skater\projectiles.qb (applied to the game's own script: lib/edits.ts)
+base 47e0c0bf
+unit ClientLaunchProjectile
++ // MERGE: 2010 - 2010: skateboard, Crystal_Ball and Anteara_Fire models (2011's ammo menu offers Skateboard and Crystal Ball too)
+= 1-29
++         }
++         case skateboard {
++             model = [{component=model model="Board_default\\Board_default.mdl"}] 
++         }
++         case Crystal_Ball {
++             model = [{component=model model="GameObjects\\pickups\\Crystal_Ball\\Crystal_Ball.mdl"}] 
++         }
++         case Anteara_Fire {
++             model = [{component=model model="fireball\\fireball.mdl"}] 
+= 30-71
++

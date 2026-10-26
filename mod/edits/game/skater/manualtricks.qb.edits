@@ -1,0 +1,26 @@
+# The Anteara Mod's edits to game\skater\manualtricks.qb (applied to the game's own script: lib/edits.ts)
+base eeeb762b
+register
+~ 1 6711 0  OneButtonTest
+unit FlatLandBranches
+= 1-2
++     // MERGE: 2010 - Left, Right, Square: Boneless
++     {Trigger={TripleInOrder, Left, Right, Square, 400} Trick_Boneless} 
++     {Trigger={InOrder, DownLeft, Square, 300} Trick_Airshuffle} 
++     {Trigger={Press, L1, 300} SkateInOrBail} 
+= 3-20
+new OneButtonTest
+after manual_turnaround2
+from 9b70efa9 game\skater\liptricks.qb LipOut
+with b9fd47e9 game\skater\groundtricks.qb Nollie
+with 7bd50e27 game\skater\groundtricks.qb NoComply
++ script OneButtonTest {
+= 6-7 @1
+= 9-10 @2
++     display 
+~ 6 31 3 Trick
+= 39-41
+~ 43 4 4
+~ 44 4 4
+= 60
++

@@ -1,0 +1,147 @@
+# The Anteara Mod's edits to allanims.qb (applied to the game's own script: lib/edits.ts)
+base 592aa868
+register
+~ 1 31180 0  animload_THPS6_LugeandSlalom
+unit animload_THPS6_human
+with d2aca535 game\startup.qb load_net_anims
+with 19d66cb6 pre:AU_scripts.prx:levels\au\au.qb load_level_anims
+with 54119665 pre:BO_scripts.prx:levels\bo\bo.qb load_level_anims
+with 4740a9f6 pre:BE_scripts.prx:levels\be\be.qb load_level_anims
+with cedabdd0 pre:NO_scripts.prx:levels\no\no.qb load_level_anims
+with 09ab11d3 pre:AP_scripts.prx:levels\ap\ap.qb load_level_anims
+with 003e92bc pre:SE_scripts.prx:levels\se\se.qb load_level_anims
+with f4326c21 pre:mainmenu_scripts.prx:levels\mainmenu\mainmenu.qb load_level_anims
+with 9ac8c34d pre:BA_scripts.prx:levels\ba\ba.qb load_level_anims
+with 413a797c pre:ST_scripts.prx:levels\st\st.qb load_level_anims
+= 1
++     animload_AnchorMan_HEAD 
++     animload_Anl_Bull 
++     animload_anl_Cat 
++     animload_anl_dog 
++     animload_anl_pigeon 
+= 10 @2
++     animload_anl_shark 
++     animload_anl_w_gorilla 
++     animload_BostonGuy_HEAD 
++     animload_Burnquist_Head 
++     animload_Hawk_Head 
++     animload_Head_CAS_Female01 
++     animload_Head_Cas_Male01 
++     animload_Koston_Head 
++     animload_Margera_Head 
++     animload_Mullen_Head 
++     animload_Muska_Head 
++     animload_Nigel_Head 
++     animload_NODrunk1_HEAD 
++     animload_NODrunk2_HEAD 
++     animload_Ped_Alien 
++     animload_Ped_Baha 
+= 5-6 @2
+= 8 @3
++     animload_PED_M_Pissed 
+= 16 @2
++     animload_Ped_DJQBert 
++     animload_Ped_Driver 
+= 2-3
++     animload_THPS6_human_unloadable 
+= 2 @1
+= 6 @4
+= 12 @5
+= 8 @5
+= 5 @6
++     animload_Ped_GermanDrunk 
+= 3 @2
+= 12 @2
+= 10 @3
++     animload_PED_Imp 
+= 7 @5
++     animload_Ped_Jester 
+= 5 @7
+= 7 @7
+= 7 @6
++     animload_PED_Mime 
+= 2 @8
++     animload_THPS6_NO_7 
++     animload_Ped_Photo 
+= 6 @6
++     animload_Ped_RollerBlade 
+= 9 @3
+= 13 @3
++     animload_Ped_Suit 
++     animload_Phil_Head 
++     animload_Rampkid_HEAD 
++     animload_SI_BustedBoard 
++     animload_SI_ExtraBoard 
++     animload_SI_FranklinKite 
++     animload_SI_Prop_1 
++     animload_SI_Prop2 
++     animload_SI_Prop_3 
++     animload_SI_shark 
++     animload_SI_Flag 
++     animload_Sparrow_Head 
+= 7 @9
+= 6 @3
++     animload_THPS6_Veh_MiniKart 
+= 5 @10
+= 12 @3
+= 11 @5
+= 11 @4
++     // MERGE: 2010 - the luge and slalom animations
++     animload_THPS6_LugeandSlalom 
++     animload_Vallely_Head 
++     LoadSound "BO\\SK6_BO_JesseRide_Loop" <...> 
++     LoadSound "BO\\SK6_BO_JesseRide_Grind" <...> 
++     LoadSound "BO\\SK6_BO_JesseRide_Jump" <...> 
++     LoadSound "BO\\SK6_BO_JesseRide_Land" <...> 
++     LoadSound "NO\\SK6_NO_HeloLoop" <...> 
++     LoadSound "NO\\SK6_NO_TrikeSqueak" <...> 
++     LoadSound "NO\\SK6_NO_TrikeLand" <...> 
++     LoadSound "NO\\SK6_NO_TrikeJump" <...> 
++     LoadSound "NO\\SK6_NO_Trike_Grind" <...> 
++     LoadSound "BE\\SK6_BE_Paulie_Loop" <...> 
++     LoadSound "BE\\SK6_BE_Paulie_Grind" <...> 
++     LoadSound "BE\\SK6_BE_Paulie_Jump" <...> 
++     LoadSound "BE\\SK6_BE_Paulie_Land" <...> 
++     LoadSound "BA\\SK6_BA_SteveOElecLoop" <...> 
++     LoadSound "BA\\SK6_BA_Steveo_Buck_11" <...> 
++     LoadSound "BA\\SK6_BA_Steveo_Buck02_11" <...> 
++     LoadSound "BA\\SK6_BA_SteveO_Grind" <...> 
++     LoadSound "BA\\SK6_BA_Steveo_Jump" <...> 
++     LoadSound "AU\\AU_KartLoop" <...> 
++     LoadSound "AU\\AU_KartLand" <...> 
++     LoadSound "AU\\AU_KartJump" <...> 
++     LoadSound "AU\\AU_KartGrind" <...> 
++     LoadSound "BO\\ShoppingCartBail" <...> 
++     LoadSound "BO\\ShoppingCartLand" <...> 
++     LoadSound "BO\\ShoppingCartLoop" <...> 
+= 4
+new animload_THPS6_LugeandSlalom
+after animload_Vallely_Head
+with c8878b31 allanims.qb animload_Ped_Alien
+with 3e1a67a0 allanims.qb animload_AnchorMan_HEAD
++ // MERGE: 2010 - the luge and slalom animations (Sit Down Luge in the 2010 menu)
++ script animload_THPS6_LugeandSlalom {LoadFunction = LoadAnim 
+= 2 @1
++     if <LoadFunction> <...> name="anims\\skater_luge\\Luge_AirIdle.ska" descChecksum=Luge_AirIdle {
++         <LoadFunction> <...> name="anims\\skater_luge\\Luge_Brake.ska" descChecksum=Luge_Brake 
++         <LoadFunction> <...> name="anims\\skater_luge\\Luge_Fullstop.ska" descChecksum=Luge_Fullstop 
++         <LoadFunction> <...> name="anims\\skater_luge\\Luge_Idle.ska" descChecksum=Luge_Idle 
++         <LoadFunction> <...> name="anims\\skater_luge\\Luge_IdleToLeanLeft.ska" descChecksum=Luge_IdleToLeanLeft 
++         <LoadFunction> <...> name="anims\\skater_luge\\Luge_IdleToLeanRight.ska" descChecksum=Luge_IdleToLeanRight 
++         <LoadFunction> <...> name="anims\\skater_luge\\Luge_Land.ska" descChecksum=Luge_Land 
++         <LoadFunction> <...> name="anims\\skater_luge\\Luge_LookLeft.ska" descChecksum=Luge_LookLeft 
++         <LoadFunction> <...> name="anims\\skater_luge\\Luge_LookRight.ska" descChecksum=Luge_LookRight 
++         <LoadFunction> <...> name="anims\\skater_luge\\Luge_Ollie.ska" descChecksum=Luge_Ollie 
++         <LoadFunction> <...> name="anims\\skater_luge\\Luge_Push.ska" descChecksum=Luge_Push 
++         <LoadFunction> <...> name="anims\\skater_luge\\Luge_Sit.ska" descChecksum=Luge_Sit 
++         <LoadFunction> <...> name="anims\\skater_luge\\Luge_Flail.ska" descChecksum=Luge_Flail 
++         <LoadFunction> <...> name="anims\\skater_slalom\\slalom_AirIdle.ska" descChecksum=slalom_AirIdle 
++         <LoadFunction> <...> name="anims\\skater_slalom\\slalom_Idle.ska" descChecksum=slalom_Idle 
++         <LoadFunction> <...> name="anims\\skater_slalom\\slalom_IdleToLeanLeft.ska" descChecksum=slalom_IdleToLeanLeft 
++         <LoadFunction> <...> name="anims\\skater_slalom\\slalom_IdleToLeanRight.ska" descChecksum=slalom_IdleToLeanRight 
++         <LoadFunction> <...> name="anims\\skater_slalom\\slalom_Land.ska" descChecksum=slalom_Land 
++         <LoadFunction> <...> name="anims\\skater_slalom\\slalom_Ollie.ska" descChecksum=slalom_Ollie 
++         <LoadFunction> <...> name="anims\\skater_slalom\\slalom_Flail.ska" descChecksum=slalom_Flail 
++     } 
+= 6-7 @2
++

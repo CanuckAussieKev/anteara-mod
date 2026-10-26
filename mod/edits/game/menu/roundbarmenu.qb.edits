@@ -1,0 +1,28 @@
+# The Anteara Mod's edits to game\menu\roundbarmenu.qb (applied to the game's own script: lib/edits.ts)
+base 844669fe
+unit make_new_roundbar_menu
+= 1-128
++     if GotParam add_3d_bg1 {
++         current_menu:SetTags add_3d_bg1=1 
++     } 
+= 129-141
+unit roundbar_menu_finish
+= 1-11
++     if current_menu:GetSingleTag add_3d_bg1 {
++         menu3d_show1 
+= 10
++     } 
+= 12-22
+unit generic_menu_animate_out
+= 1-13
+= 5
++         if <menu>:GetSingleTag add_3d_bg1 {
++             menu3d_hide 
++         } 
++         return 
++     } 
++     if <menu>:GetSingleTag add_3d_bg1 {
+= 12
++     } 
+= 14-21
++

@@ -1,0 +1,10 @@
+# The Anteara Mod's units in game\menu\Anteara_Stuff\Anteara_Misc.qb that are adapted game units (lib/edits.ts)
+new anteara_unfocus
+from b0195ae4 game\menu\roundbarmenu.qb roundbar_menu_item_unfocus
+~ 1 7 18 anteara
+= 2-7
+= 13-15
+= 22-37
++     SpawnScript menu3d_animate_out params={Die} 
++     menu3d_hide 
+= 38

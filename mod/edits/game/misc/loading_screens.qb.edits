@@ -1,0 +1,11 @@
+# The Anteara Mod's edits to game\misc\loading_screens.qb (applied to the game's own script: lib/edits.ts)
+base 2445997e
+unit startup_loading_screen
+= 1
++     // MERGE: 2010 - the Shorty's movie at start-up (2010 then kept the screen blank; 2011 shows loadscrn)
+~ 2 27 5 shortys
+~ 11 4 12
+~ 15 4 12
+~ 45 4 8
+= 53
++

@@ -1,0 +1,45 @@
+# The Anteara Mod's edits to game\menu\goal_editor_menu.qb (applied to the game's own script: lib/edits.ts)
+base 53ad6da0
+remove control_types_basic
+unit generate_control_name
+= 1-2
++         case junkercar {
+= 4-29
++         case Forklift {
+~ 31 33 15 Forklift
+= 32
+~ 33 13 1 w
+= 34-37
++         }
++         case walkOnly {
++             return control_text="Walk Only" 
+= 38-46
++         }
++         case BusUK {
++             return control_text="Bus UK" 
++         }
++         case RCCar {
++             return control_text="RC Car" 
++         }
++         case TaurusCar {
++             return control_text="Taurus" 
++         }
++         case pickuptruck {
++             return control_text="Pickup Truck" 
++         }
++         case wranglercar {
++             return control_text="Jeep Wrangler" 
++         }
++         case sportscar {
++             return control_text="Sports Car" 
++         }
++         case mini_kart {
++             return control_text="Go Kart" 
+= 47-52
+unit control_types_Sk5Ed
+~ 1 29 26 skate walk RallyCar junkercar ImpalaCar PoliceCar SecurityCart GardnersCart ElCaminoCar LadaCar MiniBajaCar LimoCar Forklift BusUK RCCar TaurusCar wranglercar pickuptruck sportscar mini_kart
+unit goal_update_control
+= 1-2
++     control_types = control_types_Sk5Ed 
+= 20-42
++

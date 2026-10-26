@@ -1,0 +1,22 @@
+# The Anteara Mod's units in game\menu\Anteara_Stuff\Anteara_Parked.qb that are adapted game units (lib/edits.ts)
+new anteara_parked_setup_main_menu
+from 81d4880e pre:Sk5ed_scripts.prx:levels\sk5ed\sk5ed_scripts.qb parked_setup_main_menu
+~ 1 7 0 anteara_
+= 2-21
++     add_roundbar_menu_item text="TIME OF DAY" id=menu_tod pad_choose_script=parked_setup_tod_menu not_focusable 
+= 22-23
+~ 25 4 4
+= 27-40
+new anteara_parked_setup_test_play_menu
+from 8d3c57ba pre:Sk5ed_scripts.prx:levels\sk5ed\sk5ed_scripts.qb parked_setup_test_play_menu
+~ 1 7 0 anteara_
+= 2-14
++     if Skater:Driving {
++         add_roundbar_menu_item text="EXIT VEHICLE" id=menu_ditch_vehicle pad_choose_script=Anteara_Easy_ExitVehicle 
++     } 
+= 15-26
++     add_roundbar_menu_item text="ANTEARA MENU" id=menu_anteara pad_choose_script=create_anteara_menu 
+~ 29 4 4
+= 31-32
+~ 33 85 0 anteara_
+= 34-35

@@ -1,0 +1,112 @@
+# The Anteara Mod's edits to game\net\net.qb (applied to the game's own script: lib/edits.ts)
+base 99edc448
+register
+~ 1 22414 0  idSkater_pos idSkater_speed launch_popup_keyboard menu_pupup_message popup_cum popup_enter_mess popup_gay popup_noob popup_slap teleport_to
+unit create_player_options_dialog
++ // MERGE: 2010 - 2010: the popup / teleport / position / speed entries (the scripts are at the end of this file)
+= 1-57
++                         {text="STFU NOOB" pad_choose_script=popup_noob pad_choose_params=<...>} 
++                         {text="is a Gay" pad_choose_script=popup_gay pad_choose_params=<...>} 
++                         {text="like cumshots" pad_choose_script=popup_cum pad_choose_params=<...>} 
++                         {text="keyboard" pad_choose_script=popup_slap pad_choose_params=<...>} 
++                         {text="Teleport to host" pad_choose_script=teleport_to pad_choose_params=<...>} 
++                         {text="Show Host Position" pad_choose_script=idSkater_pos pad_choose_params=<...>} 
++                         {text="Show Host Speed On chat" pad_choose_script=idSkater_speed pad_choose_params=<...>} 
++                     ] 
++                     no_animate 
++                 } 
++             } else {
+= 51
++                 create_dialog_box {title="Popups List" 
++                     text=<Name> 
+= 31-32
++                         {text="STFU NOOB" pad_choose_script=popup_noob pad_choose_params=<...>} 
++                         {text="is a Gay" pad_choose_script=popup_gay pad_choose_params=<...>} 
++                         {text="like cumshots" pad_choose_script=popup_cum pad_choose_params=<...>} 
++                         {text="keyboard" pad_choose_script=popup_slap pad_choose_params=<...>} 
++                         {text="Teleport to Host" pad_choose_script=teleport_to pad_choose_params=<...>} 
++                         {text="Show Host Position" pad_choose_script=idSkater_pos pad_choose_params=<...>} 
++                         {text="Show Host Speed On chat" pad_choose_script=idSkater_speed pad_choose_params=<...>} 
+= 58-64
+unit StartingNewNetGame
+with f8bcbf9b game\menu\catmenu.qb cat_back_to_skater_cam
+= 1-5
+~ 6 8 1 S
+= 7-11
+= 2 @1
+= 12
+new popup_noob
+after judge_full_name
++ // MERGE: 2010 - the player options dialog's popups and the custom popup keyboard (2011 dropped them)
++ script popup_noob {
++     FormatText TextName=nick_text "\\c2STFU \\c/%n \\c0n00b!" n=<Name> 
++     SendChatMessage string=<nick_text> 
++     exit_pause_menu 
++ } 
+new popup_gay
+after popup_noob
++ script popup_gay {
++     FormatText TextName=nick_text "%n \\c2i\\c3s \\c4a \\clG\\cea\\cby\\c7!\\c4!\\c7!\\c4!" n=<Name> 
++     SendChatMessage string=<nick_text> 
++     exit_pause_menu 
++ } 
+new popup_cum
+after popup_gay
++ script popup_cum {
++     FormatText TextName=nick_text "%n \\c2like \\c3cumshots \\c4on \\c5His \\c6face\\cb!" n=<Name> 
++     SendChatMessage string=<nick_text> 
++     exit_pause_menu 
++ } 
+new popup_slap
+after popup_cum
++ script popup_slap {
++     FormatText TextName=nick_text "\\c2slaps \\c/%n \\c2around a bit with an old \\c0keyboard!" n=<Name> 
++     SendChatMessage string=<nick_text> 
++     exit_pause_menu 
++ } 
+new teleport_to
+after popup_slap
+with 940ce55d pre:mainmenu_scripts.prx:levels\mainmenu\mainmenu_cas.qb GetBonePosRelative
++ script teleport_to {
+= 4 @1
++     skater:Obj_SetPosition position=<pos> 
++     exit_pause_menu 
++ } 
+new idSkater_pos
+after teleport_to
++ script idSkater_pos {
++     <id>:Obj_GetPosition position=<pos> 
++     FormatText TextName=nick_text "%n \\c/Position is: \\c2%p!" n=<Name> p=<pos> 
++     SendChatMessage string=<nick_text> 
++     exit_pause_menu 
++ } 
+new idSkater_speed
+after idSkater_pos
++ script idSkater_speed {
++     <id>:GetSpeed 
++     FormatText TextName=SSpeed_text "%n \\c/Speed: \\c2%s!" n=<Name> s=<speed> 
++     SendChatMessage string=<SSpeed_text> 
++     exit_pause_menu 
++ } 
+new launch_popup_keyboard
+after idSkater_speed
+with d26d3f67 game\game.qb launch_chat_keyboard
++ script launch_popup_keyboard {
+= 2-3 @1
++     create_onscreen_keyboard allow_cancel no_buttons pos=(320.0, 260.0) keyboard_done_script=menu_pupup_message display_text="CUSTOM POPUP MESSAGE: " keyboard_title="ENTER MESSAGE" min_length=1 max_length=127 display_text_scale=0.5 
++ } 
+new menu_pupup_message
+after launch_popup_keyboard
++ script menu_pupup_message {
++     popup_enter_mess 
++ } 
+new popup_enter_mess
+after menu_pupup_message
+with 6ed2bf6a game\game.qb entered_chat_message
++ script popup_enter_mess {
+= 2 @1
++     FormatText TextName=c_popup "%n %s %p" n=<Name> s=<string> p=<pos> 
++     SendChatMessage string=<c_popup> 
++     exit_pause_menu 
++ } 
++

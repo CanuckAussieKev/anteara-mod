@@ -1,0 +1,87 @@
+# The Anteara Mod's edits to game\goal_utilities.qb (applied to the game's own script: lib/edits.ts)
+base 856a9a5b
+unit goal_passive_start
+= 1-14
+~ 15 69 0  or (<control_type> = WalkOnly) or (<control_type> = Mini_kart)
+= 16-42
+unit goal_deactivate
+= 1-79
+~ 80 29 6 Node_N
+= 81
+~ 82 29 6 Node_N
+= 83-138
++     } 
++     if (<control_type> = Mini_kart) {
++         anteara_board 
++     } 
++     if (<control_type> = WalkOnly) {
++         Skater:ReturnBoardToSkater 
+= 139-140
+unit goal_initialize_skater
+= 1-5
+~ 6 63 0  or (<control_type> = WalkOnly) or (<control_type> = Mini_kart) or (<control_type> = mechbull) or (<control_type> = wheelchair) or (<control_type> = Tricycle) or (<control_type> = Segway)
+= 7-11
++             case WalkOnly {
++                 Skater:TakeBoardFromSkater 
+= 13
++                     ResetSkaters Node_Name=<restart_node> RestartWalking 
++                 } 
++             }
+= 12-13
+~ 14 33 6 Node_N
+= 15-18
+~ 19 33 6 Node_N
+= 20-24
++             case Segway {
+= 13
++                     ResetSkaters Node_Name=<restart_node> 
++                 } 
+= 21-22
++                 } 
++                 anteara_scooter 
++             }
++             case Tricycle {
+= 13
++                     ResetSkaters Node_Name=<restart_node> 
++                 } 
+= 21-22
++                 } 
++                 anteara_tricycle 
++             }
++             case wheelchair {
+= 13
++                     ResetSkaters Node_Name=<restart_node> 
++                 } 
+= 21-22
++                 } 
++                 anteara_chair 
++             }
++             case mechbull {
+= 13
++                     ResetSkaters Node_Name=<restart_node> 
++                 } 
+= 21-22
++                 } 
++                 anteara_bull 
++             }
++             case Mini_kart {
+= 13
++                     ResetSkaters Node_Name=<restart_node> 
++                 } 
+= 21-22
++                 } 
++                 Anteara_Minikart 
++             }
+= 25-26
+~ 27 33 6 Node_N
+= 28-35
++         LoadExtraVehicleSounds 
+= 36-39
++                 Skater:Obj_GetOrientation 
++                 Skater:Obj_GetPosition 
+= 40-45
++                 Skater:GetHeading 
++                 Skater:Obj_GetPosition 
+~ 46 102 9
+= 47-61
++

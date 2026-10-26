@@ -1,0 +1,17 @@
+# The Anteara Mod's edits to game\net\netmessages.qb (applied to the game's own script: lib/edits.ts)
+base 821a7b71
+unit server_enter_free_skate
+with f8bcbf9b game\menu\catmenu.qb cat_back_to_skater_cam
+= 1
+= 2 @1
++     Skater:Obj_SetFlag ANTEARA_FAILSAFE_FLAG 
++     anteara_failsafe 
+= 2-10
+unit client_enter_free_skate
+with f8bcbf9b game\menu\catmenu.qb cat_back_to_skater_cam
+= 1
+= 2 @1
++     Skater:Obj_SetFlag ANTEARA_FAILSAFE_FLAG 
++     anteara_failsafe 
+= 2-7
++

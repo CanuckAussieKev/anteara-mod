@@ -1,0 +1,7 @@
+# The Anteara Mod's edits to game\menu\gamemenu.qb (applied to the game's own script: lib/edits.ts)
+base 606c7745
+unit create_debug_options_menu
+= 1-9
+~ 10 68 5 anteara
+= 11-36
++

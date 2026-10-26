@@ -1,0 +1,6 @@
+# The Anteara Mod's edits to game\net\scavenger.qb (applied to the game's own script: lib/edits.ts)
+base 6a02df51
+unit show_all_objects
+= 1
++     NullScript 
+= 29-30

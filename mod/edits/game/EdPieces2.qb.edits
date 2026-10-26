@@ -1,0 +1,852 @@
+# The Anteara Mod's edits to game\EdPieces2.qb (applied to the game's own script: lib/edits.ts)
+base b9d88184
+unit Ed_Resources_Info
+= 1-16
+~ 17 15 1 2
+= 18-21
+~ 22 16 0 2000
+~ 23 16 0 2000
+~ 24 17 0 2000
+= 25-49
+~ 50 18 1 9
+= 51
+~ 52 26 0 0
+~ 53 23 0 0
+~ 54 23 0 0
+~ 55 19 4 16777215
+= 56-62
+unit DMA_Usage
+= 1-2
++     Sk3Ed_RS_1p=0 
++     Sk3Ed_RS_Mp=0 
++     Sk3Ed_Rs_Ho=0 
++     Sk3Ed_Rs_KOTH=0 
++     Sk3Ed_GAP_01=0 
++     Sk3Ed_PB_Stairs01=0 
++     Sk3Ed_FB_Tok02=0 
++     Sk3Ed_FB_Rio01=0 
++     Sk3Ed_FB_Sub02=0 
++     Sk3Ed_FB_Sub03=0 
++     Sk3Ed_FB_30x30x4_01=0 
++     Sk3Ed_FB_30x30x4_02=0 
++     Sk3Ed_FB_30x30x4_03=0 
++     Sk3Ed_FB_30x30x4_04=0 
++     Sk3Ed_FB_30x30x8_01=0 
++     Sk3Ed_FB_30x30x8_02=0 
++     Sk3Ed_FB_30x30x8_03=0 
++     Sk3Ed_FB_30x30x8_04=0 
++     Sk3Ed_Bs_01=0 
++     Sk3Ed_Bs_02=0 
++     Sk3Ed_Bs_03=0 
++     Sk3Ed_Bs_04=0 
++     Sk3Ed_Bs_05=0 
++     Sk3Ed_Bp_01=0 
++     Sk3Ed_Bp_02=0 
++     Sk3Ed_W_10x10x5=0 
++     Sk3Ed_We_10x10x5=0 
++     Sk3Ed_W_10x10x2=0 
++     Sk3Ed_We_10x10x2=0 
++     Sk3Ed_QPd_10x10x8=0 
++     Low_Med=0 
++     Low_Long=0 
++     Sk3Ed_QPdi_10x10x8=0 
++     Sk3Ed_QPdo_10x10x8=0 
++     Sk3Ed_QPd_10x10x12=0 
++     High_Med=0 
++     High_Long=0 
++     Sk3Ed_QPdi_10x10x12=0 
++     Sk3Ed_QPdo_10x10x12=0 
++     Sk3Ed_QPdR_10x10x4=0 
++     Sk3Ed_QPdR_10x10x8=0 
++     Sk3Ed_QPdR_10x10x12=0 
++     Sk3Ed_QPdR_10x10x16=0 
++     Low_QP_Low_rail=0 
++     Low_QP_Med_rail=0 
++     Low_QP_High_rail=0 
++     Low_QP_Low_side_rail=0 
++     Low_QP_Med_side_rail=0 
++     Low_QP_High_side_rail=0 
++     High_QP_Low_rail=0 
++     High_QP_Med_rail=0 
++     High_QP_High_rail=0 
++     High_QP_Low_side_rail=0 
++     High_QP_Med_side_rail=0 
++     High_QP_High_side_rail=0 
++     Sk3Ed_P_10x10x8=0 
++     Med=0 
++     Long=0 
++     Sk3Ed_Pi_10x10x8=0 
++     Sk3Ed_Pi_20x20x8=0 
++     Sk3Ed_Po_10x10x8=0 
++     Sk3Ed_Pdp_01=0 
++     Sk3Ed_Pdb_01=0 
++     Sk3Ed_RAi_10x10x4=0 
++     Sk3Ed_RAi_10x10x8=0 
++     Sk3Ed_RAi_10x10x12=0 
++     Sk3Ed_RAi_20x20x4=0 
++     Sk3Ed_RAi_20x20x8=0 
++     Sk3Ed_RAi_20x20x12=0 
++     Sk3Ed_S_10x10x4=0 
++     Sk3Ed_Si_10x10x4=0 
++     Sk3Ed_Si2_10x10x4=0 
++     Sk3Ed_So_10x10x4=0 
++     Sk3Ed_So2_10x10x4=0 
++     Sk3Ed_S_10x10x8=0 
++     Sk3Ed_Si_10x10x8=0 
++     Sk3Ed_Si2_10x10x8=0 
++     Sk3Ed_So_10x10x8=0 
++     Sk3Ed_So2_10x10x8=0 
++     Sk3Ed_S_10x20x4=0 
++     Sk3Ed_Si_20x20x4=0 
++     Sk3Ed_Si2_20x20x4=0 
++     Sk3Ed_So_20x20x4=0 
++     Sk3Ed_So2_20x20x4=0 
++     Sk3Ed_S_10x20x8=0 
++     Sk3Ed_Si_20x20x8=0 
++     Sk3Ed_Si2_20x20x8=0 
++     Sk3Ed_So_20x20x8=0 
++     Sk3Ed_So2_20x20x8=0 
++     Sk3Ed_ST_10x10x2=0 
++     Sk3Ed_STi_10x10x2=0 
++     Sk3Ed_STi2_10x10x2=0 
++     Sk3Ed_STo_10x10x2=0 
++     Sk3Ed_STo2_10x10x2=0 
++     Sk3Ed_STio_10x10x2=0 
++     Sk3Ed_ST_10x10x4=0 
++     Sk3Ed_STi_10x10x4=0 
++     Sk3Ed_STi2_10x10x4=0 
++     Sk3Ed_STo_10x10x4=0 
++     Sk3Ed_STo2_10x10x4=0 
++     Sk3Ed_STio_10x10x4=0 
+~ 22 19 2 0
++     Sk3Ed_Gb_20x10=0 
++     Sk3Ed_Gb_10x10=0 
++     Sk4Ed_Fence_10x10=0 
++     Sk3Ed_Dumpster01=0 
++     Sk3Ed_Dumpster02=0 
++     Sk3Ed_MFo_01=0 
++     Sk3Ed_MPu_20x20x8=0 
++     Sk3Ed_MLa_20x20=0 
++     Sk3Ed_MWa_20x20=0 
++     floor_wall_block=0 
++     wall_block=0 
++     floor_block=0 
++     Sk4Ed_Sch_BigStairs=0 
++     Sk4Ed_Sch_Spine=0 
++     Sk4Ed_SF2_Bench=0 
++     Sk4Ed_SF2_Newsstands=0 
++     Sk4Ed_SF2_Planter01=0 
++     Sk4Ed_SF2_Planter02=0 
++     Sk4Ed_SF2_TnAKicker01=0 
++     Sk4Ed_SF2_TnAPipe01=0 
++     Sk4Ed_SF2_TnAPipe03=0 
++     Sk4Ed_SF2_TrashBox=0 
++     Sk4Ed_Alc_Kicker=0 
++     Sk4Ed_Alc_CrustyBench=0 
++     Sk4Ed_Alc_Bench=0 
++     Sk4Ed_Team_Blue=0 
++     Sk4Ed_Team_Red=0 
++     Sk4Ed_Team_Green=0 
++     Sk4Ed_Team_Yellow=0 
++     Sk3Ed_QPi_10x10x8=0 
++     Sk3Ed_QPo_10x10x8=0 
++     Sk3Ed_QPo_10x10x12=0 
++     Sk3Ed_QPi_10x10x12=0 
++     Sk5Ed_Sel_01=0 
++     Sk5Ed_HPTunnel_01=0 
++     Sk5Ed_QPshortMid_01=0 
++     Sk5Ed_W_10x10x06_01=0 
++     Sk5Ed_W_10x10x06_02=0 
++     Sk5Ed_RA_10x10x15_03=0 
++     Sk5Ed_RA_10x10x15_04=0 
++     Sk5ED_BoobB_01=0 
++     Sk5ED_BoobB_02=0 
++     Sk5ED_BoobB_03=0 
++     Sk5Ed_SF2_24Stair01=0 
++     sk5ed_Billboard_big=0 
++     sk5ed_Billboard_big45=0 
++     sk5ed_Billboard_Med=0 
++     sk5ed_Billboard_Med45=0 
++     sk5ed_railroad=0 
++     sk5ed_Railroad90=0 
++     sk3ed_AP_walkway=0 
++     Sk5ed_LAcurve=0 
++     Sk5ed_LAstraight=0 
++     sk5ed_ShipPool=0 
++     sk5ed_deal=0 
++     Sk5Ed_W_Slated_01=0 
++     sk5ed_Rooftop=0 
++     Sk5Ed_SideWall=0 
++     Sk5Ed_BigSideWall=0 
++     Sk5Ed_90Wall=0 
++     sk5ed_Swingrail=0 
++     sk5ed_KickerWall=0 
++     sk5ed_Tightkicker=0 
++     sk5ed_Srail=0 
++     sk5ed_Srailcenter=0 
++     sk5ed_wavysmall=0 
++     sk5ed_wavyconcretebig=0 
++     sk5ed_curveconcrete=0 
++     sk5ed_upcurve=0 
++     sk5ed_curvedLedge=0 
++     sk5ed_curvedLedge01=0 
++     sk5ed_curvedLedge02=0 
++     sk5ed_curvedLedge03=0 
++     sk5ed_shortwall=0 
++     sk5ed_BigSkyscraper=0 
++     sk5ed_curvedcurbQuarter=0 
++     sk5ed_curvedcurbHalf=0 
++     sk5ed_curvedcurbFull=0 
++     sk5ed_straightcurb=0 
++     sk5ed_bigTraffic=0 
++     sk5ed_smalltraffic=0 
++     Sk5ed_straightcurbshort=0 
++     sk5ed_hut=0 
++     sk5ed_Ghetto=0 
++     sk5ed_street=0 
++     sk5ed_Grass=0 
++     sk5ed_Mailbox=0 
++     Sk5ed_Water1square=0 
++     Sk5ed_lava1square=0 
++     sk5ed_45Launch=0 
++     sk5ed_45LaunchMed=0 
++     sk5ed_45LaunchLow=0 
++     sk5ed_45LaunchMed01=0 
++     sk5ed_SlantedBig=0 
++     sk5ed_SlantedSmall=0 
++     sk5ed_SlantedTall01=0 
++     sk5ed_SlantedTall02=0 
++     sk5ed_UndergroundRailed=0 
++     sk5ed_undergroundStraightRailed=0 
++     sk5ed_undergroundStraight=0 
++     sk5ed_UndergroundCurved=0 
++     sk5ed_Shortwall01=0 
++     sk5ed_Grass1square=0 
++     sk5ed_SDRail=0 
++     sk5ed_sdBench=0 
++     sk5ed_bbhoop=0 
++     sk5ed_sand=0 
++     sk5ed_candy=0 
++     Sk5ed_sand01=0 
++     sk5ed_street_curve=0 
++     Sk5Ed_RA_10x10x15_02=0 
++     sk5ed_curvedLedge04=0 
++     sk5ed_Underground=0 
++     sk6ed_sign_nono01=0 
++     sk6ed_sign_nono=0 
++     sk5ed_treetall=0 
++     sk5ed_treetall=0 
++     sk6ed_bushmid=0 
++     sk6ed_bushsmall=0 
++     sk6ed_tombstone=0 
++     sk6ed_sign_nobeyond=0 
++     sk6ed_lidsquare=0 
++     sk6ed_lidround=0 
++     sk6ed_lidsmall=0 
++     sk6ed_fence=0 
++     sk6ed_fencefiller=0 
++     sk6ed_Bouy=0 
++     sk6ed_church=0 
++     sk6ed_whitepicketfence=0 
++     sk6ed_whitepicketfence_edge=0 
++     sk6ed_pyramidqpbig=0 
++     sk6ed_Pyramidbig=0 
++     sk6ed_Pyramidmid=0 
++     sk6ed_Pyramidsmall=0 
++     sk6ed_greatwall=0 
++     sk6ed_greatwallmid=0 
++     sk6ed_hpcar=0 
++     Sk5ed_Concrete=0 
++     Sk5ed_Concretesquare=0 
++     sk5ed_street_mid=0 
++     sk6ed_Bench_BA_long=0 
++     sk6ed_Bench_BA_med=0 
++     sk6ed_Bench_BA_short=0 
++     sk6ed_log_med=0 
++     sk6ed_electricbox=0 
++     sk6ed_crypt=0 
++     sk6ed_pole=0 
++     sk6ed_BusStop=0 
++     sk6ed_handicap_AU=0 
++     sk6ed_house_small=0 
++     sk6ed_smallhouse=0 
++     sk6ed_Lamp=0 
++     sk6ed_lamp_half=0 
++     Sk3Ed_FB_30x30x8_05=0 
++     Sk3Ed_FB_30x30x8_06=0 
++     Sk3Ed_FB_30x30x8_07=0 
++     Sk3Ed_FB_30x30x8_08=0 
++     Sk3Ed_RA_10x10x12_8=0 
++     Sk3Ed_RA_10x10x8_12=0 
++     Sk3Ed_RA_10x10x4_12=0 
++     Sk3Ed_RA_10x10x4_8=0 
++     Sk3Ed_RA_10x10x4=0 
++     Sk3Ed_RA_10x10x8=0 
++     Sk3Ed_RA_10x10x12=0 
++     Sk3Ed_RAsi_10x10x4=0 
++     Sk3Ed_RAsi_10x10x8=0 
++     Sk3Ed_RAsi_10x10x12=0 
++     Sk3Ed_RAsi_20x20x4=0 
++     Sk3Ed_RAsi_20x20x8=0 
++     sk6ed_HugePyra=0 
++     sk6ed_hugedropin=0 
++     sk6ed_fencefilleredge=0 
++     sk6ed_fenceedge=0 
++     sk6ed_hugebench=0 
++     sk6ed_qppiececornerB=0 
++     sk6ed_qppiececorner1=0 
++     sk6ed_qppieceCorner=0 
++     sk6ed_qppiecemid=0 
++     sk6ed_hugepoolP01=0 
++     sk6ed_hugepoolP02=0 
++     sk6ed_hugepoolP03=0 
++     sk6ed_hugepoolP04=0 
++     sk6ed_hugepoolP05=0 
++     sk6ed_hugepoolP06=0 
++     sk6ed_hugepoolP07=0 
++     sk6ed_hugepoolP08=0 
++     sk6ed_hugepoolP09=0 
++     sk6ed_hugepoolP10=0 
++     sk6ed_hugepoolP11=0 
++     sk6ed_hugepoolP12=0 
++     sk6ed_ladderSmall=0 
++     sk6ed_ladderMid=0 
++     sk6ed_ladderTall=0 
++     sk6ed_ps2=0 
++     sk6ed_cashsign=0 
++     sk5ed_veniceBench=0 
++     sk6ed_HP_AU=0 
++     sk6ed_couch=0 
+~ 27 18 3 0
++     sk5ed_dinnertable=0 
++     sk6ed_PoleBE=0 
++     sk6ed_Fridge=0 
++     sk6ed_IndianRug=0 
++     sk6ed_BOrail=0 
++     sk6ed_Porta=0 
++     sk6ed_SubwayRamp=0 
++     sk6ed_venice_triangle=0 
++     sk6ed_doubelsidedKick=0 
++     sk5ed_HP_Skatestreet=0 
++     sk6ed_fountainLA=0 
+~ 28 20 3 0
++     sk6ed_hugeSticker=0 
++     sk6ed_MarsLamp=0 
++     sk6ed_Marsqps=0 
++     sk6ed_NYqpledge=0 
++     sk6ed_NYsnack=0 
++     sk6ed_SSbigkicker=0 
++     sk6ed_SSmidpiece=0 
++     sk6ed_SSrampmid=0 
++     sk6ed_SSrampsmall=0 
++     sk6ed_SSrampwide=0 
++     sk6ed_SSroundkicker=0 
++     sk6ed_SSrailbox=0 
++     sk6ed_tinyqp=0 
++     sk6ed_hydrant=0 
++     sk6ed_greatwallCurved=0 
++     sk6ed_RailSlanted01=0 
++     sk6ed_RailSlanted02=0 
++     sk6ed_RailSlanted03=0 
++     sk6ed_RailSlanted04=0 
++     sk6ed_RailSlanted05=0 
++     sk6ed_RailSlanted06=0 
++     sk6ed_RailSlanted07=0 
++     sk6ed_RailSlanted08=0 
++     sk6ed_RailSlanted09=0 
++     sk6ed_RailSlanted010=0 
++     sk6ed_RailSlanted011=0 
++     sk6ed_RailSlanted012=0 
++     sk6ed_RailStair01=0 
++     sk6ed_RailStair02=0 
++     sk6ed_RailStair03=0 
++     sk6ed_RailStair04=0 
++     sk6ed_RailStair05=0 
++     sk6ed_RailStair06=0 
++     sk5ed_speedboostG=0 
++     sk5ed_speedboostGS=0 
++     TRGP_ArcoWindow=0 
++     sk6ed_crate=0 
++     sk6ed_BAGlass=0 
++     BO_Classic_Barrel=0 
++     sk6ed_HILamp=0 
++     Sk6ed_Acid=0 
++     sk6ed_Kick_HighB=0 
++     sk6ed_Kick_MidB=0 
++     Sk6ed_qp_cornerB=0 
++     sk6ed_qp_MidB=0 
++     sk6ed_WallBoost=0 
++     sk6ed_LaunchSB=0 
++     sk6ed_LaunchBB=0 
++     sk6ed_SSrampmidBooster=0 
++     Sk5Ed_QPshortMid_01B=0 
++     sk5ed_Matttest=0 
++     sk5ed_Matttest01=0 
++     sk5ed_Matttest02=0 
++     sk5ed_Matttest03=0 
++     sk5ed_Matttest04=0 
++     sk5ed_Matttest05=0 
++     sk5ed_Matttest06=0 
++     sk5ed_Matttest07=0 
++     sk5ed_Matttest08=0 
++     sk5ed_Matttest09=0 
++     sk5ed_Matttest10=0 
++     sk5ed_Matttest11=0 
++     sk5ed_Matttest12=0 
++     sk5ed_Matttest13=0 
++     sk5ed_Matttest14=0 
++     sk5ed_Matttest15=0 
++     sk5ed_curvedcurb=0 
++     Sk3Ed_P_10x10x09=0 
++     Huge_Med_Pool=0 
++     Huge_Long_Pool=0 
++     Sk3Ed_QPd_10x10x13=0 
++     Huge_Mid=0 
++     Huge_Long=0 
++     Sk3Ed_S_10x10x09=0 
++     Sk3Ed_Si_10x10x09=0 
++     Sk3Ed_Si2_10x10x09=0 
++     Sk3Ed_So_10x10x11=0 
++     Sk3Ed_So2_10x10x09=0 
++     Sk3Ed_S_10x10x11=0 
++     Sk3Ed_Si_10x10x10=0 
++     Sk3Ed_Si2_10x10x10=0 
++     Sk3Ed_So_10x10x10=0 
++     Sk3Ed_So2_10x10x10=0 
++     Sk3Ed_S_10x20x09=0 
++     Sk3Ed_Si_20x20x09=0 
++     Sk3Ed_Si2_20x20x10=0 
++     Sk3Ed_So_20x20x09=0 
++     Sk3Ed_So2_20x20x09=0 
++     Sk3Ed_S_10x20x10=0 
++     Sk3Ed_Si_20x20x10=0 
++     Sk3Ed_Si2_20x20x09=0 
++     Sk3Ed_So_20x20x10=0 
++     Sk3Ed_So2_20x20x10=0 
++     sk6ed_Graffiti_Ammo=0 
++     Sk3Ed_QPd_10x10x09=0 
++     Low_Med_Huge=0 
++     Low_Long_Huge=0 
++     Sk6Ed_dead=0 
++     sk6ed_TOMATO_boxz=0 
++     BO_AppleBarrel=0 
++     Sk5Ed_Goal_01=0 
++     Sk5Ed_RAdot_Dynamic_Green=0 
++     Sk5Ed_RA_Dynamic=0 
++     Sk5Ed_RAdot_Dynamic=0 
++     Sk5Ed_Fence_Rooftop_20x20=0 
++     Sk5Ed_SlantQP=0 
++     Sk5Ed_SlantQP01=0 
++     Car_Shadow=0 
++     object03=0 
++     Object05=0 
++     object08=0 
++     Sk4Ed_Gap_10x10=0 
++     Sk3Ed_Ru1m_10x10x05=0 
++     Sk3Ed_Ru1t_10x10x05=0 
++     Sk3Ed_Ru1b_10x10x05=0 
++     Sk3Ed_Fu1_10x21=0 
++     sk5ed_NYlight=0 
++     Sk3Ed_Ru1b_10x10x06=0 
++     Sk3Ed_Ru1m_10x10x06=0 
++     Sk3Ed_Ru1t_10x10x06=0 
++     Sk3Ed_Ru1m_10x10x07=0 
++     Sk3Ed_Ru1b_10x10x07=0 
++     Sk3Ed_Ru1t_10x10x07=0 
++     Sk3Ed_Fu1_10x23=0 
++     Sk3Ed_So_10x10x09=0 
++     Sk3Ed_Fu1_10x11=0 
++     sk5ed_veniceBenchHuge=0 
++     test_merge=0 
++     test_flout=0 
++     Subwayramp=0 
++     ob_road_test=0 
++     bridgewater=0 
++     bridgeledge=0 
++     Sk4Ed_Fence_20x20xxx=0 
+= 29
+unit Ed_piece_sets
+= 1-88
++     {
++         name="HUGE RISERS" 
++         first=Sk3Ed_Ru1m_10x10x05 
++         hidden 
++     } 
++     {
++         name="ANTEARA" 
++         first=quazz_curb_hydrant 
++     } 
++     {
++         name="BUILDING PIECES" 
++         first=quazz_building_01 
++     } 
+= 89
+unit Ed_standard_metapieces
+= 1-652
+~ 653 24 1 T
+= 654-732
+~ 733 21 1 r
+= 734-1156
+~ 1157 15 1 S
+= 1158-1184
+~ 1185 28 1 m
+= 1186-1192
+~ 1193 15 19 Sk5ed_straightcurbs
+= 1194-1566
+~ 1567 32 1 0
+= 1568-1691
+= 1693-1741
+= 1735
+= 1742-1744
+~ 1745 22 0 d1
+= 1746-1748
+= 1735
+= 1749
++     } 
++     {
++         single=Sk3Ed_Ru1m_10x10x05 
++         text_name=%"Rum1" 
++     } 
++     {
++         single=Sk3Ed_Ru1b_10x10x05 
++         text_name=%"Rub1" 
++     } 
++     {
++         single=Sk3Ed_Ru1t_10x10x05 
++         text_name=%"Rut1" 
++     } 
++     {
++         single=Sk3Ed_Fu1_10x21 
++         text_name=%"Fu1" 
++     } 
++     {
++         single=Sk3Ed_Ru1b_10x10x06 
++         text_name=%"Ru1b" 
++     } 
++     {
++         single=Sk3Ed_Ru1m_10x10x06 
++         text_name=%"Ru1m" 
++     } 
++     {
++         single=Sk3Ed_Ru1t_10x10x06 
++         text_name=%"Ru1t" 
++     } 
++     {
++         single=Sk3Ed_Ru1m_10x10x07 
++         text_name=%"Ru1m07" 
++     } 
++     {
++         single=Sk3Ed_Ru1b_10x10x07 
++         text_name=%"Ru1b07" 
++     } 
++     {
++         single=Sk3Ed_Ru1t_10x10x07 
++         text_name=%"Ru1t07" 
++     } 
++     {
++         single=Sk3Ed_Fu1_10x23 
++         text_name=%"Fu1_23" 
++     } 
++     {
++         single=Sk3Ed_Fu1_10x11 
++         text_name=%"Fu1_11" 
++     } 
++     {
++         multiple=[
++             {sk6ed_hydrant [0 0 0 3]} 
++             {Sk5ed_straightcurbshort [0 0 0]} 
++         ] 
++         name=quazz_curb_hydrant 
++         text_name=%"Hydrant on Curb" 
++     } 
++     {
++         multiple=[
++             {Sk4Ed_SF2_Newsstands [0 0 0]} 
++             {Sk5ed_straightcurbshort [0 0 0]} 
++         ] 
++         name=quazz_curb_newstand 
++         text_name=%"Newstand on Curb" 
++     } 
++     {
++         multiple=[
++             {Sk5ed_straightcurbshort [0 0 0]} 
++             {Sk5ed_straightcurbshort [0 0 0 2]} 
++         ] 
++         name=quazz_full_curb 
++         text_name=%"Full Curb" 
++     } 
++     {
++         multiple=[
++             {sk5ed_curvedcurb [0 0 0]} 
++             {sk5ed_curvedcurbQuarter [0 0 0]} 
++         ] 
++         name=quazz_inside_full 
++         text_name=%"Inside Curve and Full" 
++     } 
++     {
++         multiple=[
++             {sk5ed_curvedcurb [0 0 0 2]} 
++             {sk5ed_curvedcurbQuarter [0 0 0]} 
++         ] 
++         name=quazz_path_curb 
++         text_name=%"Path Curb" 
++     } 
++     {
++         multiple=[
++             {sk6ed_SubwayRamp [0 0 0]} 
++             {Sk5ed_straightcurbshort [0 0 0]} 
++             {Sk5ed_straightcurbshort [0 0 0 2]} 
++             {Sk5ed_straightcurbshort [1 0 0]} 
++             {Sk5ed_straightcurbshort [1 0 0 2]} 
++             {Sk5ed_straightcurbshort [2 0 0]} 
++             {Sk5ed_straightcurbshort [2 0 0 2]} 
++             {Sk5ed_straightcurbshort [2 0 1]} 
++             {Sk5ed_straightcurbshort [2 0 1 2]} 
++             {Sk5ed_straightcurbshort [2 0 2]} 
++             {Sk5ed_straightcurbshort [2 0 2 2]} 
++             {Sk5ed_straightcurbshort [2 0 3]} 
++             {Sk5ed_straightcurbshort [2 0 3 2]} 
++             {Sk5ed_straightcurbshort [0 0 1]} 
++             {Sk5ed_straightcurbshort [0 0 1 2]} 
++             {Sk5ed_straightcurbshort [0 0 2]} 
++             {Sk5ed_straightcurbshort [0 0 2 2]} 
++             {Sk5ed_straightcurbshort [0 0 3]} 
++             {Sk5ed_straightcurbshort [0 0 3 2]} 
++             {Sk5ed_straightcurbshort [1 0 3 2]} 
++         ] 
++         name=quazz_subway 
++         text_name=%"Subway Ramp" 
++     } 
++     {
++         multiple=[
++             {sk5ed_street [0 0 0]} 
++             {sk6ed_doubelsidedKick [0 0 0 1]} 
++             {sk6ed_doubelsidedKick [0 0 2 1]} 
++         ] 
++         name=quazz_construction_road 
++         text_name=%"Construction Road" 
++     } 
++     {
++         multiple=[
++             {sk6ed_Bouy [0 0 0]} 
++             {Sk5ed_Water1square [0 0 0]} 
++         ] 
++         name=quazz_bouy 
++         text_name=%"Bouy in Water" 
++     } 
++     {
++         multiple=[
++             {sk5ed_railroad [0 0 0]} 
++             {Sk5ed_sand01 [0 0 0]} 
++             {Sk5ed_sand01 [1 0 0]} 
++             {Sk5ed_sand01 [2 0 0]} 
++         ] 
++         name=quazz_railroad_01 
++         text_name=%"Bouy in Water" 
++     } 
++     {
++         multiple=[
++             {sk5ed_street [0 0 1]} 
++             {Sk5ed_straightcurbshort [1 0 0]} 
++             {Sk5ed_straightcurbshort [2 0 0]} 
++             {sk5ed_curvedcurb [0 0 0 2]} 
++             {sk5ed_smalltraffic [0 0 0 3]} 
++         ] 
++         name=quazz_streetcorner_01 
++         text_name=%"Street Corner Light" 
++     } 
++     {
++         multiple=[
++             {sk5ed_street [0 0 1]} 
++             {sk5ed_straightcurb [0 0 0]} 
++             {sk5ed_bigTraffic [0 0 0 1]} 
++         ] 
++         name=quazz_streetcorner_02 
++         text_name=%"Street Light" 
++     } 
++     {
++         multiple=[
++             {sk5ed_straightcurb [0 0 0 0]} 
++             {sk5ed_bigTraffic [0 0 0 0]} 
++         ] 
++         name=quazz_streetcorner_03 
++         text_name=%"Street Light Opposing" 
++     } 
++     {
++         single=sk5ed_tele01 
++         text_name=%"Telephone Pole 1" 
++     } 
++     {
++         single=sk5ed_tele02 
++         text_name=%"Telephone Pole 2" 
++     } 
++     {
++         single=sk5ed_Telewires 
++         text_name=%"Telephone Wires" 
++     } 
++     {
++         single=sk6ed_TOMATO_boxz 
++         text_name=%"Ammo Tomato Box" 
++     } 
++     {
++         single=BO_AppleBarrel 
++         text_name=%"Ammo Apple Box" 
++     } 
++     {
++         single=sk5ed_NYlight 
++         text_name=%"NY Light" 
++     } 
++     {
++         single=sk5ed_veniceBenchHuge 
++         text_name=%"Huge Venice Bench" 
++     } 
++     {
++         multiple=[
++             {object08 [0 0 0]} 
++             {Sk5Ed_BigSideWall [0 0 0]} 
++             {Sk5Ed_BigSideWall [1 0 0]} 
++             {Sk5Ed_BigSideWall [0 2 0]} 
++             {Sk5Ed_BigSideWall [1 2 0]} 
++         ] 
++         name=quazz_building_01 
++         text_name=%"Custom Building Awning" 
++     } 
++     {
++         multiple=[
++             {Sk5Ed_BigSideWall [0 0 0]} 
++             {Sk5Ed_BigSideWall [1 0 0]} 
++             {Sk5Ed_BigSideWall [0 2 0]} 
++             {Sk5Ed_BigSideWall [1 2 0]} 
++         ] 
++         name=quazz_building_02 
++         text_name=%"Custom Building Wall" 
++     } 
++     {
++         multiple=[
++             {Sk5Ed_QPshortMid_01 [0 0 0]} 
++             {Sk5Ed_QPshortMid_01 [1 0 0]} 
++             {Sk5Ed_BigSideWall [0 0 0]} 
++             {Sk5Ed_BigSideWall [1 0 0]} 
++             {Sk5Ed_BigSideWall [0 2 0]} 
++             {Sk5Ed_BigSideWall [1 2 0]} 
++         ] 
++         name=quazz_building_03 
++         text_name=%"Custom Building QP" 
++     } 
++     {
++         multiple=[
++             {Sk5ed_straightcurbshort [0 0 0]} 
++             {Sk5ed_straightcurbshort [1 0 0]} 
++             {Sk5Ed_BigSideWall [0 0 0]} 
++             {Sk5Ed_BigSideWall [1 0 0]} 
++             {Sk5Ed_BigSideWall [0 2 0]} 
++             {Sk5Ed_BigSideWall [1 2 0]} 
++         ] 
++         name=quazz_building_04 
++         text_name=%"Custom Building Curb" 
++     } 
++     {
++         multiple=[
++             {Sk5ed_straightcurbshort [0 0 0]} 
++             {Sk5ed_straightcurbshort [1 0 0]} 
++             {object08 [0 0 0]} 
++             {Sk5Ed_BigSideWall [0 0 0]} 
++             {Sk5Ed_BigSideWall [1 0 0]} 
++             {Sk5Ed_BigSideWall [0 2 0]} 
++             {Sk5Ed_BigSideWall [1 2 0]} 
++         ] 
++         name=quazz_building_05 
++         text_name=%"Custom Building Awning Curb" 
++     } 
++     {
++         multiple=[
++             {Sk4Ed_Alc_Kicker [0 0 0 1]} 
++             {Sk5ed_straightcurbshort [0 0 0]} 
++             {Sk5ed_straightcurbshort [1 0 0]} 
++             {Sk5Ed_BigSideWall [0 0 0]} 
++             {Sk5Ed_BigSideWall [1 0 0]} 
++             {Sk5Ed_BigSideWall [0 2 0]} 
++             {Sk5Ed_BigSideWall [1 2 0]} 
++         ] 
++         name=quazz_building_06 
++         text_name=%"Custom Building Curb Kicker" 
+= 1750-1751
+unit Ed_Save_Map
+= 1-177
+~ 178 10 1 r
+= 179-222
+~ 223 13 1 T
+= 224
++     Sk5ed_straightcurbshort 
+= 226-266
+~ 267 4 1 S
+= 268-301
+~ 302 17 1 m
+= 303-506
++     sk6ed_TOMATO_boxz 
++     BO_AppleBarrel 
++     Sk5Ed_Goal_01 
++     Sk5Ed_RAdot_Dynamic_Green 
++     Sk5Ed_RA_Dynamic 
++     Sk5Ed_RAdot_Dynamic 
++     Sk5Ed_Fence_Rooftop_20x20 
++     Sk5Ed_SlantQP 
++     Sk5Ed_SlantQP01 
++     Car_Shadow 
++     object03 
++     Object05 
++     object08 
++     Sk4Ed_Gap_10x10 
++     Sk3Ed_Ru1m_10x10x05 
++     Sk3Ed_Ru1t_10x10x05 
++     Sk3Ed_Ru1b_10x10x05 
++     Sk3Ed_Fu1_10x21 
++     sk5ed_NYlight 
++     Sk3Ed_Ru1b_10x10x06 
++     Sk3Ed_Ru1m_10x10x06 
++     Sk3Ed_Ru1t_10x10x06 
++     Sk3Ed_Ru1m_10x10x07 
++     Sk3Ed_Ru1b_10x10x07 
++     Sk3Ed_Ru1t_10x10x07 
++     Sk3Ed_Fu1_10x23 
++     Sk3Ed_So_10x10x09 
++     Sk3Ed_Fu1_10x11 
++     sk5ed_veniceBenchHuge 
++     test_merge 
++     test_flout 
++     Subwayramp 
++     ob_road_test 
++     bigbridgewater 
++     bigbridgeledge 
++     Sk4Ed_Fence_20x20xxx 
++     quazz_curb_hydrant 
++     quazz_curb_newstand 
++     quazz_full_curb 
++     quazz_inside_full 
++     quazz_path_curb 
++     quazz_subway 
++     quazz_construction_road 
++     quazz_bouy 
++     quazz_railroad_01 
++     quazz_streetcorner_01 
++     quazz_streetcorner_02 
++     quazz_streetcorner_03 
++     sk5ed_tele01 
++     sk5ed_tele02 
++     sk5ed_Telewires 
++     sk6ed_TOMATO_boxz 
++     BO_AppleBarrel 
++     sk5ed_NYlight 
++     sk5ed_veniceBenchHuge 
++     quazz_building_01 
++     quazz_building_02 
++     quazz_building_03 
++     quazz_building_04 
++     quazz_building_05 
++     quazz_building_06 
+= 507
+unit Ed_Light_Info
+= 1-4
+~ 5 35 4 1.0
+= 6-228
++

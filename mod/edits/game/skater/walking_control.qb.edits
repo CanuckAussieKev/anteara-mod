@@ -1,0 +1,15 @@
+# The Anteara Mod's edits to game\skater\walking_control.qb (applied to the game's own script: lib/edits.ts)
+base b71fac41
+unit spawned_wall_tag
+~ 1 32 10 Standing_T
+= 2-4
+~ 5 47 0 AllowCameraControl 
+~ 7 17 22 ex=SkaterCollideBail s
+~ 8 24 1 o
+~ 9 21 8 Skater_S
+= 10-22
+~ 23 9 3 OTO
+= 24
+~ 25 9 3 OTO
+= 26-27
++

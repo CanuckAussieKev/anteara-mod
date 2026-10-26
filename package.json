@@ -1,0 +1,17 @@
+{
+  "name": "anteara-mod",
+  "private": true,
+  "type": "module",
+  "description": "The Anteara Mod for THUG2 (PC): its own changes and the tool that builds its script set, TypeScript run directly by Node 24.",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "node --test \"**/*.test.ts\""
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "typescript": "7.0.2"
+  }
+}

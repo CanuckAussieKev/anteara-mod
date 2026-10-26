@@ -1,0 +1,36 @@
+# The Anteara Mod's edits to game\skater\groundtricks.qb (applied to the game's own script: lib/edits.ts)
+base 77ee2cd6
+register
+~ 1 3879 0  Airshuffle Trick_Airshuffle Trick_Test
+new Trick_Airshuffle
+after Trick_Boneless
++ Trick_Airshuffle = {Scr=Airshuffle Params={Name=%"Airshuffle" Score=250}} 
+new Trick_Test
+after Trick_Airshuffle
++ Trick_Test = {Scr=OneButtonTest Params={Name=%"test" Score=250}} 
+unit GroundTricks
+= 1-2
++     {Trigger={InOrder, Up, Left, 300} Trick_PrimoSpin} 
+= 3-8
+~ 9 89 9 Left, b=R
+= 10-12
+new Airshuffle
+after Boneless
+from 7e8c48b4 game\skater\groundtricks.qb Boneless
++ script Airshuffle {
++     if GetGlobalFlag flag=ANTEARA_AIRSHUFFLE {
+~ 2 4 0     
+~ 3 4 0     
+~ 4 4 0     
+~ 7 4 0     
+~ 8 4 0     
+~ 10 4 0     
+~ 11 4 0     
++         Display 
+~ 13 22 22 HalfCabImpossible duration=2 Seconds
++         WaitAnimFinished 
++         BailOff 
++         Goto Airborne 
+= 19
+= 24
++

@@ -1,0 +1,956 @@
+# The Anteara Mod's edits to game\menu\gamemenu_pause.qb (applied to the game's own script: lib/edits.ts)
+base 277cf87e
+register
+~ 1 4835 0  FlyAi MakeSkaterFly Remove_my_board TakeAwayHair TakeAwayHands TakeAwayHead TakeAwayLegs TakeAwayShoes TakeAwayTorso TurnOnHair TurnOnHands TurnOnHead TurnOnLegs TurnOnShoes TurnOnTorso Veh_Camera_fix anteara_bounds anteara_noclipoff anteara_observe_obs anteara_timeroff anteara_timeron case_Airshuffle case_Ammo case_Color case_ColorTwo case_NO_BOUNDS case_NoClip case_Observe case_RunOutTimer case_WallJump case_WallSkate case_anteara_text_colour case_give_ammo case_hair case_hands case_head case_legs case_shoes case_torso fall_sideways fall_underground fall_underground1 fall_up fall_up1 kirillgta_clean noclipon obs_is_on proj_menu_remove_amount proj_menu_update_amount set_custom_restart1 skip_to_custom_restart1 test_standard test_widescreen toggle_SwitchAmmo toggle_SwitchAmmoNum toggle_SwitchColor toggle_SwitchColorTwo toggle_SwitchNoBounds toggle_SwitchOffAirshuffle toggle_SwitchOffNoClip toggle_SwitchOffObserve toggle_SwitchOffTimer toggle_SwitchOffWallJump toggle_SwitchOffWallSkate toggle_SwitchTextColour toggle_TakeAwayHair toggle_TakeAwayHands toggle_TakeAwayHead toggle_TakeAwayLegs toggle_TakeAwayShoes toggle_TakeAwayTorso walljumpoff walljumpon wallshuffleoff wallshuffleon wallskateoff wallskateon
+remove do_localized_pause_title
+unit create_pause_menu
+= 1
++     Skater:Obj_SetFlag ANTEARA_FAILSAFE_FLAG 
++     anteara_failsafe 
+= 2-18
+~ 19 7 1 i
+= 20-24
+~ 25 12 0 anteara_
+= 26-30
+~ 31 12 0 anteara_
+= 32-44
+~ 45 12 1 C
+= 46
+~ 47 12 1 C
+= 48-64
+~ 65 28 5 NullS
+~ 66 12 1 P
+= 67-72
++         if Skater:driving {
+~ 73 8 0     
+~ 74 12 0     
+~ 75 12 0     
+~ 76 12 0     
++                 Pos=(250.0, 75.0) 
+~ 78 12 0     
+~ 79 12 0     
+~ 80 12 0     
+~ 81 12 0     
++             } 
++         } else {
++             make_new_roundbar_menu {
++                 menu_id=pause_menu 
++                 vmenu_id=pause_vmenu 
++                 pad_back_script=handle_start_pressed 
++                 Pos=(250.0, 95.0) 
++                 dims=(250.0, 480.0) 
++                 internal_text_just=right 
++                 helper_text=<helper> 
++                 add_3d_bg 
++             } 
+= 82-83
+~ 84 29 1 P
+= 85-86
+~ 87 25 1 P
++     if Skater:driving {
++         add_roundbar_menu_item {text="EXIT VEHICLE" 
++             Id=ditch_vehicle_id 
++             pad_choose_script=Anteara_Easy_ExitVehicle 
+= 92
++         } 
++     } 
+= 88-89
+~ 90 12 1 I
+= 91-96
+~ 97 16 1 I
+= 98-102
+~ 103 16 1 I
+= 104-109
+~ 110 16 1 I
+= 111-117
+~ 118 16 1 I
+= 119-130
+~ 131 74 1 I
+= 132-136
+~ 137 49 1 I
+= 138-140
+~ 141 28 13 A=<goal_id> B
+= 142-143
+~ 144 66 1 I
+= 145-148
+~ 149 58 1 I
+= 150-151
+~ 152 53 1 I
+= 153
+~ 154 52 1 I
+= 155-157
+~ 158 63 1 I
+= 159
+~ 160 53 1 I
+= 161
+~ 162 60 1 I
+= 163-170
+~ 171 53 1 I
+= 172-175
+~ 176 53 1 I
+= 177-179
+~ 180 7 1 i
+= 181-189
+~ 190 12 1 I
+= 191-194
+~ 195 7 1 i
+= 196-199
+~ 200 65 1 I
+= 201-203
+~ 204 63 1 I
+= 205-207
+~ 208 7 1 i
+= 209-211
+~ 212 63 1 I
+= 213
+~ 214 65 1 I
+= 215-220
+~ 221 71 1 I
+= 222
+~ 223 73 1 I
+= 224-229
+~ 230 7 1 i
+= 231-236
+~ 237 32 4 EDIT
+= 238-243
+~ 244 36 4 EDIT
+= 245-247
+~ 248 53 1 I
+= 249-250
+~ 251 7 1 i
+= 252-255
+~ 256 67 1 I
+= 257-261
+~ 262 22 11 Bootstrap_B
+~ 263 58 1 I
+= 264
+~ 265 58 1 I
+= 266
+~ 267 61 1 I
+= 268
+~ 269 68 1 I
+= 270-274
+~ 275 9 1 i
+= 276-279
+~ 280 37 1 P
+~ 281 34 19 A=<skater_family> B
+= 282-286
+~ 287 61 1 I
+= 288-291
+~ 292 9 1 i
+~ 293 51 1 I
+= 294
+~ 295 33 67 ANTEARA MENU" Id=menu_anteara_options pad_choose_script=create_anteara
++     add_roundbar_menu_item text="GAME OPTIONS" Id=menu_game_options pad_choose_script=create_options_menu 
+= 296-297
+~ 298 54 1 I
+= 299-300
+~ 301 7 1 i
+~ 302 51 1 I
+= 303-305
+~ 306 30 11 Bootstrap_B
+= 307
+~ 308 66 1 I
+= 309-311
+~ 312 66 1 I
+= 313-317
+~ 318 43 1 I
+= 319-321
+~ 322 57 1 I
+= 323-327
+~ 328 20 1 I
+= 329-342
+unit exit_pause_menu
+= 1
+~ 2 4 1 C
+~ 3 27 1 I
+~ 4 18 1 T
+= 5-6
+~ 7 13 1 x
+= 8-9
+~ 10 4 1 C
+~ 11 4 1 C
+= 12
+~ 13 8 1 C
+= 14-15
+~ 16 7 1 i
+= 17
+~ 18 28 1 I
+= 19-30
++         spawnscript SFX_refresh_music_box_triggers params={Wait} 
+= 32-34
+~ 35 20 1 I
+~ 36 29 1 I
+= 37
+~ 38 26 1 I
+= 39-41
+~ 42 35 3 UnP
+= 43-49
+~ 50 9 1 i
+= 51-54
+~ 55 4 1 C
++     KillSpawnedScript name=do_localized_pause_title 
++     if ! inNetGame {
++         if ObjectExists Id=PlayerVehicleCamera {
++             if ! ((((case_anteara_veh = 4) or (case_anteara_veh = 7) or (case_anteara_veh = 8) or (case_anteara_veh = 13)))) {
++                 Skater:hide 
++             } 
++             SetActiveCamera Id=PlayerVehicleCamera 
++         } 
++     } 
+= 56
+new Veh_Camera_fix
+after exit_pause_menu
++ script Veh_Camera_fix {
++     PlayerVehicleCamera:VehicleCamera_Reset 
++     SetActiveCamera Id=PlayerVehicleCamera 
++ } 
+new proj_menu_update_amount
+after pause_launch_level
++ script proj_menu_update_amount {
++     Skater:GetAmmo 
++     Skater:SetAmmo <value> 
++ } 
+new proj_menu_remove_amount
+after proj_menu_update_amount
++ script proj_menu_remove_amount {
++     Skater:GetAmmo 
++     Skater:SetAmmo 0 
++ } 
+new Remove_my_board
+after proj_menu_remove_amount
++ script Remove_my_board {
++     Wait 1 gameframe 
++     Skater:SwitchOffBoard 
++     Wait 1 gameframe 
++     Skater:SetBoardMissing 
++ } 
+new fall_underground
+after Remove_my_board
++ script fall_underground {
++     exit_pause_menu 
++     Skater:move Y=-99.0 
++ } 
+new fall_underground1
+after fall_underground
++ script fall_underground1 {
++     exit_pause_menu 
++     Skater:move Y=-29.0 
++ } 
+new fall_sideways
+after fall_underground1
++ script fall_sideways {
++     exit_pause_menu 
++     Skater:move x=99.0 
++ } 
+new fall_up
+after fall_sideways
++ script fall_up {
++     exit_pause_menu 
++     Skater:move Y=99.0 
++ } 
+new fall_up1
+after fall_up
++ script fall_up1 {
++     exit_pause_menu 
++     Skater:move Y=999.0 
++ } 
+new noclipon
+after fall_up1
++ script noclipon {
++     MakeSkaterFly 
++     Skater:pausephysics 
++     exit_pause_menu 
++ } 
+new MakeSkaterFly
+after noclipon
++ script MakeSkaterFly {
++     MakeSkaterGoto FlyAi 
++ } 
+new FlyAi
+after MakeSkaterFly
+with bf4bd247 game\menu\skateshop.qb SkateshopAI
+with 5a92f264 game\pro_anims.qb Skater_GoalInit
++ script FlyAi {move = 8 
+= 11-12 @1
++     SetSpeed 0 
++     setstate Air 
+= 15 @2
++     NoRailTricks 
++     while {
++         if Held R2 {
++             move Y=-6 
++         } 
++         if Held L1 {
++             move Y=6 
++         } 
++         if Held L2 {
++             if Held Square {
++                 move x=18 
++             } 
++             if Held Circle {
++                 move x=-18 
++             } 
++             if Held Triangle {
++                 move z=18 
++             } 
++             if Held x {
++                 move z=-18 
++             } 
++         } else {
++             if Held Square {
++                 move x=6 
++             } 
++             if Held Circle {
++                 move x=-6 
++             } 
++             if Held Triangle {
++                 move z=8 
++             } 
++             if Held x {
++                 move z=-8 
++             } 
++         } 
++         waitonegameframe 
++     } 
++     AllowRailTricks 
++     MakeSkaterGoto OnGroundAI 
++ } 
+new obs_is_on
+after FlyAi
++ obs_is_on = 0 
+new anteara_observe_obs
+after obs_is_on
+with 7f1312f1 gamemodes\gamemode.qb create_rankings
++ script anteara_observe_obs {
++     switch obs_is_on
++         case 0 {
++             Skater:remove_skater_from_world 
++             EnterSurveyorMode 
++             Change obs_is_on=1 
++         }
++         case 1 {
+= 14-15 @1
++             Change obs_is_on=0 
++         }
++     endswitch    
++ } 
+new set_custom_restart1
+after anteara_observe_obs
++ script set_custom_restart1 {
++     if ObjectExists Id=PlayerVehicle {
++         NullScript 
++     } else {
++         Skater:SetCustomRestart Set 
++     } 
++ } 
+new skip_to_custom_restart1
+after set_custom_restart1
++ script skip_to_custom_restart1 {
++     if ObjectExists Id=PlayerVehicle {
++         NullScript 
++     } else {
++         Skater:SkipToCustomRestart 
++     } 
++ } 
+new kirillgta_clean
+after skip_to_custom_restart1
++ script kirillgta_clean {
++     exit_pause_menu 
++     SendChatMessage String="\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n" 
++ } 
+new test_widescreen
+after kirillgta_clean
++ script test_widescreen {
++     SetPreferencesFromUI prefs=network field="Anteara_Resolution" checksum=Widescreen 
++     change_screen_mode wide callback=screen_setup_widescreen set_screen_flags 
++     create_anteara_menu 
++ } 
+new test_standard
+after test_widescreen
++ script test_standard {
++     SetPreferencesFromUI prefs=network field="Anteara_Resolution" checksum=standard 
++     change_screen_mode standard callback=screen_setup_standard set_screen_flags 
++     create_anteara_menu 
++ } 
+new case_hair
+after test_standard
++ case_hair = 1 
+new toggle_TakeAwayHair
+after case_hair
++ script toggle_TakeAwayHair {
++     printf "un/Hide Hair" 
++     switch case_hair
++         case 0 {
++             Change case_hair=1 
++             SetScreenElementProps Id={menu_TakeAwayHair child=0} text="Hair: Visible" 
++             Skater:TurnOnHair 
++         }
++         case 1 {
++             Change case_hair=0 
++             SetScreenElementProps Id={menu_TakeAwayHair child=0} text="Hair: Invisible" 
++             Skater:TakeAwayHair 
++         }
++     endswitch    
++ } 
+new case_head
+after toggle_TakeAwayHair
++ case_head = 1 
+new toggle_TakeAwayHead
+after case_head
++ script toggle_TakeAwayHead {
++     printf "un/Hide Head" 
++     switch case_head
++         case 0 {
++             Change case_head=1 
++             SetScreenElementProps Id={menu_TakeAwayHead child=0} text="Head: Visible" 
++             Skater:TurnOnHead 
++         }
++         case 1 {
++             Change case_head=0 
++             SetScreenElementProps Id={menu_TakeAwayHead child=0} text="Head: Invisible" 
++             Skater:TakeAwayHead 
++         }
++     endswitch    
++ } 
+new case_torso
+after toggle_TakeAwayHead
++ case_torso = 1 
+new toggle_TakeAwayTorso
+after case_torso
++ script toggle_TakeAwayTorso {
++     printf "un/Hide Torso" 
++     switch case_torso
++         case 0 {
++             Change case_torso=1 
++             SetScreenElementProps Id={menu_TakeAwayTorso child=0} text="Torso: Visible" 
++             Skater:TurnOnTorso 
++         }
++         case 1 {
++             Change case_torso=0 
++             SetScreenElementProps Id={menu_TakeAwayTorso child=0} text="Torso: Invisible" 
++             Skater:TakeAwayTorso 
++         }
++     endswitch    
++ } 
+new case_legs
+after toggle_TakeAwayTorso
++ case_legs = 1 
+new toggle_TakeAwayLegs
+after case_legs
++ script toggle_TakeAwayLegs {
++     printf "un/Hide Legs" 
++     switch case_legs
++         case 0 {
++             Change case_legs=1 
++             SetScreenElementProps Id={menu_TakeAwayLegs child=0} text="Legs: Visible" 
++             Skater:TurnOnLegs 
++         }
++         case 1 {
++             Change case_legs=0 
++             SetScreenElementProps Id={menu_TakeAwayLegs child=0} text="Legs: Invisible" 
++             Skater:TakeAwayLegs 
++         }
++     endswitch    
++ } 
+new case_hands
+after toggle_TakeAwayLegs
++ case_hands = 1 
+new toggle_TakeAwayHands
+after case_hands
++ script toggle_TakeAwayHands {
++     printf "un/Hide Hands" 
++     switch case_hands
++         case 0 {
++             Change case_hands=1 
++             SetScreenElementProps Id={menu_TakeAwayHand child=0} text="Hands: Visible" 
++             Skater:TurnOnHands 
++         }
++         case 1 {
++             Change case_hands=0 
++             SetScreenElementProps Id={menu_TakeAwayHand child=0} text="Hands: Invisible" 
++             Skater:TakeAwayHands 
++         }
++     endswitch    
++ } 
+new case_shoes
+after toggle_TakeAwayHands
++ case_shoes = 1 
+new toggle_TakeAwayShoes
+after case_shoes
++ script toggle_TakeAwayShoes {
++     printf "un/Hide Shoes" 
++     switch case_shoes
++         case 0 {
++             Change case_shoes=1 
++             SetScreenElementProps Id={menu_TakeAwayShoes child=0} text="Shoes: Visible" 
++             Skater:TurnOnShoes 
++         }
++         case 1 {
++             Change case_shoes=0 
++             SetScreenElementProps Id={menu_TakeAwayShoes child=0} text="Shoes: Invisible" 
++             Skater:TakeAwayShoes 
++         }
++     endswitch    
++ } 
+new TakeAwayHair
+after toggle_TakeAwayShoes
++ script TakeAwayHair {
++     SwitchOffAtomic skater_m_hair 
++     SwitchOffAtomic skater_f_hair 
++     SwitchOffAtomic skater_f_hat_hair 
++ } 
+new TakeAwayHead
+after TakeAwayHair
++ script TakeAwayHead {
++     SwitchOffAtomic skater_m_head 
++     SwitchOffAtomic skater_f_head 
++ } 
+new TakeAwayTorso
+after TakeAwayHead
++ script TakeAwayTorso {
++     SwitchOffAtomic skater_m_torso 
++     SwitchOffAtomic skater_f_torso 
++ } 
+new TakeAwayLegs
+after TakeAwayTorso
++ script TakeAwayLegs {
++     SwitchOffAtomic skater_m_legs 
++     SwitchOffAtomic skater_f_legs 
++ } 
+new TakeAwayHands
+after TakeAwayLegs
++ script TakeAwayHands {
++     SwitchOffAtomic skater_m_hands 
++     SwitchOffAtomic skater_f_hands 
++ } 
+new TakeAwayShoes
+after TakeAwayHands
++ script TakeAwayShoes {
++     SwitchOffAtomic shoes 
++ } 
+new TurnOnHair
+after TakeAwayShoes
++ script TurnOnHair {
++     SwitchOnAtomic skater_m_hair 
++     SwitchOnAtomic skater_f_hair 
++     SwitchOnAtomic skater_f_hat_hair 
++ } 
+new TurnOnHead
+after TurnOnHair
++ script TurnOnHead {
++     SwitchOnAtomic skater_m_head 
++     SwitchOnAtomic skater_f_head 
++ } 
+new TurnOnTorso
+after TurnOnHead
++ script TurnOnTorso {
++     SwitchOnAtomic skater_m_torso 
++     SwitchOnAtomic skater_f_torso 
++ } 
+new TurnOnLegs
+after TurnOnTorso
++ script TurnOnLegs {
++     SwitchOnAtomic skater_m_legs 
++     SwitchOnAtomic skater_f_legs 
++ } 
+new TurnOnShoes
+after TurnOnLegs
++ script TurnOnShoes {
++     SwitchOnAtomic shoes 
++ } 
+new TurnOnHands
+after TurnOnShoes
++ script TurnOnHands {
++     SwitchOnAtomic skater_m_hands 
++     SwitchOnAtomic skater_f_hands 
++ } 
+new anteara_bounds
+after TurnOnHands
++ script anteara_bounds {
++     Change TODManager_SetActive 1 
++     Change tod_manager_active=1 
++     Change TOD_OFF=0 
++ } 
+new case_RunOutTimer
+after anteara_bounds
++ case_RunOutTimer = 1 
+new toggle_SwitchOffTimer
+after case_RunOutTimer
++ script toggle_SwitchOffTimer {
++     printf "On/Off Timer" 
++     switch case_RunOutTimer
++         case 0 {
++             Change case_RunOutTimer=1 
++             SetScreenElementProps Id={menu_SwitchOffRunOutTimer child=0} text="Infinite Run Out Timer: Off" 
++             anteara_timeroff 
++         }
++         case 1 {
++             Change case_RunOutTimer=0 
++             SetScreenElementProps Id={menu_SwitchOffRunOutTimer child=0} text="Infinite Run Out Timer: On" 
++             anteara_timeron 
++         }
++     endswitch    
++ } 
+new case_WallJump
+after toggle_SwitchOffTimer
++ case_WallJump = 1 
+new toggle_SwitchOffWallJump
+after case_WallJump
++ script toggle_SwitchOffWallJump {
++     printf "On/Off Walljump" 
++     switch case_WallJump
++         case 0 {
++             Change case_WallJump=1 
++             SetScreenElementProps Id={menu_SwitchOffWallJump child=0} text="Infinite Wall Jumps: Off" 
++             walljumpoff 
++         }
++         case 1 {
++             Change case_WallJump=0 
++             SetScreenElementProps Id={menu_SwitchOffWallJump child=0} text="Infinite Wall Jumps: On" 
++             walljumpon 
++         }
++     endswitch    
++ } 
+new case_WallSkate
+after toggle_SwitchOffWallJump
++ case_WallSkate = 1 
+new toggle_SwitchOffWallSkate
+after case_WallSkate
++ script toggle_SwitchOffWallSkate {
++     printf "On/Off Wallskate" 
++     switch case_WallSkate
++         case 0 {
++             Change case_WallSkate=1 
++             SetScreenElementProps Id={menu_SwitchOffWallSkate child=0} text="Skate on Walls: Off" 
++             wallskateoff 
++         }
++         case 1 {
++             Change case_WallSkate=0 
++             SetScreenElementProps Id={menu_SwitchOffWallSkate child=0} text="Skate on Walls: On" 
++             Skater:wallskateon 
++         }
++     endswitch    
++ } 
+new case_NoClip
+after toggle_SwitchOffWallSkate
++ case_NoClip = 1 
+new toggle_SwitchOffNoClip
+after case_NoClip
++ script toggle_SwitchOffNoClip {
++     printf "on/Off NoClip" 
++     switch case_NoClip
++         case 0 {
++             Change case_NoClip=1 
++             SetScreenElementProps Id={menu_SwitchOffNoClip child=0} text="No Clip: Off" 
++             anteara_noclipoff 
++         }
++         case 1 {
++             Change case_NoClip=0 
++             SetScreenElementProps Id={menu_SwitchOffNoClip child=0} text="No Clip: On" 
++             MakeSkaterFly 
++             Skater:pausephysics 
++         }
++     endswitch    
++ } 
+new case_NO_BOUNDS
+after toggle_SwitchOffNoClip
++ case_NO_BOUNDS = 1 
+new toggle_SwitchNoBounds
+after case_NO_BOUNDS
++ script toggle_SwitchNoBounds {
++     switch case_NO_BOUNDS
++         case 0 {
++             Change case_NO_BOUNDS=1 
++             SetScreenElementProps Id={menu_SwitchNoBounds child=0} text="No Out Of Bounds: Off" 
++             UnSetGlobalFlag flag=FREEMAN_BOUND 
++         }
++         case 1 {
++             Change case_NO_BOUNDS=0 
++             SetScreenElementProps Id={menu_SwitchNoBounds child=0} text="No Out Of Bounds: On" 
++             SetGlobalFlag flag=FREEMAN_BOUND 
++         }
++     endswitch    
++ } 
+new case_Observe
+after toggle_SwitchNoBounds
++ case_Observe = 1 
+new toggle_SwitchOffObserve
+after case_Observe
+with 7f1312f1 gamemodes\gamemode.qb create_rankings
++ script toggle_SwitchOffObserve {
++     printf "On/Off Observe" 
++     switch case_Observe
++         case 0 {
++             Change case_Observe=1 
++             SetScreenElementProps Id={menu_SwitchOffObserve child=0} text="Observing: Off" 
+= 14-15 @1
++             Change obs_is_on=0 
++         }
++         case 1 {
++             Change case_Observe=0 
++             SetScreenElementProps Id={menu_SwitchOffObserve child=0} text="Observing: On" 
++             Skater:remove_skater_from_world 
++             EnterSurveyorMode 
++             Change obs_is_on=1 
++         }
++     endswitch    
++ } 
+new case_Airshuffle
+after toggle_SwitchOffObserve
++ case_Airshuffle = 1 
+new toggle_SwitchOffAirshuffle
+after case_Airshuffle
++ script toggle_SwitchOffAirshuffle {
++     switch case_Airshuffle
++         case 0 {
++             Change case_Airshuffle=1 
++             SetScreenElementProps Id={menu_SwitchOffAirshuffle child=0} text="Airshuffle (DownLeft + Flip): Off" 
++             UnSetGlobalFlag flag=ANTEARA_AIRSHUFFLE 
++         }
++         case 1 {
++             Change case_Airshuffle=0 
++             SetScreenElementProps Id={menu_SwitchOffAirshuffle child=0} text="Airshuffle (DownLeft + Flip): On" 
++             SetGlobalFlag flag=ANTEARA_AIRSHUFFLE 
++         }
++     endswitch    
++ } 
+new anteara_noclipoff
+after toggle_SwitchOffAirshuffle
++ script anteara_noclipoff {
++     Skater:unpausephysics 
++ } 
+new walljumpon
+after anteara_noclipoff
++ script walljumpon {
++     Change Physics_Disallow_Rewallplant_Duration=0 
++ } 
+new walljumpoff
+after walljumpon
++ script walljumpoff {
++     Change Physics_Disallow_Rewallplant_Duration=850 
++ } 
+new wallskateon
+after walljumpoff
++ script wallskateon {
++     Change Wall_Non_Skatable_Angle=0 
++ } 
+new wallskateoff
+after wallskateon
++ script wallskateoff {
++     Change Wall_Non_Skatable_Angle=25 
++ } 
+new anteara_timeron
+after wallskateoff
++ script anteara_timeron {
++     Change Physics_RunTimer_Duration={(50000.0, 20000.0) STATS_RUN `switch`=no_switch} 
++ } 
+new anteara_timeroff
+after anteara_timeron
++ script anteara_timeroff {
++     Change Physics_RunTimer_Duration={(2.0, 3.0) STATS_RUN `switch`=no_switch} 
++ } 
+new wallshuffleon
+after anteara_timeroff
++ script wallshuffleon {
++     Change wall_ride_delay=0.0 
++ } 
+new wallshuffleoff
+after wallshuffleon
++ script wallshuffleoff {
++     Change wall_ride_delay=0.666 
++ } 
+new case_anteara_text_colour
+after wallshuffleoff
++ case_anteara_text_colour = 5 
+new toggle_SwitchTextColour
+after case_anteara_text_colour
++ script toggle_SwitchTextColour {
++     printf "Text Colour" 
++     switch case_anteara_text_colour
++         case 5 {
++             Change case_anteara_text_colour=6 
++             SetScreenElementProps Id={menu_SwitchTextColour child=0} text="Text Colour: Orange" 
++             SetPreferencesFromUI prefs=network field="TextColor" checksum=color_cb 
++         }
++         case 6 {
++             Change case_anteara_text_colour=7 
++             SetScreenElementProps Id={menu_SwitchTextColour child=0} text="Text Colour: Green" 
++             SetPreferencesFromUI prefs=network field="TextColor" checksum=color_c4 
++         }
++         case 7 {
++             Change case_anteara_text_colour=8 
++             SetScreenElementProps Id={menu_SwitchTextColour child=0} text="Text Colour: Pink" 
++             SetPreferencesFromUI prefs=network field="TextColor" checksum=color_cL 
++         }
++         case 8 {
++             Change case_anteara_text_colour=5 
++             SetScreenElementProps Id={menu_SwitchTextColour child=0} text="Text Colour: White" 
++             SetPreferencesFromUI prefs=network field="TextColor" checksum=color_c0 
++         }
++     endswitch    
++ } 
+new case_give_ammo
+after toggle_SwitchTextColour
++ case_give_ammo = 5 
+new toggle_SwitchAmmoNum
+after case_give_ammo
++ script toggle_SwitchAmmoNum {
++     printf "On/Off Ammo" 
++     switch case_give_ammo
++         case 5 {
++             Change case_give_ammo=6 
++             SetScreenElementProps Id={menu_SwitchAmmoNum child=0} text="Ammo: 500" 
++             Skater:GetAmmo 
++             Skater:SetAmmo 500 
++         }
++         case 6 {
++             Change case_give_ammo=7 
++             SetScreenElementProps Id={menu_SwitchAmmoNum child=0} text="Ammo: 1000" 
++             Skater:GetAmmo 
++             Skater:SetAmmo 1000 
++         }
++         case 7 {
++             Change case_give_ammo=5 
++             SetScreenElementProps Id={menu_SwitchAmmoNum child=0} text="Ammo: 0" 
++             Skater:GetAmmo 
++             Skater:SetAmmo 0 
++         }
++     endswitch    
++ } 
+new case_Color
+after toggle_SwitchAmmoNum
++ case_Color = 5 
+new toggle_SwitchColor
+after case_Color
++ script toggle_SwitchColor {
++     printf "On/Off Color" 
++     switch case_Color
++         case 5 {
++             Change case_Color=6 
++             SetScreenElementProps Id={menu_SwitchColor child=0} text="Balance Bar Colour: Green" 
++             Change DE_BALANCE_METER_COLOR=[0 255 18 100] 
++         }
++         case 6 {
++             Change case_Color=7 
++             SetScreenElementProps Id={menu_SwitchColor child=0} text="Balance Bar Colour: Red" 
++             Change DE_BALANCE_METER_COLOR=[255 0 0 100] 
++         }
++         case 7 {
++             Change case_Color=8 
++             SetScreenElementProps Id={menu_SwitchColor child=0} text="Balance Bar Colour: Light Blue" 
++             Change DE_BALANCE_METER_COLOR=[0 252 255 100] 
++         }
++         case 8 {
++             Change case_Color=9 
++             SetScreenElementProps Id={menu_SwitchColor child=0} text="Balance Bar Colour: Yellow" 
++             Change DE_BALANCE_METER_COLOR=[234 255 0 100] 
++         }
++         case 9 {
++             Change case_Color=10 
++             SetScreenElementProps Id={menu_SwitchColor child=0} text="Balance Bar Colour: Black" 
++             Change DE_BALANCE_METER_COLOR=[0 0 0 100] 
++         }
++         case 10 {
++             Change case_Color=11 
++             SetScreenElementProps Id={menu_SwitchColor child=0} text="Balance Bar Colour: White" 
++             Change DE_BALANCE_METER_COLOR=[255 255 255 100] 
++         }
++         case 11 {
++             Change case_Color=5 
++             SetScreenElementProps Id={menu_SwitchColor child=0} text="Balance Bar Colour: Pink" 
++             Change DE_BALANCE_METER_COLOR=[225 18 213 100] 
++         }
++     endswitch    
++ } 
+new case_ColorTwo
+after toggle_SwitchColor
++ case_ColorTwo = 8 
+new toggle_SwitchColorTwo
+after case_ColorTwo
++ script toggle_SwitchColorTwo {
++     printf "On/Off ColorTwo" 
++     switch case_ColorTwo
++         case 5 {
++             Change case_ColorTwo=6 
++             SetScreenElementProps Id={menu_SwitchColorTwo child=0} text="Balance Arrow Colour: Green" 
++             Change DE_BALANCE_ARROW_COLOR=[0 255 18 100] 
++         }
++         case 6 {
++             Change case_ColorTwo=7 
++             SetScreenElementProps Id={menu_SwitchColorTwo child=0} text="Balance Arrow Colour: Red" 
++             Change DE_BALANCE_ARROW_COLOR=[255 0 0 100] 
++         }
++         case 7 {
++             Change case_ColorTwo=8 
++             SetScreenElementProps Id={menu_SwitchColorTwo child=0} text="Balance Arrow Colour: Light Blue" 
++             Change DE_BALANCE_ARROW_COLOR=[0 252 255 100] 
++         }
++         case 8 {
++             Change case_ColorTwo=9 
++             SetScreenElementProps Id={menu_SwitchColorTwo child=0} text="Balance Arrow Colour: Yellow" 
++             Change DE_BALANCE_ARROW_COLOR=[234 255 0 100] 
++         }
++         case 9 {
++             Change case_ColorTwo=10 
++             SetScreenElementProps Id={menu_SwitchColorTwo child=0} text="Balance Arrow Colour: Black" 
++             Change DE_BALANCE_ARROW_COLOR=[0 0 0 100] 
++         }
++         case 10 {
++             Change case_ColorTwo=11 
++             SetScreenElementProps Id={menu_SwitchColorTwo child=0} text="Balance Arrow Colour: White" 
++             Change DE_BALANCE_ARROW_COLOR=[255 255 255 100] 
++         }
++         case 11 {
++             Change case_ColorTwo=5 
++             SetScreenElementProps Id={menu_SwitchColorTwo child=0} text="Balance Arrow Colour: Pink" 
++             Change DE_BALANCE_ARROW_COLOR=[225 18 213 100] 
++         }
++     endswitch    
++ } 
+new case_Ammo
+after toggle_SwitchColorTwo
++ case_Ammo = 5 
+new toggle_SwitchAmmo
+after case_Ammo
++ script toggle_SwitchAmmo {
++     printf "Select Ammo type" 
++     switch case_Ammo
++         case 5 {
++             Change case_Ammo=6 
++             SetScreenElementProps Id={menu_SwitchAmmo child=0} text="Ammo Type: Apple" 
++             Skater:SetAmmoType apple 
++         }
++         case 6 {
++             Change case_Ammo=7 
++             SetScreenElementProps Id={menu_SwitchAmmo child=0} text="Ammo Type: Shrimp" 
++             Skater:SetAmmoType shrimp 
++         }
++         case 7 {
++             Change case_Ammo=8 
++             SetScreenElementProps Id={menu_SwitchAmmo child=0} text="Ammo Type: Smokebomb" 
++             Skater:SetAmmoType smokebomb 
++         }
++         case 8 {
++             Change case_Ammo=9 
++             SetScreenElementProps Id={menu_SwitchAmmo child=0} text="Ammo Type: Paintcan" 
++             Skater:SetAmmoType paintcan 
++         }
++         case 9 {
++             Change case_Ammo=10 
++             SetScreenElementProps Id={menu_SwitchAmmo child=0} text="Ammo Type: Skateboard" 
++             Skater:SetAmmoType skateboard 
++         }
++         case 10 {
++             Change case_Ammo=11 
++             SetScreenElementProps Id={menu_SwitchAmmo child=0} text="Ammo Type: Crystal Ball" 
++             Skater:SetAmmoType Crystal_Ball 
++         }
++         case 11 {
++             Change case_Ammo=5 
++             SetScreenElementProps Id={menu_SwitchAmmo child=0} text="Ammo Type: Tomato" 
++             Skater:SetAmmoType tomato 
++         }
++     endswitch    
++ } 
++

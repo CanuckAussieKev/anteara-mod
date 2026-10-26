@@ -1,0 +1,10 @@
+# The Anteara Mod's edits to localtext.qb (applied to the game's own script: lib/edits.ts)
+base eaf25688
+unit Translations
+= 1-1638
+~ 1639 17 10 lolsuplols
+= 1640-16431
+unit Unused
+= 1-19311
+~ 19312 17 9 lolsuplol
+= 19313-24918

@@ -1,0 +1,111 @@
+# The Anteara Mod's edits to game\misc\SK4_Scripts.qb (applied to the game's own script: lib/edits.ts)
+base c973f47f
+unit SK3_KillSkater
+= 1
++     if ! GetGlobalFlag flag=FREEMAN_BOUND {
+~ 2 4 0     
+~ 3 8 0     
++             InBail 
+~ 5 8 0     
+~ 6 12 0     
++             } else {
+~ 8 12 0     
+~ 9 12 0     
+~ 10 12 0     
++             } 
+~ 12 8 0     
+~ 13 12 0     
+~ 14 16 0     
+~ 15 20 0     
+~ 16 24 0     
+~ 17 28 0     
+~ 18 28 0     
+~ 19 28 0     
+= 20-24
++                             } 
++                         } else {
+~ 27 24 0     
+~ 28 28 0     
+~ 29 32 0     
+~ 30 32 0     
+~ 31 32 0     
+= 32-35
++                                 } 
++                             } else {
+~ 38 28 0     
+~ 39 32 0     
+~ 40 32 0     
+~ 41 32 0     
++ 1 { "Oops!" 
+~ 50 10 23 at the fuck are you doing here
++  } 1 { "Noob" 
++  } 1 { "Apparently it's hard..." 
++  } 1 { "Hey. Hey. Hey. Hey. You suck. " 
++  } 1 { "You suck like ProSkater!" 
++  } 1 { "lol" 
++  } 1 { "-.-" 
++  } 1 { "THUG2 isn't hard..." 
+~ 51 8 13 .......
+= 52
++                                 } 
+= 53-57
++             SK3_Killskater_Finish <...> 
+= 58
+= 60-61
+unit SK3_KillSkater_Water
+= 1
++     if ! GetGlobalFlag flag=FREEMAN_BOUND {
+~ 2 4 0     
+~ 3 8 0     
+~ 4 8 0     
+~ 5 12 0     
++             } else {
+~ 7 12 0     
++             } 
+~ 9 8 0     
+~ 10 12 0     
+~ 11 16 0     
+~ 12 20 0     
+~ 13 24 0     
+~ 14 24 0     
+~ 15 24 0     
+= 16-20
++                         } 
++                     } else {
+~ 23 20 0     
+~ 24 24 0     
+~ 25 24 0     
+~ 26 24 0     
+= 27-33
++                         } 
+= 34-36
++             SK3_Killskater_Finish water r=100 g=100 b=200 <...> 
+= 37
+= 39-40
+unit SK3_KillSkater_Pungee
+= 1
++     if ! GetGlobalFlag flag=FREEMAN_BOUND {
+~ 2 4 0     
+~ 3 8 0     
+~ 4 8 0     
+~ 5 8 0     
+~ 6 12 0     
+~ 7 16 0     
+~ 8 20 0     
+~ 9 24 0     
+~ 10 24 0     
+~ 11 24 0     
+= 12-17
++                         } 
++                     } else {
+~ 20 20 0     
+~ 21 24 0     
+~ 22 24 0     
+~ 23 24 0     
+= 24-29
++                         } 
+= 30-32
++             SK3_Killskater_Finish r=150 g=50 b=50 <...> 
+= 33
+= 35-36
++

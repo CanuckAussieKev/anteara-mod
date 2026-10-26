@@ -1,0 +1,3 @@
+mod/** -text diff
+# The TypeScript is LF in every checkout (Biome checks the line ends)
+*.ts text eol=lf

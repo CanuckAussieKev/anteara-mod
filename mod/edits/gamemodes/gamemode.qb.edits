@@ -1,0 +1,29 @@
+# The Anteara Mod's edits to gamemodes\gamemode.qb (applied to the game's own script: lib/edits.ts)
+base 02b7495d
+unit mode_freeskate
++ // MERGE: 2010 - 2010: accumulate_score=1, should_modulate_color=1
+= 1-8
+~ 9 21 1 1
+= 10-20
+~ 21 26 1 1
+= 22-39
+unit mode_freeskate2p
++ // MERGE: 2010 - 2010: accumulate_score=1
+= 1-8
+~ 9 21 1 1
+= 10-38
+unit mode_singlesession
++ // MERGE: 2010 - 2010: should_modulate_color=1
+= 1-20
+~ 21 26 1 1
+= 22-38
+unit mode_netlobby
++ // MERGE: 2010 - 2010: accumulate_score=1, should_modulate_color=1, show_leader_messages=1
+= 1-8
+~ 9 21 1 1
+= 10-20
+~ 21 26 1 1
+= 22-29
+~ 30 25 1 1
+= 31-37
++

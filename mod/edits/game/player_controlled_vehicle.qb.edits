@@ -1,0 +1,507 @@
+# The Anteara Mod's edits to game\player_controlled_vehicle.qb (applied to the game's own script: lib/edits.ts)
+base 32d70693
+new DrivingAi
+first
+from 31b51cfc thug1:scripts\game\player_controlled_vehicle.qb DrivingAi
+= 1-10
+new ToggleUserControlledVehicleMode
+after DrivingAi
+from 76cad9ea thug1:scripts\game\player_controlled_vehicle.qb ToggleUserControlledVehicleMode
+with b9bd93ce thug1:scripts\game\goal_utilities.qb goal_initialize_skater
+= 1
+~ 2 9 1 s
+= 3-6
+~ 7 8 1 s
+~ 8 8 1 s
+~ 9 8 1 s
+~ 10 8 1 s
+~ 11 8 1 s
+~ 12 8 1 s
+~ 13 8 1 s
+~ 14 8 1 s
+~ 15 8 1 s
+~ 16 8 1 s
+~ 17 8 1 s
+~ 18 8 1 s
+= 19
+~ 20 8 1 s
+~ 21 8 1 s
+~ 22 8 1 s
+~ 23 8 1 s
+= 24
+~ 25 8 1 s
+~ 26 17 1 x
+= 27-28
+= 48 @1
+= 29
+~ 30 8 1 s
+= 31-33
+~ 34 24 1 i
+= 35-36
+~ 37 8 1 s
+~ 38 8 1 s
+~ 39 8 1 s
+~ 40 8 1 s
+= 41-44
+new createPlayerVehicle
+after ToggleUserControlledVehicleMode
+with aee0b531 thug1:scripts\game\player_controlled_vehicle.qb createPlayerVehicle
+with 20159d94 thug1:scripts\game\goal_editor\goal_editor.qb goal_editor_create_cursor
+with 298218fc fx\particle_scripts.qb alloc_fast_particle
+with 448c3663 pre:BO_scripts.prx:levels\bo\bo_scripts.qb BO_BailDummy_Bail
+= 1-7 @1
++     if ! ObjectExists id=PlayerVehicle {
+= 8 @4
++         skater:Obj_GetOrientation 
+= 9-18 @1
++                     component=motion 
++                 } 
++                 {
+= 19-37 @1
++         if StructureContains Structure=<VehicleSetup> RCCarCamera {
+= 5 @2
++                 components=[
++                     {
++                         component=cameralookaround 
++                     } 
++                     {
++                         component=vehiclecamera 
++                         subject=PlayerVehicle 
++                         RCCarvehicleCameraSetup 
++                     } 
++                     {
++                         component=camera 
++                     } 
++                     {
++                         component=input 
++                         player=0 
++                     } 
++                 ] 
++                 params={name=PlayerVehicleCamera} 
++             } 
++         } else {
++             if StructureContains Structure=<VehicleSetup> BusUKCamera {
+= 8 @3
++                     components=[
++                         {
++                             component=cameralookaround 
++                         } 
++                         {
++                             component=vehiclecamera 
++                             subject=PlayerVehicle 
++                             BusUKvehicleCameraSetup 
++                         } 
++                         {
++                             component=camera 
++                         } 
++                         {
++                             component=input 
++                             player=0 
++                         } 
++                     ] 
++                     params={name=PlayerVehicleCamera} 
++                 } 
+= 33-34 @3
++                     components=[
++                         {
++                             component=cameralookaround 
++                         } 
++                         {
++                             component=vehiclecamera 
++                             subject=PlayerVehicle 
++                             VehicleCameraSetup 
++                         } 
++                         {
++                             component=camera 
++                         } 
++                         {
++                             component=input 
++                             player=0 
++                         } 
++                     ] 
++                     params={name=PlayerVehicleCamera} 
++                 } 
++             } 
++         } 
++     } 
++     PlayerVehicle:Vehicle_MoveToRestart TRG_Team_Restart 
++ } 
+new NonLocalClientInVehicle
+after createPlayerVehicle
+from 01ee4608 thug1:scripts\game\player_controlled_vehicle.qb NonLocalClientInVehicle
+= 1-3
+~ 4 20 1 i
+= 5-9
+~ 10 22 1 i
+= 11-20
+new NonLocalClientExitVehicle
+after NonLocalClientInVehicle
+from a0ce5a95 thug1:scripts\game\player_controlled_vehicle.qb NonLocalClientExitVehicle
+= 1-6
+new lock_car_to_non_local_skater
+after NonLocalClientExitVehicle
+from d18f2799 thug1:scripts\game\player_controlled_vehicle.qb lock_car_to_non_local_skater
+= 1-4
+= 11-36
+~ 37 45 1 i
+= 38-39
+new remove_car_from_non_local_skater
+after lock_car_to_non_local_skater
+from cee557f6 thug1:scripts\game\player_controlled_vehicle.qb remove_car_from_non_local_skater
+= 1-3
+~ 4 20 1 i
+= 5-7
+new DrivingCollisionLost
+after remove_car_from_non_local_skater
+from f7e05323 thug1:scripts\game\player_controlled_vehicle.qb DrivingCollisionLost
+= 1-3
+new GetVehicleSetup
+after DrivingCollisionLost
+from 593e2327 thug1:scripts\game\player_controlled_vehicle.qb GetVehicleSetup
+= 1-38
++         case Forklift {
+~ 40 32 10 Forklift
++         }
++         case BusUK {
++             return VehicleSetup=BusUKSetup 
++         }
++         case RcCar {
++             return VehicleSetup=rcCarSetup 
++         }
++         case Tauruscar {
++             return VehicleSetup=TaurusCarSetup 
++         }
++         case PickupTruck {
++             return VehicleSetup=PickupTruckSetup 
++         }
++         case wranglerCar {
++             return VehicleSetup=wranglerCarSetup 
++         }
++         case SportsCar {
++             return VehicleSetup=SportsCarSetup 
++         }
++         case SmartCar {
++             return VehicleSetup=SmartCarSetup 
++         }
++         case OldVan {
++             return VehicleSetup=OldVanSetup 
+= 41-43
+new VehicleCameraSetup
+after GetVehicleSetup
+from 44b54cbd thug1:scripts\game\player_controlled_vehicle.qb vehicleCameraSetup
+~ 1 0 1 V
+= 2-6
+new RCCarvehicleCameraSetup
+after VehicleCameraSetup
++ RCCarvehicleCameraSetup = {
++     alignment_rate=3.5 
++     offset_height=15 
++     offset_distance=50 
++     angle=0 
++ } 
+new BusUKvehicleCameraSetup
+after RCCarvehicleCameraSetup
++ BusUKvehicleCameraSetup = {
++     alignment_rate=3.5 
++     offset_height=70 
++     offset_distance=350 
++     angle=0 
++ } 
+new Vehicle_BodyCollision
+after BusUKvehicleCameraSetup
+from 2e1db108 thug1:scripts\game\player_controlled_vehicle.qb Vehicle_BodyCollision
+= 1-3
+new artificial_collision_duration
+after Vehicle_BodyCollision
+from 2bb15a69 thug1:scripts\game\player_controlled_vehicle.qb artificial_collision_duration
+= 1
+new coll_forward_imp
+after artificial_collision_duration
+from aeceb61a thug1:scripts\game\player_controlled_vehicle.qb coll_forward_imp
+= 1
+new coll_sideways_imp
+after coll_forward_imp
+from 94516559 thug1:scripts\game\player_controlled_vehicle.qb coll_sideways_imp
+= 1
+new coll_upwards_imp
+after coll_sideways_imp
+from 7d8a65c0 thug1:scripts\game\player_controlled_vehicle.qb coll_upwards_imp
+= 1
+new coll_spin_rot
+after coll_upwards_imp
+from 73c528f7 thug1:scripts\game\player_controlled_vehicle.qb coll_spin_rot
+= 1
+new coll_flip_rot
+after coll_spin_rot
+from f3831d59 thug1:scripts\game\player_controlled_vehicle.qb coll_flip_rot
+= 1
+new vehicle_physics_artificial_collision_duration
+after coll_flip_rot
+from 4de289d2 thug1:scripts\game\player_controlled_vehicle.qb vehicle_physics_artificial_collision_duration
+= 1
+new vehicle_physics_netcoll_forward_impulse
+after vehicle_physics_artificial_collision_duration
+from 8d1c64d6 thug1:scripts\game\player_controlled_vehicle.qb vehicle_physics_netcoll_forward_impulse
+= 1
+new vehicle_physics_netcoll_sideways_impulse
+after vehicle_physics_netcoll_forward_impulse
+from 4164eb0b thug1:scripts\game\player_controlled_vehicle.qb vehicle_physics_netcoll_sideways_impulse
+= 1
+new vehicle_physics_netcoll_upwards_impulse
+after vehicle_physics_netcoll_sideways_impulse
+from 6e9f3279 thug1:scripts\game\player_controlled_vehicle.qb vehicle_physics_netcoll_upwards_impulse
+= 1
+new vehicle_physics_netcoll_spin_impulse
+after vehicle_physics_netcoll_upwards_impulse
+from dc900292 thug1:scripts\game\player_controlled_vehicle.qb vehicle_physics_netcoll_spin_impulse
+= 1
+new vehicle_physics_netcoll_flip_impulse
+after vehicle_physics_netcoll_spin_impulse
+from ca58c298 thug1:scripts\game\player_controlled_vehicle.qb vehicle_physics_netcoll_flip_impulse
+= 1
+new TransCarSetup
+after vehicle_physics_netcoll_flip_impulse
+from eb088a0b thug1:scripts\game\player_controlled_vehicle.qb TransCarSetup
+with bf981134 thug1:scripts\game\player_controlled_vehicle.qb LadaCarSetup
+= 1-5
+= 6 @1
+= 7-62
+~ 63 21 1 L
+= 64-94
+new CustomCarSetup
+after TransCarSetup
+from 1469e05a thug1:scripts\game\player_controlled_vehicle.qb CustomCarSetup
+= 1-3
++     angle=(0.0, 180.0, 0.0) 
+~ 6 14 6 NasalR
+= 7-62
+~ 63 21 1 L
+= 64-94
+new BlimpSetup
+after CustomCarSetup
+from a3d55726 thug1:scripts\game\player_controlled_vehicle.qb BlimpSetup
+= 1-3
++     sounds=NJ_NasalRacer 
+= 7-8
++     mass=500 
+= 10-59
+~ 60 21 1 L
+= 61-95
+new GardnersCartSetup
+after BlimpSetup
+from 04f496ad thug1:scripts\game\player_controlled_vehicle.qb GardnersCartSetup
+= 1-5
+~ 6 14 1 c
+= 7-64
+~ 65 21 1 L
+= 66-100
+new SecurityCartSetup
+after GardnersCartSetup
+from 3b75a718 thug1:scripts\game\player_controlled_vehicle.qb SecurityCartSetup
+= 1-3
++     sounds=SD_cart 
+= 5
+= 7-64
+~ 65 21 1 L
+= 66-100
+new ForkliftSetup
+after SecurityCartSetup
+from b211caad thug1:scripts\game\player_controlled_vehicle.qb LeafBlowerSetup
++ ForkliftSetup = {
+~ 2 17 10 Forklift
+~ 3 20 26 forklift\\Veh_forklift
+= 4-7
+~ 8 16 17 0.0, 22.0, 60.0
+= 9-61
+~ 62 21 1 L
+= 63-100
+new ImpalaCarSetup
+after ForkliftSetup
+from 4d08e1cd thug1:scripts\game\player_controlled_vehicle.qb ImpalaCarSetup
+= 1-5
+~ 6 11 7 RU_Foreign
+= 7-62
+~ 63 21 1 L
+= 64-94
+new PoliceCarSetup
+after ImpalaCarSetup
+from 7f169b28 thug1:scripts\game\player_controlled_vehicle.qb PoliceCarSetup
+= 1-62
+~ 63 21 1 L
+= 64-94
+new ElCaminoCarSetup
+after PoliceCarSetup
+from a5902de6 thug1:scripts\game\player_controlled_vehicle.qb ElCaminoCarSetup
+= 1-5
+~ 6 11 3 RU_Foreign
+= 7-62
+~ 63 21 1 L
+= 64-94
+new LimoCarSetup
+after ElCaminoCarSetup
+from 410b4e5b thug1:scripts\game\player_controlled_vehicle.qb LimoCarSetup
+with bf981134 thug1:scripts\game\player_controlled_vehicle.qb LadaCarSetup
+= 1-5
+= 6 @1
+= 7-62
+~ 63 21 1 L
+= 64-94
+new MiniBajaCarSetup
+after LimoCarSetup
+from 67d6325f thug1:scripts\game\player_controlled_vehicle.qb MiniBajaCarSetup
+with bf981134 thug1:scripts\game\player_controlled_vehicle.qb LadaCarSetup
+= 1-5
+= 6 @1
+= 7-64
+~ 65 21 1 L
+= 66-100
+new TaurusCarSetup
+after MiniBajaCarSetup
+from bf981134 thug1:scripts\game\player_controlled_vehicle.qb LadaCarSetup
+~ 1 0 4 Taurus
+~ 2 17 5 Taurusc
+~ 3 20 14 taurustype\\veh_TaurusType
+= 4-62
+~ 63 21 1 L
+= 64-94
+new LadaCarSetup
+after TaurusCarSetup
+from bf981134 thug1:scripts\game\player_controlled_vehicle.qb LadaCarSetup
+= 1-62
+~ 63 21 1 L
+= 64-94
+new BusUKSetup
+after LadaCarSetup
+from b211caad thug1:scripts\game\player_controlled_vehicle.qb LeafBlowerSetup
++ BusUKSetup = {
+~ 2 17 10 BusUK
+~ 3 20 26 BusUK\\Veh_BusUK
++     sounds=UKBus_Sound_Profile 
++     BusUKCamera 
+= 10-61
+~ 62 21 1 L
+= 63-100
+new rcCarSetup
+after BusUKSetup
+from 67d6325f thug1:scripts\game\player_controlled_vehicle.qb MiniBajaCarSetup
+~ 1 0 8 rc
+~ 2 17 8 Rc
+~ 3 20 22 rc\\veh_rc
++     sounds=SD_cart 
++     RCCarCamera 
+~ 10 32 1 2
++     mass=9000 
+= 12
+~ 13 23 1 3
+= 14-17
+~ 18 23 2 49
+= 19-21
+~ 22 28 3 1
+= 23
+= 25-26
++             (1.0, 1.0, 1.0) 
++             (-1.0, 1.0, 1.0) 
++             (1.0, 1.0, -1.0) 
+= 30-31
++             (1.0, 1.0, 1.0) 
++             (-1.0, 1.0, 1.0) 
++             (1.0, 1.0, -1.0) 
+= 35-37
+~ 38 21 2 100
+~ 39 20 2 50
+= 40-43
+= 46
+= 48-51
++         radius=13 
+= 53-54
+~ 55 21 2 28
+~ 56 24 1 2
+= 57
+~ 58 33 2 12
+= 59-60
++         brake_torque=2000 
+= 61-63
+~ 64 32 1 5.5
+~ 65 21 1 L
+= 66-68
+~ 69 41 0 .5
+~ 70 38 1 4.0
+= 71-72
+~ 73 32 1 5.5
+= 74-77
+~ 78 41 0 .5
+~ 79 38 1 4.0
+= 80-81
+~ 82 32 1 6
+= 83-86
+~ 87 40 1 3
+= 88-90
+~ 91 32 1 6
+= 92
++             drive=fixed 
+= 94-95
+~ 96 40 1 3
+= 97-100
+new PickupTruckSetup
+after rcCarSetup
+from bf981134 thug1:scripts\game\player_controlled_vehicle.qb LadaCarSetup
++ PickupTruckSetup = {
+~ 2 17 7 PickupTruck
+~ 3 20 14 pickup\\veh_pickup
+= 4-62
+~ 63 21 1 L
+= 64-94
+new wranglerCarSetup
+after PickupTruckSetup
+from bf981134 thug1:scripts\game\player_controlled_vehicle.qb LadaCarSetup
+~ 1 0 4 wrangler
+~ 2 17 4 wrangler
+~ 3 20 14 wrangler\\veh_wrangler
++     sounds=`default` 
+= 7-62
+~ 63 21 1 L
+= 64-94
+new SportsCarSetup
+after wranglerCarSetup
+from bf981134 thug1:scripts\game\player_controlled_vehicle.qb LadaCarSetup
+~ 1 0 4 Sports
+~ 2 17 4 Sports
+~ 3 20 14 smallsportscar\\veh_smallsportscar
+= 4-62
+~ 63 21 1 L
+= 64-94
+new OldVanSetup
+after SportsCarSetup
+from bf981134 thug1:scripts\game\player_controlled_vehicle.qb LadaCarSetup
++ OldVanSetup = {
+~ 2 17 7 OldVan
+~ 3 10 24 %"veh/veh_oldvan/veh_oldvan
++     sounds=`default` 
+= 7-62
+~ 63 21 1 L
+= 64-77
+~ 78 30 3 3
+= 79-85
+~ 86 30 3 3
+= 87-94
+new SmartCarSetup
+after OldVanSetup
+from bf981134 thug1:scripts\game\player_controlled_vehicle.qb LadaCarSetup
+~ 1 0 4 Smart
+~ 2 17 4 Smart
+~ 3 20 14 smart_car\\veh_smart_car
++     sounds=SD_cart 
+= 7-62
+~ 63 21 1 L
+= 64-70
+~ 71 21 5 fixed
+= 72-77
+~ 78 30 3 3
+= 79-85
+~ 86 30 3 3
+~ 87 21 5 right
+= 88-94
+new defaultCarSetup
+after SmartCarSetup
+from 43e89667 thug1:scripts\game\player_controlled_vehicle.qb defaultCarSetup
+= 1-2
