@@ -575,9 +575,8 @@ function tempDir(): string {
 }
 
 // Writes <out>\anteara\: every file of the mod's qdir.txt (scripts\...), its qdir.txt and localtext.qb.
-// edits / frontEndEdits: {"scripts\\game\\levels.qb" (lower case): function(text) -> text}, the data overlay's own
-// changes to re-apply - edits for anteara\, frontEndEdits for anteara\front_end\ (the skate-shop front end's
-// versions). thug1: THUG1's install (the mod's vehicle scripts are made from its qb.pre; without it those files stay
+// edits: {"scripts\\game\\levels.qb" (lower case): function(text) -> text}, the data overlay's own changes to
+// re-apply. thug1: THUG1's install (the mod's vehicle scripts are made from its qb.pre; without it those files stay
 // THUG2's own, empty ones, and the description says so). Returns a description, or null when the game has no loose
 // scripts to build on.
 export function install(
@@ -585,11 +584,9 @@ export function install(
     out: string,
     tool: string,
     edits: ReadonlyMap<string, Edit> = new Map(),
-    frontEndEdits: ReadonlyMap<string, Edit> = new Map(),
     thug1 = THUG1_DEFAULT,
 ): string | null {
     const overlayEdits = new Map([...edits].map(([k, v]) => [k.toLowerCase(), v]));
-    const overlayFrontEndEdits = new Map([...frontEndEdits].map(([k, v]) => [k.toLowerCase(), v]));
     const loose = pyJoin(game, "Data", "scripts");
     const target = pyJoin(out, "anteara");
     if (isDir(target)) fs.rmSync(target, { recursive: true, force: true });
@@ -615,7 +612,7 @@ export function install(
             if (!entry?.new) {
                 const src = path.join(loose, rel);
                 if (!fs.existsSync(src)) pyExit(`anteara: ${rel} missing from ${loose}`);
-                if (!entry && !overlayEdits.has(key) && !overlayFrontEndEdits.has(key)) {
+                if (!entry && !overlayEdits.has(key)) {
                     fs.mkdirSync(path.dirname(dst), { recursive: true });
                     fs.copyFileSync(src, dst);
                     made.copied += 1;
@@ -625,8 +622,6 @@ export function install(
             let text = entry ? modText(rel, entry, scripts) : scripts.text(rel);
             if (entry?.new) made.new += 1;
             else if (entry) made.patched += 1;
-            const frontEnd = overlayFrontEndEdits.get(key);
-            if (frontEnd) compileTo(tool, frontEnd(text), path.join(target, "front_end", "scripts", rel), work);
             const edit = overlayEdits.get(key);
             if (edit) {
                 text = edit(text);
@@ -918,7 +913,7 @@ async function main(): Promise<number> {
     } else {
         // (without the overlay's edits - make_menu_level.ts installs it with them)
         const overlay = values.overlay ?? pyJoin(game, "thug2-decomp-data");
-        print(install(game, overlay, values.ns, new Map(), new Map(), values.thug1) ?? "None");
+        print(install(game, overlay, values.ns, new Map(), values.thug1) ?? "None");
     }
     return 0;
 }

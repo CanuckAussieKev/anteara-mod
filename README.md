@@ -37,7 +37,7 @@ It's one switch for now. Per-feature switches would go into the mod's scripts as
 KEYBOARD SYMBOLS toggle works.
 
 With the mod on, the data overlay's own changes keep working: the ported levels in the level select and Levels.qb, SKATE
-SHOP / TEST LEVEL, LEVEL EDITOR and DEBUG OPTIONS in the pause menu, the skate-shop front end and its standard main
+SHOP / TEST LEVEL, LEVEL EDITOR and DEBUG OPTIONS in the pause menu, the new front end's standard main
 menu, and CREATE 100% CAS.
 
 ## How it's built
@@ -61,14 +61,12 @@ menu, and CREATE 100% CAS.
   - The overlay's own edits are re-applied where it changes the same files, using make_menu_level.ts's functions:
     - `Levels.qb`: the skate shop and ported levels;
     - `gamemenu_levelselect.qb` / `sprites.qb`: the sections and signs;
-    - `gamemenu_pause.qb`: LEVEL EDITOR and DEBUG OPTIONS;
-    - `anteara\front_end\scripts\game\menu\roundbarmenu.qb`: the front end's roundbar, while the THPS4 skate shop
-      backdrop is installed.
+    - `gamemenu_pause.qb`: LEVEL EDITOR and DEBUG OPTIONS.
   - Files with no change are copied as they are. `qdir.txt` and `localtext.qb` are written too.
   - CREATE 100% CAS's `mainmenu_options.qb`, the front end's `mainmenu_scripts.qb` and the rest aren't in the mod's
     set, so they come from the overlay as before.
 - **The DLL** (`src/game/front/data_overlay.cpp`):
-  - While `anteara_mod=1`, a file is looked for in `anteara\front_end\` (only while the skate-shop front end is on),
+  - While `anteara_mod=1`, a file is looked for in `anteara\front_end\` (only while the new front end is on),
     then `anteara\`, then the overlay's `front_end\` and top as before, then the game's archives and files
     (`SearchFolders`; self-test `TestDataOverlay`).
   - The game reads `scripts\qdir.txt` after `qb_scripts.pre`, so the mod's `qdir.txt` decides what loads.
