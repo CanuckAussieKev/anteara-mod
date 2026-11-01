@@ -3,7 +3,7 @@
 // THAW\Game) or the game folder itself (Game's contents at the top - what's left when the launcher, docs and readme
 // around it are deleted; PartyMod's installs, the workspaces, THPS3). Each game is told by marker files /
 // folders of its data, matched without regard to case; the folder itself is tried first, then its Game folder.
-// tools/pipeline/game/game_exe.ps1's Resolve-Install is the PowerShell twin (the same markers).
+// tools/game/game_exe.ps1's Resolve-Install is the PowerShell twin (the same markers).
 
 import * as fs from "node:fs";
 import { pyExit, pyJoin } from "./py.ts";

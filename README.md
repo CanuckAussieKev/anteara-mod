@@ -8,7 +8,7 @@
 > Rights holders: open an issue and it will be dealt with promptly.
 
 Part of the THUG2 decompilation (github.com/CanuckAussieKev/thug2-decomp), mounted there as the submodule `tools/anteara`;
-run from that repository's root with Node 24. `lib/` is a copy of the decomp's small helpers (tools/pipeline/lib) so
+run from that repository's root with Node 24. `lib/` is a copy of the small helpers in thug2-level-converter-core's `lib/` so
 this repository stands alone.
 
 On its own (a plain clone): `npm install`, `npm run typecheck`, `npm test`, and `node anteara.ts extract | check |
