@@ -743,10 +743,27 @@ export function today(): string {
 
 // --- paths ----------------------------------------------------------------------------------------------------------
 
-// Python's os.path.join on Windows (ntpath.join): joins with "\" but keeps the parts' own slashes (node:path's join
-// normalises "C:/x" to "C:\x" - matters only where a path is printed or compared as text). An absolute part
-// (a drive, or a leading slash) starts again, as ntpath.
+// Python's os.path.join: on Windows ntpath.join - joins with "\" but keeps the parts' own slashes (node:path's join
+// normalises "C:/x" to "C:\x" - matters only where a path is printed or compared as text); an absolute part (a drive,
+// or a leading slash) starts again, as ntpath. Elsewhere posixJoin: the tools write relative paths with "\"
+// ("scripts\\game\\levels.qb"), which on Linux / macOS would be one file name.
 export function pyJoin(first: string, ...rest: string[]): string {
+    return process.platform === "win32" ? ntJoin(first, ...rest) : posixJoin(first, ...rest);
+}
+
+// posixpath.join after every "\" in the parts is made "/": an absolute part starts again.
+export function posixJoin(first: string, ...rest: string[]): string {
+    let out = first.replaceAll("\\", "/");
+    for (const raw of rest) {
+        const part = raw.replaceAll("\\", "/");
+        if (part.startsWith("/")) out = part;
+        else if (out === "" || out.endsWith("/")) out += part;
+        else out += `/${part}`;
+    }
+    return out;
+}
+
+export function ntJoin(first: string, ...rest: string[]): string {
     let out = first;
     for (const part of rest) {
         if (/^[A-Za-z]:/.test(part)) {
