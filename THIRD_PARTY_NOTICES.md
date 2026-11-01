@@ -6,10 +6,10 @@ to those parts. (No game files or game script text are in it: README.md "How it'
 | Component | Where | Licence |
 |---|---|---|
 | Python's `difflib` (SequenceMatcher, its ratios, get_close_matches, unified_diff) - CPython, https://github.com/python/cpython (`Lib/difflib.py`) | `lib/difflib.ts`: a TypeScript translation of those parts, the same algorithm step by step so the results are Python's | PSF License Agreement - below |
-| CPython's `vector_norm` (`math.hypot` / `math.dist`, `Modules/mathmodule.c`) | `lib/py.ts` (`vectorNorm`): a TypeScript translation | PSF License Agreement - below |
+| CPython's `vector_norm` (`math.hypot` / `math.dist`, `Modules/mathmodule.c`) | `lib/numbers.ts` (`vectorNorm`): a TypeScript translation | PSF License Agreement - below |
 | NeverScript (byxor; THUG2 fork by violetvandal) - https://github.com/violetvandal/NeverScript | **not in this repository**: the tools run the `ns.exe` the THUG2 decomp builds (its `tools\build_neverscript.ps1` downloads it), or one passed with `--ns` | no licence; its author's permission - the decomp's THIRD_PARTY_NOTICES.md |
 
-## Python Software Foundation License (difflib.ts, py.ts's vectorNorm)
+## Python Software Foundation License (difflib.ts, numbers.ts's vectorNorm)
 
 Changes made (clause 3 below): the parts of `difflib.py` named above and `vector_norm` from `mathmodule.c` translated
 into TypeScript - sequences as arrays, no junk function (SequenceMatcher's "popular element" autojunk kept), only what

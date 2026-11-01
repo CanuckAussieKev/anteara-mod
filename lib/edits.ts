@@ -25,7 +25,7 @@
 
 import * as zlib from "node:zlib";
 import { SequenceMatcher } from "./difflib.ts";
-import { encodeLatin1 } from "./py.ts";
+import { encodeLatin1 } from "./text.ts";
 
 export function textCrc(text: string): string {
     return (zlib.crc32(encodeLatin1(text)) >>> 0).toString(16).padStart(8, "0");

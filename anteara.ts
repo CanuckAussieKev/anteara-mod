@@ -29,7 +29,7 @@ import * as os from "node:os";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
 import * as zlib from "node:zlib";
-import { parseCli } from "./lib/cli.ts";
+import { exitWith, isMain, parseCli, print, runMain } from "./lib/cli.ts";
 import { NS_DEFAULT, nsMissing } from "./lib/decomp.ts";
 import { unifiedDiff } from "./lib/difflib.ts";
 import {
@@ -49,21 +49,10 @@ import {
     type UnitLookup,
 } from "./lib/edits.ts";
 import { findCaseless, findInstall, resolveInstall } from "./lib/install.ts";
+import { jsonText } from "./lib/json.ts";
 import { fileKey, prxFiles } from "./lib/prx.ts";
-import {
-    compareStr,
-    encodeLatin1,
-    isMain,
-    print,
-    pyExit,
-    pyJsonDumps,
-    pySplit,
-    pyStrip,
-    pyStrRepr,
-    runMain,
-    writeTextPy,
-} from "./lib/py.ts";
 import { search, sub } from "./lib/re.ts";
+import { compareStr, encodeLatin1, quotedText, splitWords, stripSpace, writeText } from "./lib/text.ts";
 
 const USAGE =
     "usage: anteara.ts {extract,check,install} [--unified UNIFIED] [--game GAME] [--overlay OVERLAY] [--thug1 THUG1] " +
@@ -169,7 +158,7 @@ export function norm(unitText: string): string {
         if (t.startsWith("#")) return t.toLowerCase();
         return keyOf(t);
     };
-    return pyStrip(sub(IDENT, (m) => one(m.str(0)), text).replace(new RegExp(`${WS}+`, "g"), " "));
+    return stripSpace(sub(IDENT, (m) => one(m.str(0)), text).replace(new RegExp(`${WS}+`, "g"), " "));
 }
 
 // --- NeverScript ---------------------------------------------------------------------------------------------------
@@ -185,7 +174,7 @@ export function ns(tool: string, ...args: string[]): void {
     const result = spawnSync(tool, args, { maxBuffer: 1 << 30 });
     if (result.error) throw result.error;
     if (result.status !== 0) {
-        pyExit(`ns ${args.join(" ")} failed:\n${textReplace(result.stdout)}${textReplace(result.stderr)}`);
+        exitWith(`ns ${args.join(" ")} failed:\n${textReplace(result.stdout)}${textReplace(result.stderr)}`);
     }
 }
 
@@ -209,7 +198,7 @@ export function compileTo(tool: string, text: string, target: string, work: stri
 export function qdirFiles(text: string): string[] {
     const out: string[] = [];
     for (const line of text.split("\n")) {
-        const m = search(/\\scripts\\(.+\.qb)/i, pyStrip(line));
+        const m = search(/\\scripts\\(.+\.qb)/i, stripSpace(line));
         if (m) out.push(m.str(1));
     }
     return out;
@@ -242,7 +231,7 @@ export interface UnitChanges {
 
 function indexLower(files: readonly string[], name: string): number {
     const at = files.map((f) => f.toLowerCase()).indexOf(name.toLowerCase());
-    if (at < 0) throw new Error(`${pyStrRepr(name.toLowerCase())} is not in list`);
+    if (at < 0) throw new Error(`${quotedText(name.toLowerCase())} is not in list`);
     return at;
 }
 
@@ -306,13 +295,13 @@ export function applyPatch(base: string, patchText: string, entry: UnitChanges, 
     for (const edit of entry.edits ?? []) {
         const n = text.split(edit.old).length - 1;
         if (n !== 1) {
-            pyExit(`anteara: ${rel}: the line edit's text ${pyStrRepr(edit.old.slice(0, 60))} found ${n} times`);
+            exitWith(`anteara: ${rel}: the line edit's text ${quotedText(edit.old.slice(0, 60))} found ${n} times`);
         }
         text = replaceAllLiteral(text, edit.old, edit.new);
     }
     // names the mod adds, for decompilers (the checksum table)
     if (patchText && register) {
-        const have = new Set(pySplit(register).map((w) => w.toLowerCase()));
+        const have = new Set(splitWords(register).map((w) => w.toLowerCase()));
         const names = new Set<string>();
         for (const m of patchText.matchAll(/^script ([A-Za-z_][A-Za-z0-9_]*)/gm)) names.add(m[1]!);
         for (const m of patchText.matchAll(/^([A-Za-z_][A-Za-z0-9_]*) =/gm)) names.add(m[1]!);
@@ -426,7 +415,7 @@ export class GameScripts implements UnitLookup {
                 text = result.status === 0 && fs.existsSync(out) ? readLatin1(out) : "";
             } else {
                 const file = looseFile(this.loose, rel);
-                if (!fs.existsSync(file)) pyExit(`anteara: ${rel} missing from ${this.loose}`);
+                if (!fs.existsSync(file)) exitWith(`anteara: ${rel} missing from ${this.loose}`);
                 text = decompile(this.tool, file, this.work);
             }
             this.texts.set(key, text);
@@ -465,12 +454,12 @@ export class GameScripts implements UnitLookup {
 // A game script with the mod's edits: its units changed, added, removed (base: the decompiled game script).
 export function applyScriptEdits(base: string, edits: Edits, scripts: GameScripts, where: string): string {
     if (edits.base !== null && textCrc(base) !== edits.base) {
-        pyExit(`anteara: ${where}: the game's script isn't the one the mod was made from (Data\\scripts changed?)`);
+        exitWith(`anteara: ${where}: the game's script isn't the one the mod was made from (Data\\scripts changed?)`);
     }
     let [head, units, register] = split(base);
     const at = (name: string): number => {
         const i = units.findIndex((u) => keyOf(u[1]) === keyOf(name));
-        if (i < 0) pyExit(`anteara: ${where}: no unit ${name}`);
+        if (i < 0) exitWith(`anteara: ${where}: no unit ${name}`);
         return i;
     };
     for (const block of edits.blocks) {
@@ -485,7 +474,7 @@ export function applyScriptEdits(base: string, edits: Edits, scripts: GameScript
             ];
         } else if (block.kind === "new") {
             const text = blockLines(scripts, block, [], where).join("\n");
-            if (block.after === undefined) pyExit(`anteara: ${where}: new ${block.name} has no place`);
+            if (block.after === undefined) exitWith(`anteara: ${where}: new ${block.name} has no place`);
             units.splice(block.after === "" ? 0 : at(block.after) + 1, 0, ["", block.name, text]);
         } else if (block.kind === "head") {
             head = blockLines(scripts, block, head.split("\n"), where).join("\n");
@@ -507,7 +496,7 @@ export function modText(rel: string, entry: FileEntry, scripts: GameScripts): st
         const base = scripts.text(rel);
         return edits ? applyScriptEdits(base, edits, scripts, rel) : base;
     } catch (err) {
-        if (err instanceof EditsError) pyExit(`anteara: ${err.message}`);
+        if (err instanceof EditsError) exitWith(`anteara: ${err.message}`);
         throw err;
     }
 }
@@ -621,7 +610,7 @@ export function install(
             const dst = path.join(target, "scripts", ...relParts(rel));
             if (!entry?.new) {
                 const src = looseFile(loose, rel);
-                if (!fs.existsSync(src)) pyExit(`anteara: ${rel} missing from ${loose}`);
+                if (!fs.existsSync(src)) exitWith(`anteara: ${rel} missing from ${loose}`);
                 if (!entry && !overlayEdits.has(key)) {
                     fs.mkdirSync(path.dirname(dst), { recursive: true });
                     fs.copyFileSync(src, dst);
@@ -746,7 +735,7 @@ export function extract(unified: string, game: string, tool: string, thug1 = THU
         let thug1Index: UnitIndex | null = null;
         const emptyIndex = (rel: string): UnitIndex => {
             if (!thug1Pre) {
-                pyExit(
+                exitWith(
                     `anteara: ${rel} is empty in THUG2 and the mod's is made from THUG1's: THUG1's Data\\pre\\qb.pre ` +
                         `not found in ${thug1} (or its Game folder) - pass --thug1 <THUG1's install folder>`,
                 );
@@ -823,7 +812,7 @@ export function extract(unified: string, game: string, tool: string, thug1 = THU
     } finally {
         fs.rmSync(work, { recursive: true, force: true });
     }
-    writeTextPy(MANIFEST, pyJsonDumps(manifest, 1));
+    writeText(MANIFEST, jsonText(manifest, 1));
     print(report.join("\n"));
     const all = Object.values(manifest.files);
     print(`${all.length} files: ${all.filter((e) => e.new).length} new, ${all.filter((e) => !e.new).length} patched`);
@@ -908,7 +897,7 @@ async function main(): Promise<number> {
         process.stderr.write(`${USAGE}\n`);
         return 2;
     }
-    if (!fs.existsSync(values.ns)) pyExit(nsMissing(values.ns));
+    if (!fs.existsSync(values.ns)) exitWith(nsMissing(values.ns));
     let game = values.game;
     // (the install root or the game folder itself: C:\Games\THUG2 -> C:\Games\THUG2\Game - lib/install.ts)
     game = resolveInstall(game, "thug2");

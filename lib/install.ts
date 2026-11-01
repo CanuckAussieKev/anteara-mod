@@ -7,7 +7,7 @@
 
 import * as fs from "node:fs";
 import * as path from "node:path";
-import { pyExit } from "./py.ts";
+import { exitWith } from "./cli.ts";
 
 export type InstallGame = "thug2" | "thps3" | "thps4" | "thug1" | "thaw" | "thps2" | "thp8";
 
@@ -83,7 +83,7 @@ export function installError(dir: string, game: InstallGame): string {
 
 const resolved = new Map<string, string>(); // (game + "|" + dir -> folder: the converters ask per file)
 
-// findInstall, or exit with installError's message (SystemExit: a CLI's runMain prints it). Asking again with the
+// findInstall, or exit with installError's message (CliExit: a CLI's runMain prints it). Asking again with the
 // folder it returned gives the same folder, so a function may resolve what it is handed whether or not its caller
 // did.
 export function resolveInstall(dir: string, game: InstallGame): string {
@@ -91,7 +91,7 @@ export function resolveInstall(dir: string, game: InstallGame): string {
     const known = resolved.get(key);
     if (known !== undefined) return known;
     const folder = findInstall(dir, game);
-    if (folder === null) pyExit(installError(dir, game));
+    if (folder === null) exitWith(installError(dir, game));
     resolved.set(key, folder);
     return folder;
 }
