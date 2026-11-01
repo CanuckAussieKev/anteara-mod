@@ -6,7 +6,8 @@
 // tools/game/game_exe.ps1's Resolve-Install is the PowerShell twin (the same markers).
 
 import * as fs from "node:fs";
-import { pyExit, pyJoin } from "./py.ts";
+import * as path from "node:path";
+import { pyExit } from "./py.ts";
 
 export type InstallGame = "thug2" | "thps3" | "thps4" | "thug1" | "thaw" | "thps2" | "thp8";
 
@@ -48,7 +49,7 @@ export function findCaseless(folder: string, ...parts: string[]): string | null 
     for (const part of parts) {
         const match = entries(p)?.find((e) => e.toLowerCase() === part.toLowerCase());
         if (match === undefined) return null;
-        p = pyJoin(p, match);
+        p = path.join(p, match);
     }
     return p;
 }
@@ -60,7 +61,7 @@ function trimSeparators(dir: string): string {
 }
 
 function hasMarker(dir: string, game: InstallGame): boolean {
-    return INSTALLS[game].markers.some((all) => all.every((m) => findCaseless(dir, ...m.split("\\")) !== null));
+    return INSTALLS[game].markers.some((all) => all.every((m) => findCaseless(dir, ...m.split(/[\\/]/)) !== null));
 }
 
 // The folder holding the game's files: `dir` itself or its Game folder; null when neither has the game's markers.

@@ -56,7 +56,6 @@ import {
     isMain,
     print,
     pyExit,
-    pyJoin,
     pyJsonDumps,
     pySplit,
     pyStrip,
@@ -516,7 +515,7 @@ export function modText(rel: string, entry: FileEntry, scripts: GameScripts): st
 // Every file the mod changes or adds, as text (the overlay's edits not applied).
 export function modTexts(game: string, tool: string, work: string, thug1 = THUG1_DEFAULT): Map<string, string> {
     const manifest = JSON.parse(fs.readFileSync(MANIFEST, "utf-8")) as ModManifest;
-    const scripts = new GameScripts(pyJoin(game, "Data", "scripts"), tool, work, thug1QbPre(thug1), thug1);
+    const scripts = new GameScripts(path.join(game, "Data", "scripts"), tool, work, thug1QbPre(thug1), thug1);
     return new Map(Object.entries(manifest.files).map(([rel, entry]) => [rel, modText(rel, entry, scripts)]));
 }
 
@@ -598,8 +597,8 @@ export function install(
     thug1 = THUG1_DEFAULT,
 ): string | null {
     const overlayEdits = new Map([...edits].map(([k, v]) => [k.toLowerCase(), v]));
-    const loose = pyJoin(game, "Data", "scripts");
-    const target = pyJoin(out, "anteara");
+    const loose = path.join(game, "Data", "scripts");
+    const target = path.join(out, "anteara");
     if (isDir(target)) fs.rmSync(target, { recursive: true, force: true });
     if (!fs.existsSync(looseFile(loose, "qdir.txt"))) return null;
     const manifest = JSON.parse(fs.readFileSync(MANIFEST, "utf-8")) as ModManifest;
@@ -672,8 +671,8 @@ export function lineEdits(baseUnit: string, modUnit: string): [string, string][]
 }
 
 export function extract(unified: string, game: string, tool: string, thug1 = THUG1_DEFAULT): void {
-    const srcRoot = pyJoin(unified, "src");
-    const loose = pyJoin(game, "Data", "scripts");
+    const srcRoot = path.join(unified, "src");
+    const loose = path.join(game, "Data", "scripts");
     let unifiedQdir = qdirFiles(readLatin1(path.join(unified, "qdir.txt")));
     const gameQdir = qdirFiles(readLatin1(looseFile(loose, "qdir.txt")));
     // one spelling per folder (the merged qdir has game\menu\Anteara_Stuff and game\menu\anteara_stuff)
@@ -683,7 +682,7 @@ export function extract(unified: string, game: string, tool: string, thug1 = THU
         if (!spelling.has(folder.toLowerCase())) spelling.set(folder.toLowerCase(), folder);
     }
     unifiedQdir = unifiedQdir.map((f) =>
-        ntDirname(f) ? pyJoin(spelling.get(ntDirname(f).toLowerCase())!, ntBasename(f)) : f,
+        ntDirname(f) ? `${spelling.get(ntDirname(f).toLowerCase())!}\\${ntBasename(f)}` : f,
     );
     const lowerGame = gameQdir.map((f) => f.toLowerCase());
     const lowerMod = unifiedQdir.map((f) => f.toLowerCase());
@@ -848,7 +847,7 @@ function codeLines(tool: string, file: string, work: string, fromNs = false): st
 }
 
 export function check(unified: string, overlay: string, tool: string): void {
-    const target = pyJoin(overlay, "anteara", "scripts");
+    const target = path.join(overlay, "anteara", "scripts");
     const unifiedQdir = qdirFiles(readLatin1(path.join(unified, "qdir.txt")));
     const installedQdir = qdirFiles(readLatin1(path.join(target, "qdir.txt")));
     const sameQdir =
@@ -920,10 +919,10 @@ async function main(): Promise<number> {
     if (action === "extract") {
         extract(need(values.unified), game, values.ns, values.thug1);
     } else if (action === "check") {
-        check(need(values.unified), values.overlay ?? pyJoin(game, "thug2-decomp-data"), values.ns);
+        check(need(values.unified), values.overlay ?? path.join(game, "thug2-decomp-data"), values.ns);
     } else {
         // (without the overlay's edits - make_menu_level.ts installs it with them)
-        const overlay = values.overlay ?? pyJoin(game, "thug2-decomp-data");
+        const overlay = values.overlay ?? path.join(game, "thug2-decomp-data");
         print(install(game, overlay, values.ns, new Map(), values.thug1) ?? "None");
     }
     return 0;
