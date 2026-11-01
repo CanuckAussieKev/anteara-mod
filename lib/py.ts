@@ -556,9 +556,10 @@ export function decodeUtf8(data: Uint8Array, errors: "strict" | "replace" = "str
 // --- text files as Python's open(..., "w") / open(...) ---------------------------------------------------------------
 
 // Python's text mode on Windows writes each "\n" as "\r\n" (open(path, "w", encoding="utf-8")). Use this where the
-// Python tool wrote a text file, so the bytes are the same (levels.json, NeverScript sources, reports).
+// Python tool wrote a text file, so the bytes are the same (levels.json, NeverScript sources, reports) - on every
+// system: the output doesn't depend on where it runs.
 export function writeTextPy(path: string, text: string): void {
-    fs.writeFileSync(path, process.platform === "win32" ? text.replaceAll("\n", "\r\n") : text, "utf-8");
+    fs.writeFileSync(path, text.replaceAll("\n", "\r\n"), "utf-8");
 }
 
 // Python's text mode reading (open(path, encoding=...).read()): "\r\n" and "\r" read as "\n" (universal newlines).
