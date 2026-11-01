@@ -341,6 +341,17 @@ export const THUG1_PREFIX = "thug1:";
 
 export class Thug1Missing extends EditsError {}
 
+// A script's path parts ("game\startup.qb": qdir.txt's and the manifest's names use "\", one file name on Linux /
+// macOS).
+export const relParts = (rel: string): string[] => rel.split(/[\\/]/).filter((p) => p !== "");
+
+// A file of the game's loose scripts, matched without regard to case (Linux / macOS file names have a case), or its
+// plain path when it isn't there.
+export function looseFile(loose: string, rel: string): string {
+    const parts = relParts(rel);
+    return findCaseless(loose, ...parts) ?? path.join(loose, ...parts);
+}
+
 // The user's Data\scripts (and the archives above), decompiled as they are needed. thug1: THUG1's qb.pre, or null
 // (thug1Folder: where it was looked for, for the message).
 export class GameScripts implements UnitLookup {
@@ -396,7 +407,7 @@ export class GameScripts implements UnitLookup {
     has(rel: string): boolean {
         const archived = GameScripts.archived(rel);
         if (archived) return this.archive(archived[0]).has(fileKey(archived[1]));
-        return fs.existsSync(path.join(this.loose, rel));
+        return fs.existsSync(looseFile(this.loose, rel));
     }
 
     text(rel: string): string {
@@ -415,7 +426,7 @@ export class GameScripts implements UnitLookup {
                 if (result.error) throw result.error;
                 text = result.status === 0 && fs.existsSync(out) ? readLatin1(out) : "";
             } else {
-                const file = path.join(this.loose, rel);
+                const file = looseFile(this.loose, rel);
                 if (!fs.existsSync(file)) pyExit(`anteara: ${rel} missing from ${this.loose}`);
                 text = decompile(this.tool, file, this.work);
             }
@@ -590,10 +601,10 @@ export function install(
     const loose = pyJoin(game, "Data", "scripts");
     const target = pyJoin(out, "anteara");
     if (isDir(target)) fs.rmSync(target, { recursive: true, force: true });
-    if (!fs.existsSync(path.join(loose, "qdir.txt"))) return null;
+    if (!fs.existsSync(looseFile(loose, "qdir.txt"))) return null;
     const manifest = JSON.parse(fs.readFileSync(MANIFEST, "utf-8")) as ModManifest;
     const files = new Map(Object.entries(manifest.files).map(([k, v]) => [k.toLowerCase(), v]));
-    const gameQdir = qdirFiles(readLatin1(path.join(loose, "qdir.txt")));
+    const gameQdir = qdirFiles(readLatin1(looseFile(loose, "qdir.txt")));
     const qdir = modQdir(gameQdir, manifest);
     const made = { patched: 0, new: 0, copied: 0, overlay: 0 };
     const thug1Pre = thug1QbPre(thug1);
@@ -608,9 +619,9 @@ export function install(
                 withoutThug1.push(rel);
                 entry = undefined;
             }
-            const dst = path.join(target, "scripts", rel);
+            const dst = path.join(target, "scripts", ...relParts(rel));
             if (!entry?.new) {
-                const src = path.join(loose, rel);
+                const src = looseFile(loose, rel);
                 if (!fs.existsSync(src)) pyExit(`anteara: ${rel} missing from ${loose}`);
                 if (!entry && !overlayEdits.has(key)) {
                     fs.mkdirSync(path.dirname(dst), { recursive: true });
@@ -664,7 +675,7 @@ export function extract(unified: string, game: string, tool: string, thug1 = THU
     const srcRoot = pyJoin(unified, "src");
     const loose = pyJoin(game, "Data", "scripts");
     let unifiedQdir = qdirFiles(readLatin1(path.join(unified, "qdir.txt")));
-    const gameQdir = qdirFiles(readLatin1(path.join(loose, "qdir.txt")));
+    const gameQdir = qdirFiles(readLatin1(looseFile(loose, "qdir.txt")));
     // one spelling per folder (the merged qdir has game\menu\Anteara_Stuff and game\menu\anteara_stuff)
     const spelling = new Map<string, string>();
     for (const f of unifiedQdir) {
